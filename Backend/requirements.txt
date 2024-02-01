@@ -1,0 +1,6 @@
+flask
+Flask-Migrate
+PyJWT
+requests
+psycopg2-binary
+

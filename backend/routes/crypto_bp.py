@@ -1,5 +1,5 @@
 from flask import Blueprint
-from controllers.CryptoController import get_crypto_value_by_id, get_crypto_list, get_crypto_values
+from controllers.CryptoController import get_crypto_value_by_id, get_data_crypto, get_crypto_list, get_crypto_values, get_crypto_value_by_time, get_crypto_market_cap_by_time
 from middleware.auth_middleware import token_required
 
 crypto_bp = Blueprint('crypto_bp', __name__)
@@ -19,3 +19,19 @@ def get_crypto(current_user, id):
 def get_cryptos(current_user):
     return get_crypto_values()
     
+@crypto_bp.route('/data', methods=['GET'])
+# @token_required
+def get_crypto_data():
+    return get_data_crypto()
+
+
+@crypto_bp.route('/dataValuesByTime', methods=['GET'])
+# @token_required
+def get_data_values_by_time():
+    return get_crypto_value_by_time()
+
+
+@crypto_bp.route('/dataMCByTime', methods=['GET'])
+# @token_required
+def get_data_mc_by_time():
+    return get_crypto_market_cap_by_time()

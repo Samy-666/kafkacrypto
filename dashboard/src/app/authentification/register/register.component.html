@@ -1,0 +1,36 @@
+<div class="container">
+    <mat-card>
+        <mat-card-title>Création de compte</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <mat-form-field>
+                    <input matInput placeholder="Email" formControlName="email">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Mot de passe" formControlName="password" type="password">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Retapez le mot de passe" formControlName="repeatPassword" type="password">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Nom" formControlName="last_name" type="text">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Prénom" formControlName="first_name" type="text">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Age" formControlName="age" type="number">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Adresse" formControlName="address" type="text">
+                </mat-form-field>
+                <mat-error *ngIf="errorMessage.length>0" class="error">
+                    {{errorMessage}}
+                </mat-error>
+                <span>Déjà un compte? Connectez vous <a (click)="goToLogin()">ici</a></span>
+                <button mat-raised-button color="primary" type="submit">S'inscrire</button>
+            </form>
+            
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,7 @@
+export enum PAGE_ID {
+    LOGIN = 'LOGIN',
+    REGISTER = 'REGISTER',
+    HOME = 'HOME',
+    DASHBOARD = 'DASHBOARD',
+    CRYPTO_LIST = 'CRYPTO_LIST',
+}

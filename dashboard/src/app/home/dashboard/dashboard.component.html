@@ -1,0 +1,35 @@
+<div class="full-container d-block justify-content-around">
+  <mat-form-field>
+    <mat-label> Période </mat-label>
+    <mat-select (selectionChange)="onPeriodChange($event)">
+      <mat-option *ngFor="let periode of Periodes" [value]="periode.value">
+        {{ periode.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="ml-3">
+    <mat-label> Format </mat-label>
+    <mat-select (selectionChange)="onFormatChange($event)">
+      <mat-option *ngFor="let format of FormatChart" [value]="format.type">
+        {{ format.type }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="ml-3">
+    <mat-label> CryptoMonnaie </mat-label>
+    <mat-select (selectionChange)="onCryptoChange($event)">
+      <mat-option *ngFor="let cryptoMonnaie of CryptoList" [value]="cryptoMonnaie.id">
+        {{ cryptoMonnaie.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <app-chart-market-value
+    [cryptoId]="cryptoId"
+    [selectedPeriod]="selectedPeriod"
+    [selectedFormat]="selectedFormat"
+    [selectedCrypto]="selectedCrypto"
+  ></app-chart-market-value>
+</div>

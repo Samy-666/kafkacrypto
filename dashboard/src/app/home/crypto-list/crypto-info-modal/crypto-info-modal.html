@@ -1,0 +1,10 @@
+<div class="full-container" *ngIf="error">
+    <p>Il n'y a pas encore d'informations sur cette crypto</p>
+</div>
+<div class="full-container" *ngIf="!error">
+    <p>{{cryptoName}}</p>
+    <p>{{description}}</p>
+    <p>{{priceChange}}</p>
+
+    <button (click)="voirPlus()">Voir plus </button>
+</div>

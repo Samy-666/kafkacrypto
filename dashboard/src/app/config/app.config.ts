@@ -1,0 +1,6 @@
+
+export const LOGIN_ROUTE = '/users/login'
+export const REGISTER_ROUTE = '/users/register'
+export const CRYPTO_LIST_ROUTE = '/crypto/list'
+export const USER_INFO_ROUTE = '/users/getUserinfo'
+export const CRYPTO_INFO  = '/crypto/values'

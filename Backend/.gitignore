@@ -1,0 +1,7 @@
+__pycache__
+config.py
+controllers/__pycache__
+models/__pycache__
+routes/__pycache__
+/migrations
+requirements.txt

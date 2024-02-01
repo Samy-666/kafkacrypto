@@ -1,0 +1,14 @@
+
+#to initialise migration
+#initialize migration: flask db init
+
+
+#to migrate to database
+#migration: flask db migrate
+
+#to launch server
+#run flask run --host=0.0.0.0
+
+
+#To upgrade migration
+#run : flask db upgrade

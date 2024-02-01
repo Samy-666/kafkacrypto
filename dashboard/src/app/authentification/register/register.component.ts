@@ -41,7 +41,7 @@ export class RegisterComponent {
             };
             this.authentificationService.register(params).subscribe(
                 () => {
-                    this.router.navigate(['/dashboard']);
+                    this.goToLogin();
                 },
                 (error) => {
                     this.errorMessage = error.error.message;

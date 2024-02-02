@@ -62,21 +62,20 @@ export class ChartComponent implements OnChanges, OnInit {
     Chart.register(...registerables);
   }
   ngOnInit(): void {
-  // this.route.queryParams.subscribe((params) => {
-  //     const id = params['id'];
-  //     const crypto = params['crypto'];
-  //     if (id && crypto) {
-  //       this.selectedCryptoName = crypto;
-  //       this.selectedCrypto = id;
-  //       this.getChartDataValue(id, this.selectedPeriod);
-  //       this.getChartDataMc(id, this.selectedPeriod);
-  //       this.createBarChart();
-  //     }
-  //   });
-  //   // supprimer les query params
-  //   const currentRoute = this.router.url;
-  //   this.router.navigateByUrl(currentRoute.split('?')[0]);
-  console.log('cc')
+  this.route.queryParams.subscribe((params) => {
+      const id = params['id'];
+      const crypto = params['crypto'];
+      if (id && crypto) {
+        this.selectedCryptoName = crypto;
+        this.selectedCrypto = id;
+        this.getChartDataValue(id, this.selectedPeriod);
+        this.getChartDataMc(id, this.selectedPeriod);
+        this.createBarChart();
+      }
+    });
+    // supprimer les query params
+    const currentRoute = this.router.url;
+    this.router.navigateByUrl(currentRoute.split('?')[0]);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -129,6 +128,12 @@ export class ChartComponent implements OnChanges, OnInit {
     this.chartColorsMarketCap = this.chartDataMarketCap.map((item: any) =>
       this.generateRandomColor()
     );
+    if(this.chartDataValue?.length > 50){
+      this.chartDataValue = this.chartDataValue.slice(0, 50);
+      this.chartLabelsValues = this.chartLabelsValues.slice(0, 50);
+      this.chartColorsValues = this.chartColorsValues.slice(0, 50);
+      this.chartDataMarketCap = this.chartDataMarketCap.slice(0, 50);
+    }
   }
 
   createBarChart(): void {
@@ -157,6 +162,8 @@ export class ChartComponent implements OnChanges, OnInit {
             backgroundColor: this.chartColorsValues,
             borderColor: this.chartColorsValues,
             borderWidth: 1,
+            pointStyle: '',
+            pointRadius: 0
           },
         ],
       },
@@ -187,6 +194,8 @@ export class ChartComponent implements OnChanges, OnInit {
             backgroundColor: this.chartColorsMarketCap,
             borderColor: this.chartColorsMarketCap,
             borderWidth: 1,
+            pointStyle: '',
+            pointRadius: 0
           },
         ],
       },

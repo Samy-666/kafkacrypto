@@ -1,7 +1,7 @@
 <div class="selectedCrypto justify-content-center">
   La Cryoto Monnaie séléctionnée est: {{ selectedCryptoName }}
 </div>
-<div class="w-100 h-100 d-flex justify-content-around">
+<div class="w-100 h-100">
   <mat-card class="d-block">
     <mat-card-header class="d-block">
       <mat-card-title>Market Value </mat-card-title>
@@ -10,11 +10,11 @@
       >
     </mat-card-header>
     <mat-card-content>
-      <canvas id="myChartValue" height="450px" width="450px"></canvas>
+      <canvas id="myChartValue" height="450px" width="900px"></canvas>
     </mat-card-content>
   </mat-card>
 
-  <mat-card class="d-block">
+  <mat-card class="d-block mt-5">
     <mat-card-header class="d-block">
       <mat-card-title>Market Cap </mat-card-title>
       <mat-card-subtitle
@@ -22,7 +22,7 @@
       >
     </mat-card-header>
     <mat-card-content>
-      <canvas id="myChartMarketCap" height="450px" width="450px"></canvas>
+      <canvas id="myChartMarketCap" height="450px" width="900px"></canvas>
     </mat-card-content>
   </mat-card>
 </div>

@@ -1,4 +1,11 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Chart, ChartTypeRegistry } from 'chart.js';
 import {
   BarElement,
@@ -19,11 +26,11 @@ import { MarketCap, Values } from 'src/app/models/crypto.model';
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss'],
 })
-export class ChartComponent implements OnChanges {
-  @Input() public cryptoId: string = '';
+export class ChartComponent implements OnChanges, OnInit {
   @Input() public selectedPeriod = '';
   @Input() public selectedFormat = '';
   @Input() public selectedCrypto = 0;
+  @Input() public selectedCryptoName = '';
 
   public chartDataValue: number[] = [];
   public chartDataMarketCap: number[] = [];
@@ -37,7 +44,11 @@ export class ChartComponent implements OnChanges {
   public myChartValue: Chart | null = null;
   public myChartMarketCap: Chart | null = null;
 
-  constructor(private cryptoListService: CryptoListService) {
+  constructor(
+    private cryptoListService: CryptoListService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
     Chart.register(
       BarElement,
       BarController,
@@ -50,10 +61,29 @@ export class ChartComponent implements OnChanges {
     );
     Chart.register(...registerables);
   }
+  ngOnInit(): void {
+  // this.route.queryParams.subscribe((params) => {
+  //     const id = params['id'];
+  //     const crypto = params['crypto'];
+  //     if (id && crypto) {
+  //       this.selectedCryptoName = crypto;
+  //       this.selectedCrypto = id;
+  //       this.getChartDataValue(id, this.selectedPeriod);
+  //       this.getChartDataMc(id, this.selectedPeriod);
+  //       this.createBarChart();
+  //     }
+  //   });
+  //   // supprimer les query params
+  //   const currentRoute = this.router.url;
+  //   this.router.navigateByUrl(currentRoute.split('?')[0]);
+  console.log('cc')
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
     this.getChartDataValue(this.selectedCrypto, this.selectedPeriod);
     this.getChartDataMc(this.selectedCrypto, this.selectedPeriod);
     this.createBarChart();
+  
   }
 
   private generateRandomColor(): string {
@@ -81,9 +111,7 @@ export class ChartComponent implements OnChanges {
   }
 
   public formatData(): void {
-    this.chartDataValue = this.filtredDataValue.map(
-      (item: any) => item.value
-    );
+    this.chartDataValue = this.filtredDataValue.map((item: any) => item.value);
     this.chartDataMarketCap = this.filtredDataMc.map(
       (item: any) => item.market_cap
     );
@@ -116,7 +144,6 @@ export class ChartComponent implements OnChanges {
       this.myChartMarketCap.destroy();
     }
 
-
     // Chart for Values
 
     this.myChartValue = new Chart(ctx, {
@@ -136,12 +163,16 @@ export class ChartComponent implements OnChanges {
       options: {
         scales: {
           y: {
-            beginAtZero: true,
+            ticks: {
+              callback: function (value: any, index, values) {
+                // Divisez les valeurs par 1000 (ou tout autre facteur que vous trouvez approprié)
+                return value / 1000 + 'k$';
+              },
+            },
           },
         },
       },
     });
-
 
     // Chart for Market Cap
 
@@ -162,7 +193,12 @@ export class ChartComponent implements OnChanges {
       options: {
         scales: {
           y: {
-            beginAtZero: true,
+            ticks: {
+              callback: function (value: any, index, values) {
+                // Divisez les valeurs par 1000 (ou tout autre facteur que vous trouvez approprié)
+                return value / 1000 + 'k$';
+              },
+            },
           },
         },
       },

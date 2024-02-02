@@ -18,6 +18,10 @@ def get_crypto_list():
         return cryptoList
 
 
+def get_crypto_current_info():
+    data = get_data_crypto()
+    crypto = data["data"]
+    return jsonify(crypto)
 
 def get_crypto_market_cap_by_time():
     body = request.get_json()

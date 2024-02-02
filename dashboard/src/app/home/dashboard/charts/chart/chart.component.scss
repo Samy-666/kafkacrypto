@@ -1,0 +1,14 @@
+:host {
+  mat-card{
+    padding: 7px;
+    background-color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  .selectedCrypto{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   CryptoList,
@@ -16,7 +16,9 @@ export class DashboardComponent implements OnInit {
   public cryptoId: string = '';
   public selectedPeriod = '';
   public selectedFormat = '';
+  public selectedCryptoName = '';
   public selectedCrypto = 0;
+  public ready = false;
   public Periodes: PeriodModel[] = [
     { id: 0, value: '20s', viewValue: '20 secondes' },
     { id: 1, value: '40s', viewValue: '40 secondes' },
@@ -26,8 +28,8 @@ export class DashboardComponent implements OnInit {
     { id: 5, value: '30m', viewValue: '30 minutes' },
   ];
   public FormatChart: FormatLabel[] = [
-    { id: 0, type: 'line', name: 'Ligne'  },
-    { id: 1, type: 'bar', name: 'Barre'},
+    { id: 0, type: 'line', name: 'Ligne' },
+    { id: 1, type: 'bar', name: 'Barre' },
     { id: 2, type: 'pie', name: 'Camembert' },
   ];
 
@@ -50,15 +52,18 @@ export class DashboardComponent implements OnInit {
 
   private getChartData(): void {
     this.cryptoListService.getCryptoList().subscribe(
-      (response: any) => {
+      (response: CryptoList[]) => {
         this.CryptoList = response;
+        this.selectedCrypto = this.CryptoList.length > 0 ? this.CryptoList[0].id : 0;
+        this.selectedCryptoName = this.CryptoList.length > 0 ? this.CryptoList[0].name : '';
+        this.ready = true;
       },
       (error) => {
         console.log(error);
       }
     );
   }
-
+  
   ngOnInit(): void {
     const queryParams = this.router.parseUrl(this.router.url).queryParams;
     if (queryParams['id'] && queryParams['id'].length > 0) {

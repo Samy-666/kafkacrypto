@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CRYPTO_INFO, CRYPTO_LIST_ROUTE, CRYPTO_MARKET_CAP, CRYPTO_VALUE } from 'src/app/config/app.config';
+import { CRYPTO_INFO, CRYPTO_LISTING_CRYPTO, CRYPTO_LIST_ROUTE, CRYPTO_MARKET_CAP, CRYPTO_VALUE } from 'src/app/config/app.config';
 import { environment } from 'src/environments/environment';
-import { CryptoInfoModel, Values, MarketCap } from 'src/app/models/crypto.model';
+import { CryptoInfoModel, Values, MarketCap, CryptoList } from 'src/app/models/crypto.model';
 
 
 @Injectable({
@@ -17,7 +17,15 @@ export class CryptoListService {
         const HttpHeaders = {
             'Authorization': 'Bearer ' + token
         };
-        return this.http.get<CryptoInfoModel[]>(`${environment.apiUrl}` + CRYPTO_LIST_ROUTE, { headers: HttpHeaders });
+        return this.http.get<CryptoList[]>(`${environment.apiUrl}` + CRYPTO_LIST_ROUTE, { headers: HttpHeaders });
+    }
+
+    public getListingCrypto() {
+        const token = JSON.parse(localStorage.getItem('token')!);
+        const HttpHeaders = {
+            'Authorization': 'Bearer ' + token
+        };
+        return this.http.post<CryptoList[]>(`${environment.apiUrl}` + CRYPTO_LISTING_CRYPTO, { headers: HttpHeaders });
     }
 
     public getCryptoInfo(id: string) {

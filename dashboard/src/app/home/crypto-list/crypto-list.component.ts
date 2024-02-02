@@ -26,8 +26,8 @@ export class CryptoListComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.cryptoListService.getCryptoList().subscribe(
       (response: any) => {
-        response['crypto_list'] = response['crypto_list'].slice(0, 10000);
-        this.datas = response['crypto_list'];
+        this.datas = response[0];
+        console.log(111, this.datas);
         this.dataSource = new MatTableDataSource<CryptoInfoModel>(this.datas);
 
         if (this.paginator) {

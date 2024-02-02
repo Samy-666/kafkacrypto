@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CRYPTO_INFO, CRYPTO_LIST_ROUTE } from 'src/app/config/app.config';
+import { CRYPTO_INFO, CRYPTO_LIST_ROUTE, CRYPTO_MARKET_CAP, CRYPTO_VALUE } from 'src/app/config/app.config';
 import { environment } from 'src/environments/environment';
-import { CryptoInfoModel } from 'src/app/models/crypto.model';
+import { CryptoInfoModel, Values, MarketCap } from 'src/app/models/crypto.model';
 
 
 @Injectable({
@@ -28,12 +28,29 @@ export class CryptoListService {
         return this.http.get<CryptoInfoModel>(`${environment.apiUrl}` + CRYPTO_INFO + '/' + id, { headers: HttpHeaders });
     }
 
-    public getTestData() {
-        return this.http.get('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30');
+    public getDataValueByTime(id:number, periode:string) {
+       const token = JSON.parse(localStorage.getItem('token')!);
+        const HttpHeaders = {
+            'Authorization': 'Bearer ' + token,
+            'Content-Type': 'application/json'
+        };
+        const body = {
+            crypto_id: id,
+            time_interval: periode
+        }
+        return this.http.post<Values[]>(`${environment.apiUrl}` + CRYPTO_VALUE, body, { headers: HttpHeaders });
     }
 
-    public getDataFromJson() {
-        const file = require('../../data/cryptoviz.json');
-        return file;
+    public getDataMCByTime(id:number, periode:string) {
+        const token = JSON.parse(localStorage.getItem('token')!);
+        const HttpHeaders = {
+            'Authorization': 'Bearer ' + token,
+            'Content-Type': 'application/json'
+        };
+        const body = {
+            crypto_id: id,
+            time_interval: periode
+        }
+        return this.http.post<MarketCap[]>(`${environment.apiUrl}` + CRYPTO_MARKET_CAP, body, { headers: HttpHeaders });
     }
 }

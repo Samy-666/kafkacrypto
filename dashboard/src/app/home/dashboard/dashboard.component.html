@@ -12,7 +12,7 @@
     <mat-label> Format </mat-label>
     <mat-select (selectionChange)="onFormatChange($event)">
       <mat-option *ngFor="let format of FormatChart" [value]="format.type">
-        {{ format.type }}
+        {{ format.name }}
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -26,10 +26,10 @@
     </mat-select>
   </mat-form-field>
 
-  <app-chart-market-value
+  <app-chart
     [cryptoId]="cryptoId"
     [selectedPeriod]="selectedPeriod"
     [selectedFormat]="selectedFormat"
     [selectedCrypto]="selectedCrypto"
-  ></app-chart-market-value>
+  ></app-chart>
 </div>

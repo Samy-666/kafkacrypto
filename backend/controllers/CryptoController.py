@@ -119,3 +119,36 @@ def filter_data_mc_by_time(data, time_interval):
             data_mk.append({"market_cap": crypto["market_cap"], "time": current_time})
 
     return data_mk
+
+def calculate_percentage_evolution():
+    #defining parameters to test
+    data = get_data_crypto()
+    crypto_name = 'Bitcoin'
+    time_interval = '30m'
+
+    # Convertir les timestamps en datetime
+    for record in data:
+        record['time'] = datetime.strptime(record['time'], "%Y-%m-%d %H:%M:%S")
+
+    # Filtrer les données pour la cryptomonnaie spécifiée
+    filtered_data = [record for record in data if record['crypto'] == crypto_name]
+    filtered_data.sort(key=lambda x: x['time'], reverse=True)
+
+    # Trouver les enregistrements dans l'intervalle de temps
+    end_time = filtered_data[0]['time']
+    start_time = end_time - timedelta(seconds=time_interval)
+
+    start_price = None
+    end_price = filtered_data[0]['price']
+
+    for record in filtered_data:
+        if record['time'] <= start_time:
+            start_price = record['price']
+            break
+
+    # Calculer l'évolution en pourcentage
+    if start_price and end_price:
+        evolution = ((end_price - start_price) / start_price) * 100
+        return evolution
+    else:
+        return "Données insuffisantes"

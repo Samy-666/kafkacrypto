@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CRYPTO_INFO, CRYPTO_LISTING_CRYPTO, CRYPTO_LIST_ROUTE, CRYPTO_MARKET_CAP, CRYPTO_VALUE } from 'src/app/config/app.config';
 import { environment } from 'src/environments/environment';
-import { CryptoInfoModel, Values, MarketCap, CryptoList } from 'src/app/models/crypto.model';
+import { CryptoInfoModel, Values, MarketCap, CryptoList, ResponseValue, ResponseMarketCap } from 'src/app/models/crypto.model';
 
 
 @Injectable({
@@ -46,7 +46,7 @@ export class CryptoListService {
             crypto_id: id,
             time_interval: periode
         }
-        return this.http.post<Values[]>(`${environment.apiUrl}` + CRYPTO_VALUE, body, { headers: HttpHeaders });
+        return this.http.post<ResponseValue[]>(`${environment.apiUrl}` + CRYPTO_VALUE, body, { headers: HttpHeaders });
     }
 
     public getDataMCByTime(id:number, periode:string) {
@@ -59,6 +59,6 @@ export class CryptoListService {
             crypto_id: id,
             time_interval: periode
         }
-        return this.http.post<MarketCap[]>(`${environment.apiUrl}` + CRYPTO_MARKET_CAP, body, { headers: HttpHeaders });
+        return this.http.post<ResponseMarketCap[]>(`${environment.apiUrl}` + CRYPTO_MARKET_CAP, body, { headers: HttpHeaders });
     }
 }

@@ -91,7 +91,7 @@ def get_crypto_value_by_time():
 def filter_data_value_by_time(data, time_interval):
     
     data_values = []
-
+    datas = []
     # Convertir la chaîne de temps en une durée timedelta
     interval_duration = timedelta(seconds=int(time_interval[:-1]))
 
@@ -102,11 +102,18 @@ def filter_data_value_by_time(data, time_interval):
         if not data_values or current_time - data_values[-1]["time"] >= interval_duration:
             data_values.append({"value": crypto["value"], "time": current_time})
 
-    return data_values
+    fistValue = data_values[0]["value"]
+    lastValue = data_values[len(data_values)-1]["value"]
+    evolution = ((fistValue - lastValue) / fistValue) * 100
+    evolution = round(evolution, 3)
+    datas.append({"evolution": evolution, "data": data_values})
+
+    return datas
 
 def filter_data_mc_by_time(data, time_interval):
     
     data_mk = []
+    datas = []
 
     # Convertir la chaîne de temps en une durée timedelta
     interval_duration = timedelta(seconds=int(time_interval[:-1]))
@@ -118,7 +125,12 @@ def filter_data_mc_by_time(data, time_interval):
         if not data_mk or current_time - data_mk[-1]["time"] >= interval_duration:
             data_mk.append({"market_cap": crypto["market_cap"], "time": current_time})
 
-    return data_mk
+    fistValue = data_mk[0]["market_cap"]
+    lastValue = data_mk[len(data_mk)-1]["market_cap"]
+    evolution = ((fistValue - lastValue) / fistValue) * 100
+    evolution = round(evolution, 3)
+    datas.append({"evolution": evolution, "data": data_mk})
+    return datas
 
 def calculate_percentage_evolution():
     #defining parameters to test

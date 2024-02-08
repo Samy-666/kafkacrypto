@@ -22,6 +22,14 @@ export interface Values {
     time: string;
     value: number
 }
+export interface ResponseValue{
+    data: Values[]
+    evolution: number
+}
+export interface ResponseMarketCap{
+    data: MarketCap[]
+    evolution: number
+}
 export interface MarketCap {
     time: string;
     market_cap: number

@@ -19,7 +19,7 @@ import {
   Tooltip,
 } from 'chart.js';
 import { CryptoListService } from 'src/app/home/crypto-list/crypto-list.service';
-import { MarketCap, Values } from 'src/app/models/crypto.model';
+import { MarketCap, ResponseMarketCap, ResponseValue, Values } from 'src/app/models/crypto.model';
 
 @Component({
   selector: 'app-chart',
@@ -44,6 +44,8 @@ export class ChartComponent implements OnChanges, OnInit {
   public myChartValue: Chart | null = null;
   public myChartMarketCap: Chart | null = null;
 
+  public valueEvolution: number = 0;
+  public marketCapEvolution: number = 0;
   constructor(
     private cryptoListService: CryptoListService,
     private route: ActivatedRoute,
@@ -93,8 +95,9 @@ export class ChartComponent implements OnChanges, OnInit {
   private getChartDataMc(id: number, periode: string) {
     this.cryptoListService
       .getDataMCByTime(id, periode)
-      .subscribe((data: MarketCap[]) => {
-        this.filtredDataMc = data;
+      .subscribe((data: ResponseMarketCap[]) => {
+        this.marketCapEvolution = data[0]["evolution"];
+        this.filtredDataMc = data[0]["data"];
         this.formatData();
         this.createBarChart();
       });
@@ -102,8 +105,9 @@ export class ChartComponent implements OnChanges, OnInit {
   private getChartDataValue(id: number, periode: string) {
     this.cryptoListService
       .getDataValueByTime(id, periode)
-      .subscribe((data: Values[]) => {
-        this.filtredDataValue = data;
+      .subscribe((data: ResponseValue[]) => {
+        this.valueEvolution = data[0]["evolution"];
+        this.filtredDataValue = data[0]["data"];
         this.formatData();
         this.createBarChart();
       });

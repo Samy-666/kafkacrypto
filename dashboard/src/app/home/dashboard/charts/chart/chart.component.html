@@ -1,29 +1,108 @@
-<div class="selectedCrypto justify-content-center">
-  La Cryoto Monnaie séléctionnée est: {{ selectedCryptoName }}
+<div class="d-flex w-100 justify-content-between">
+  <div class="selectedCrypto justify-content-center">
+    La Cryoto Monnaie séléctionnée est: {{ selectedCryptoName }}
+  </div>
+  <div
+    class="selectedCrypto justify-content-center"
+    *ngIf="selectedCryptoCompareToName.length > 0"
+  >
+    La Cryoto Monnaie auquel on la compare est:
+    {{ selectedCryptoCompareToName }}
+  </div>
 </div>
+
 <div class="w-100 h-100">
-  <mat-card class="d-block">
-    <mat-card-header class="d-block">
-      <mat-card-title>Market Value </mat-card-title>
-      <mat-card-subtitle
-        ><b>Période selectionnée:</b> {{ selectedPeriod }}</mat-card-subtitle
-      >
+  <mat-card>
+    <mat-card-header class="d-flex w-100">
+      <div class="title">
+        <mat-card-title>Market Value </mat-card-title>
+        <mat-card-subtitle
+          ><b>Période selectionnée:</b> {{ selectedPeriod }}</mat-card-subtitle
+        >
+      </div>
+      <div class="evolution">
+        <div class="evolution-content" *ngIf="valueEvolution < 0">
+          <span class="mr-2"> {{ selectedCryptoName }} </span>
+          <img src="../../../../../assets/trending_down-24px.svg" alt="" />
+          <span [ngClass]="'negative'">{{ valueEvolution }}</span>
+        </div>
+
+        <div
+          class="evolution-content"
+          *ngIf="
+            selectedCryptoCompareToName.length > 0 &&
+            valueEvolutionCompareTo < 0
+          "
+        >
+          <span class="mr-2"> {{ selectedCryptoCompareToName }} </span>
+          <img src="../../../../../assets/trending_down-24px.svg" alt="" />
+          <span [ngClass]="'negative'">{{ valueEvolutionCompareTo }}</span>
+        </div>
+
+        <div class="evolution-content" *ngIf="valueEvolution > 0">
+          <span class="mr-2"> {{ selectedCryptoName }} </span>
+          <img src="../../../../../assets/trending_up-24px.svg" alt="" />
+          <span [ngClass]="'positive'">{{ valueEvolution }}</span>
+        </div>
+        <div
+          class="evolution-content"
+          *ngIf="
+            selectedCryptoCompareToName.length > 0 &&
+            valueEvolutionCompareTo > 0
+          "
+        >
+          <span class="mr-2"> {{ selectedCryptoCompareToName }} </span>
+          <img src="../../../../../assets/trending_up-24px.svg" alt="" />
+          <span [ngClass]="'positive'">{{ valueEvolutionCompareTo }}</span>
+        </div>
+
+        <div class="evolution-content" *ngIf="valueEvolution == 0">
+          <span class="mr-2"> {{ selectedCryptoName }} </span>
+          <img src="../../../../../assets/trending_flat-24px.svg" alt="" />
+          <span [ngClass]="'no'">{{ valueEvolution }}</span>
+        </div>
+        <div
+          class="evolution-content"
+          *ngIf="
+            selectedCryptoCompareToName.length > 0 &&
+            valueEvolutionCompareTo == 0
+          "
+        >
+          <span class="mr-2"> {{ selectedCryptoCompareToName }} </span>
+          <img src="../../../../../assets/trending_flat-24px.svg" alt="" />
+          <span [ngClass]="'no'">{{ valueEvolutionCompareTo }}</span>
+        </div>
+      </div>
     </mat-card-header>
     <mat-card-content>
-      <p><b>Evolution : </b> {{valueEvolution}}</p>
       <canvas id="myChartValue" height="450px" width="900px"></canvas>
     </mat-card-content>
   </mat-card>
 
   <mat-card class="d-block mt-5">
-    <mat-card-header class="d-block">
-      <mat-card-title>Market Cap </mat-card-title>
-      <mat-card-subtitle
-        ><b>Période selectionnée:</b> {{ selectedPeriod }}</mat-card-subtitle
-      >
+    <mat-card-header class="d-flex w-100">
+      <div class="title">
+        <mat-card-title>Market Cap </mat-card-title>
+        <mat-card-subtitle
+          ><b>Période selectionnée:</b> {{ selectedPeriod }}</mat-card-subtitle
+        >
+      </div>
+      <div class="evolution">
+        <div class="evolution-content" *ngIf="marketCapEvolution < 0">
+          <img src="../../../../../assets/trending_down-24px.svg" alt="" />
+          <span [ngClass]="'negative'">{{ marketCapEvolution }}</span>
+        </div>
+        <div class="evolution-content" *ngIf="marketCapEvolution > 0">
+          <img src="../../../../../assets/trending_up-24px.svg" alt="" />
+          <span [ngClass]="'positive'">{{ marketCapEvolution }}</span>
+        </div>
+        <div class="evolution-content" *ngIf="marketCapEvolution == 0">
+          <img src="../../../../../assets/trending_flat-24px.svg" alt="" />
+          <span [ngClass]="'no'">{{ marketCapEvolution }}</span>
+        </div>
+      </div>
     </mat-card-header>
     <mat-card-content>
-      <p><b>Evolution : </b> {{marketCapEvolution}}</p>
       <canvas id="myChartMarketCap" height="450px" width="900px"></canvas>
     </mat-card-content>
   </mat-card>

@@ -11,6 +11,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { HomeModule } from './home/home.module';
 import { AuthentificationModule } from './authentification/authentification.module';
+import { MatSelectModule } from '@angular/material/select';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,8 @@ import { AuthentificationModule } from './authentification/authentification.modu
     MatMenuModule,
     MatIconModule,
     AuthentificationModule,
-    HomeModule
+    HomeModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

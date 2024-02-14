@@ -1,8 +1,8 @@
 <div class="full-container d-block justify-content-around" *ngIf="ready">
   <div class="row justify-content-between">
     <mat-form-field class="row w-50">
-      <mat-label> Période </mat-label>
-      <mat-select (selectionChange)="onPeriodChange($event)">
+      <mat-label> Interval de temps </mat-label>
+      <mat-select [value]="selectedPeriod"  (selectionChange)="onPeriodChange($event)">
         <mat-option *ngFor="let periode of Periodes" [value]="periode.value">
           {{ periode.viewValue }}
         </mat-option>
@@ -10,17 +10,16 @@
     </mat-form-field>
 
     <mat-form-field class="row w-50">
-      <mat-label> Format </mat-label>
-      <mat-select (selectionChange)="onFormatChange($event)">
+      <mat-label>Format</mat-label>
+      <mat-select [value]="selectedFormat" (selectionChange)="onFormatChange($event)">
         <mat-option *ngFor="let format of FormatChart" [value]="format.type">
           {{ format.name }}
         </mat-option>
       </mat-select>
     </mat-form-field>
-
     <mat-form-field class="row w-50">
       <mat-label> Crypto Monnaie </mat-label>
-      <mat-select (selectionChange)="onCryptoChange($event)">
+      <mat-select [value]="selectedCrypto" (selectionChange)="onCryptoChange($event)">
         <mat-option
           *ngFor="let cryptoMonnaie of CryptoList"
           [value]="cryptoMonnaie.id"
@@ -28,6 +27,22 @@
           {{ cryptoMonnaie.name }}
         </mat-option>
       </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="row w-50" *ngIf="displayCompareTo">
+      <mat-label> Comparer à </mat-label>
+      <mat-select (selectionChange)="onCryptoCompareToChange($event)">
+        <mat-option
+          *ngFor="let cryptoMonnaie of CryptoListCompareTo"
+          [value]="cryptoMonnaie.id"
+        >
+          {{ cryptoMonnaie.name }}
+        </mat-option>
+        mat-suff
+      </mat-select>
+      <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearFields()">
+        <mat-icon>clear</mat-icon>
+      </button>
     </mat-form-field>
   </div>
 
@@ -37,5 +52,7 @@
     [selectedFormat]="selectedFormat"
     [selectedCrypto]="selectedCrypto"
     [selectedCryptoName]="selectedCryptoName"
+    [selectedCryptoCompareToName]="selectedCryptoCompareToName"
+    [selectedCryptoCompareTo]="selectedCryptoCompareTo"
   ></app-chart>
 </div>

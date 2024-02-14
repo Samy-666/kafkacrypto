@@ -19,7 +19,12 @@ import {
   Tooltip,
 } from 'chart.js';
 import { CryptoListService } from 'src/app/home/crypto-list/crypto-list.service';
-import { MarketCap, ResponseMarketCap, ResponseValue, Values } from 'src/app/models/crypto.model';
+import {
+  MarketCap,
+  ResponseMarketCap,
+  ResponseValue,
+  Values,
+} from 'src/app/models/crypto.model';
 
 @Component({
   selector: 'app-chart',
@@ -31,6 +36,8 @@ export class ChartComponent implements OnChanges, OnInit {
   @Input() public selectedFormat = '';
   @Input() public selectedCrypto = 0;
   @Input() public selectedCryptoName = '';
+  @Input() public selectedCryptoCompareTo = 0;
+  @Input() public selectedCryptoCompareToName = '';
 
   public chartDataValue: number[] = [];
   public chartDataMarketCap: number[] = [];
@@ -39,6 +46,13 @@ export class ChartComponent implements OnChanges, OnInit {
   public chartLabelsValues: string[] = [];
   public chartLabelsMarketCap: string[] = [];
 
+  public chartDataValueCompareTo: number[] = [];
+  public chartDataMarketCapCompareTo: number[] = [];
+  public chartColorsValuesCompareTo: any[] = [];
+  public chartColorsMarketCapCompareTo: any[] = [];
+  public chartLabelsValuesCompareTo: string[] = [];
+  public chartLabelsMarketCapCompareTo: string[] = [];
+
   public filtredDataMc: MarketCap[] = [];
   public filtredDataValue: Values[] = [];
   public myChartValue: Chart | null = null;
@@ -46,6 +60,8 @@ export class ChartComponent implements OnChanges, OnInit {
 
   public valueEvolution: number = 0;
   public marketCapEvolution: number = 0;
+  public valueEvolutionCompareTo: number = 0;
+  public marketCapEvolutionCompareTo: number = 0;
   constructor(
     private cryptoListService: CryptoListService,
     private route: ActivatedRoute,
@@ -64,7 +80,7 @@ export class ChartComponent implements OnChanges, OnInit {
     Chart.register(...registerables);
   }
   ngOnInit(): void {
-  this.route.queryParams.subscribe((params) => {
+    this.route.queryParams.subscribe((params) => {
       const id = params['id'];
       const crypto = params['crypto'];
       if (id && crypto) {
@@ -72,10 +88,9 @@ export class ChartComponent implements OnChanges, OnInit {
         this.selectedCrypto = id;
         this.getChartDataValue(id, this.selectedPeriod);
         this.getChartDataMc(id, this.selectedPeriod);
-        this.createBarChart();
+        this.createChart();
       }
     });
-    // supprimer les query params
     const currentRoute = this.router.url;
     this.router.navigateByUrl(currentRoute.split('?')[0]);
   }
@@ -83,8 +98,15 @@ export class ChartComponent implements OnChanges, OnInit {
   ngOnChanges(changes: SimpleChanges): void {
     this.getChartDataValue(this.selectedCrypto, this.selectedPeriod);
     this.getChartDataMc(this.selectedCrypto, this.selectedPeriod);
-    this.createBarChart();
-  
+    this.getChartDataValueCompareTo(
+      this.selectedCryptoCompareTo,
+      this.selectedPeriod
+    );
+    this.getChartDataMcCompareTo(
+      this.selectedCryptoCompareTo,
+      this.selectedPeriod
+    );
+    this.createChart();
   }
 
   private generateRandomColor(): string {
@@ -96,25 +118,65 @@ export class ChartComponent implements OnChanges, OnInit {
     this.cryptoListService
       .getDataMCByTime(id, periode)
       .subscribe((data: ResponseMarketCap[]) => {
-        this.marketCapEvolution = data[0]["evolution"];
-        this.filtredDataMc = data[0]["data"];
+        this.marketCapEvolution = data[0]['evolution'];
+        this.filtredDataMc = data[0]['data'];
         this.formatData();
-        this.createBarChart();
+        this.createChart();
       });
   }
   private getChartDataValue(id: number, periode: string) {
     this.cryptoListService
       .getDataValueByTime(id, periode)
       .subscribe((data: ResponseValue[]) => {
-        this.valueEvolution = data[0]["evolution"];
-        this.filtredDataValue = data[0]["data"];
+        this.valueEvolution = data[0]['evolution'];
+        this.filtredDataValue = data[0]['data'];
         this.formatData();
-        this.createBarChart();
+        this.createChart();
+      });
+  }
+
+  private getChartDataValueCompareTo(id: number, periode: string) {
+    this.cryptoListService
+      .getDataValueByTime(id, periode)
+      .subscribe((data: ResponseValue[]) => {
+        this.chartDataValueCompareTo = data[0]['data'].map(
+          (item: any) => item.value
+        );
+        this.chartLabelsValuesCompareTo = data[0]['data'].map((item: any) => {
+          const date = new Date(item.time);
+          return date.toLocaleTimeString();
+        });
+        this.chartColorsValuesCompareTo = this.chartDataValueCompareTo.map(
+          (item: any) => this.generateRandomColor()
+        );
+        this.valueEvolutionCompareTo = data[0]['evolution'];
+      });
+  }
+
+  private getChartDataMcCompareTo(id: number, periode: string) {
+    this.cryptoListService
+      .getDataMCByTime(id, periode)
+      .subscribe((data: ResponseMarketCap[]) => {
+        this.chartDataMarketCapCompareTo = data[0]['data'].map(
+          (item: any) => item.market_cap
+        );
+        this.chartLabelsMarketCapCompareTo = data[0]['data'].map(
+          (item: any) => {
+            const date = new Date(item.time);
+            return date.toLocaleTimeString();
+          }
+        );
+        this.chartColorsMarketCapCompareTo =
+          this.chartDataMarketCapCompareTo.map((item: any) =>
+            this.generateRandomColor()
+          );
+        this.marketCapEvolutionCompareTo = data[0]['evolution'];
       });
   }
 
   public formatData(): void {
     this.chartDataValue = this.filtredDataValue.map((item: any) => item.value);
+
     this.chartDataMarketCap = this.filtredDataMc.map(
       (item: any) => item.market_cap
     );
@@ -132,7 +194,7 @@ export class ChartComponent implements OnChanges, OnInit {
     this.chartColorsMarketCap = this.chartDataMarketCap.map((item: any) =>
       this.generateRandomColor()
     );
-    if(this.chartDataValue?.length > 50){
+    if (this.chartDataValue?.length > 50) {
       this.chartDataValue = this.chartDataValue.slice(0, 50);
       this.chartLabelsValues = this.chartLabelsValues.slice(0, 50);
       this.chartColorsValues = this.chartColorsValues.slice(0, 50);
@@ -140,9 +202,11 @@ export class ChartComponent implements OnChanges, OnInit {
     }
   }
 
-  createBarChart(): void {
-    const ctx = document.getElementById('myChartValue') as HTMLCanvasElement;
-    const ctx2 = document.getElementById(
+  createChart(): void {
+    const ctxValue = document.getElementById(
+      'myChartValue'
+    ) as HTMLCanvasElement;
+    const ctxMarketCap = document.getElementById(
       'myChartMarketCap'
     ) as HTMLCanvasElement;
 
@@ -152,31 +216,50 @@ export class ChartComponent implements OnChanges, OnInit {
     if (this.myChartMarketCap) {
       this.myChartMarketCap.destroy();
     }
-
     // Chart for Values
-
-    this.myChartValue = new Chart(ctx, {
+    this.myChartValue = new Chart(ctxValue, {
       type: this.selectedFormat as keyof ChartTypeRegistry,
       data: {
         labels: this.chartLabelsValues,
-        datasets: [
-          {
-            label: 'Values',
-            data: this.chartDataValue,
-            backgroundColor: this.chartColorsValues,
-            borderColor: this.chartColorsValues,
-            borderWidth: 1,
-            pointStyle: '',
-            pointRadius: 0
-          },
-        ],
+        datasets:
+          this.selectedCryptoCompareToName.length > 0 && this.selectedFormat == 'line'
+            ? [
+                {
+                  label: this.selectedCryptoName,
+                  data: this.chartDataValue,
+                  backgroundColor: this.chartColorsValues,
+                  borderColor: this.chartColorsValues,
+                  borderWidth: 1,
+                  pointStyle: '',
+                  pointRadius: 0,
+                },
+                {
+                  label: this.selectedCryptoCompareToName,
+                  data: this.chartDataValueCompareTo,
+                  backgroundColor: this.chartColorsValuesCompareTo,
+                  borderColor: this.chartColorsValuesCompareTo,
+                  borderWidth: 1,
+                  pointStyle: '',
+                  pointRadius: 0,
+                },
+              ]
+            : [
+                {
+                  label: this.selectedCryptoName,
+                  data: this.chartDataValue,
+                  backgroundColor: this.chartColorsValues,
+                  borderColor: this.chartColorsValues,
+                  borderWidth: 1,
+                  pointStyle: '',
+                  pointRadius: 0,
+                },
+              ],
       },
       options: {
         scales: {
           y: {
             ticks: {
               callback: function (value: any, index, values) {
-                // Divisez les valeurs par 1000 (ou tout autre facteur que vous trouvez approprié)
                 return value / 1000 + 'k$';
               },
             },
@@ -186,29 +269,49 @@ export class ChartComponent implements OnChanges, OnInit {
     });
 
     // Chart for Market Cap
-
-    this.myChartMarketCap = new Chart(ctx2, {
+    this.myChartMarketCap = new Chart(ctxMarketCap, {
       type: this.selectedFormat as keyof ChartTypeRegistry,
       data: {
         labels: this.chartLabelsMarketCap,
-        datasets: [
-          {
-            label: 'Market Cap',
-            data: this.chartDataMarketCap,
-            backgroundColor: this.chartColorsMarketCap,
-            borderColor: this.chartColorsMarketCap,
-            borderWidth: 1,
-            pointStyle: '',
-            pointRadius: 0
-          },
-        ],
+        datasets:
+          this.selectedCryptoCompareToName.length > 0 && this.selectedFormat == 'line'
+            ? [
+                {
+                  label: this.selectedCryptoName,
+                  data: this.chartDataMarketCap,
+                  backgroundColor: this.chartColorsMarketCap,
+                  borderColor: this.chartColorsMarketCap,
+                  borderWidth: 1,
+                  pointStyle: '',
+                  pointRadius: 0,
+                },
+                {
+                  label: this.selectedCryptoCompareToName,
+                  data: this.chartDataMarketCapCompareTo,
+                  backgroundColor: this.chartColorsMarketCapCompareTo,
+                  borderColor: this.chartColorsMarketCapCompareTo,
+                  borderWidth: 1,
+                  pointStyle: '',
+                  pointRadius: 0,
+                },
+              ]
+            : [
+                {
+                  label: this.selectedCryptoName,
+                  data: this.chartDataMarketCap,
+                  backgroundColor: this.chartColorsMarketCap,
+                  borderColor: this.chartColorsMarketCap,
+                  borderWidth: 1,
+                  pointStyle: '',
+                  pointRadius: 0,
+                },
+              ],
       },
       options: {
         scales: {
           y: {
             ticks: {
               callback: function (value: any, index, values) {
-                // Divisez les valeurs par 1000 (ou tout autre facteur que vous trouvez approprié)
                 return value / 1000 + 'k$';
               },
             },

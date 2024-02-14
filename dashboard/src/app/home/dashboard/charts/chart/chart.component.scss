@@ -1,14 +1,42 @@
 :host {
-  mat-card{
+  mat-card {
     padding: 7px;
     background-color: aliceblue;
-    font-family: 'Courier New', Courier, monospace;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    font-family: "Courier New", Courier, monospace;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
-  .selectedCrypto{
+  .selectedCrypto {
     font-size: 20px;
     font-weight: bold;
     margin-top: 10px;
     margin-bottom: 15px;
+  }
+  .title {
+    width: 100%;
+  }
+  .evolution {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    .evolution-content {
+      display: flex;
+      .positive {
+        color: green;
+      }
+      .negative {
+        color: red;
+      }
+      .no {
+        color: black;
+      }
+      span{
+        margin-left: 10px;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
   }
 }

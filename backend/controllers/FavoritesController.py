@@ -57,7 +57,7 @@ def get_users_favorites(current_user):
     user_id = current_user.id
     favorites = Favorites.query.filter_by(user_id=user_id).all()
     if favorites:
-        return jsonify([favorite.serialize for favorite in favorites]), 200
+        return jsonify(favorites[0].serialize), 200
     else:
         return jsonify(message='Favorites not found'), 400
 

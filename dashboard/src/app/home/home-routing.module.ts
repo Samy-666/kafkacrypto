@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home.component';
 import { PAGE_ID } from '../enums/page.enum';
 import { AuthGuard } from '../config/guard/auth.guard';
+import { FavorisListComponent } from './favoris-list/favoris-list.component';
 
 
 const routes: Routes = [
@@ -13,11 +14,7 @@ const routes: Routes = [
         component: HomeComponent,
         data: { pageId: PAGE_ID.HOME },
         children: [
-            // {
-            //     path: '', 
-            //     pathMatch: 'full', 
-            //     redirectTo: 'dashboard',
-            // },
+    
             {
                 path: 'dashboard',
                 component: DashboardComponent,
@@ -31,6 +28,12 @@ const routes: Routes = [
                 data: { pageId: PAGE_ID.CRYPTO_LIST },
                 canActivate: [AuthGuard],
             },
+            {
+                path: 'favoris-list',
+                component: FavorisListComponent,
+                data: { pageId: PAGE_ID.FAVORIS_LIST },
+                canActivate: [AuthGuard],
+            }
         ],
     },
 ];

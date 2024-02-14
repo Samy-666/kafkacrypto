@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+import json
 
 db = SQLAlchemy()
 
@@ -31,12 +32,21 @@ class Favorites(db.Model):
     __tablename__ = 'favorites'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    crypto_list = db.Column(db.String)
+    crypto_list = db.Column(db.String)  # Colonne pour stocker les données JSON sous forme de chaîne
+
+    def __init__(self, user_id, crypto_list):
+        self.user_id = user_id
+        self.crypto_list = json.dumps(crypto_list)  # Convertir la liste en format JSON
+
+    @property
+    def deserialize_crypto_list(self):
+        return json.loads(self.crypto_list)  # Convertir la chaîne JSON en liste
+
     @property
     def serialize(self):
         return {
             'id': self.id, 
             'user_id': self.user_id,
-            'crypto_list': self.crypto_list
+            'crypto_list': self.deserialize_crypto_list  # Utiliser la méthode pour récupérer la liste
         }
 

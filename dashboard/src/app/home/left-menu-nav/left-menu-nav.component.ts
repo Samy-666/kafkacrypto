@@ -26,7 +26,7 @@ export class LeftMenuNavComponent implements OnInit {
     public flyerTwo = false;
     public isAtHome = false;
     public menuList: MenuList[] = [{ id: 0, name: 'Dashboard', route: '/dashboard' },
-                                   { id: 1, name: 'Liste des Cryptomonnaies', route: '/crypto-list' }];
+                                   { id: 1, name: 'Toutes les Monnaies', route: '/crypto-list' }];
     public isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),

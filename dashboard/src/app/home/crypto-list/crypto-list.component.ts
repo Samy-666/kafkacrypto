@@ -36,7 +36,7 @@ export class CryptoListComponent implements AfterViewInit {
 
   public voirPlus(id: number, crypto: string) {
     const queryParams: any = { id: id, crypto: crypto};
-    this.router.navigate(['/dashboard/crypto'], { queryParams });
+    this.router.navigate(['/dashboard'], { queryParams });
   }
 
   ngAfterViewInit() {
@@ -58,5 +58,14 @@ export class CryptoListComponent implements AfterViewInit {
         console.log(error);
       }
     );
+  }
+
+  public applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 }

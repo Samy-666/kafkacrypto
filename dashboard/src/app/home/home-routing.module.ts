@@ -4,6 +4,8 @@ import { CryptoListComponent } from './crypto-list/crypto-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home.component';
 import { PAGE_ID } from '../enums/page.enum';
+import { AuthGuard } from '../config/guard/auth.guard';
+
 
 const routes: Routes = [
     {
@@ -11,20 +13,23 @@ const routes: Routes = [
         component: HomeComponent,
         data: { pageId: PAGE_ID.HOME },
         children: [
-            {
-                path: '', 
-                pathMatch: 'full', 
-                redirectTo: 'dashboard',
-            },
+            // {
+            //     path: '', 
+            //     pathMatch: 'full', 
+            //     redirectTo: 'dashboard',
+            // },
             {
                 path: 'dashboard',
                 component: DashboardComponent,
-                data: { pageId: PAGE_ID.DASHBOARD },
+                data: { pageId: PAGE_ID.DASHBOARD, queryParams: true},
+                canActivate: [AuthGuard],
+
             },
             {
                 path: 'crypto-list',
                 component: CryptoListComponent,
                 data: { pageId: PAGE_ID.CRYPTO_LIST },
+                canActivate: [AuthGuard],
             },
         ],
     },
@@ -36,5 +41,6 @@ const routes: Routes = [
 })
 
 export class HomeRoutingModule {
+    
 
 }

@@ -1,11 +1,18 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { Router } from '@angular/router';
+import {
+  AfterViewInit,
+  Component,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {
   CryptoList,
   FormatLabel,
   PeriodModel,
 } from 'src/app/models/crypto.model';
 import { CryptoListService } from '../crypto-list/crypto-list.service';
+import { MatSelect, MatSelectChange } from '@angular/material/select';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +20,6 @@ import { CryptoListService } from '../crypto-list/crypto-list.service';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  public cryptoId: string = '';
   public selectedPeriod = '';
   public selectedCryptoName = '';
   public selectedCryptoCompareToName = '';
@@ -40,8 +46,8 @@ export class DashboardComponent implements OnInit {
   public displayCompareTo = false;
 
   constructor(
-    private router: Router,
-    private cryptoListService: CryptoListService
+    private cryptoListService: CryptoListService,
+    private route: ActivatedRoute
   ) {}
 
   onPeriodChange(event: any) {
@@ -88,6 +94,14 @@ export class DashboardComponent implements OnInit {
         this.selectedCryptoName =
           this.CryptoList.length > 0 ? this.CryptoList[0].name : '';
         this.ready = true;
+        this.route.queryParams.subscribe((params) => {
+          if (params['id']) {
+            this.selectedCrypto = parseInt(params['id']);
+            this.selectedCryptoName = params['crypto'];
+            const event = { value: this.selectedCrypto };
+            this.onCryptoChange(event);
+          }
+        });
       },
       (error) => {
         console.log(error);
@@ -96,13 +110,8 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const queryParams = this.router.parseUrl(this.router.url).queryParams;
-    if (queryParams['id'] && queryParams['id'].length > 0) {
-      this.cryptoId = queryParams['id'];
-    }
     this.getChartData();
     this.selectedPeriod = this.Periodes[0]?.value;
     this.selectedFormat = this.FormatChart[0]?.type;
-    this.selectedCrypto = this.CryptoList[0]?.id;
   }
 }

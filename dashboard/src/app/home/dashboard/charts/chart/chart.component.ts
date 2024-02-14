@@ -31,7 +31,7 @@ import {
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss'],
 })
-export class ChartComponent implements OnChanges, OnInit {
+export class ChartComponent implements OnChanges {
   @Input() public selectedPeriod = '';
   @Input() public selectedFormat = '';
   @Input() public selectedCrypto = 0;
@@ -64,8 +64,6 @@ export class ChartComponent implements OnChanges, OnInit {
   public marketCapEvolutionCompareTo: number = 0;
   constructor(
     private cryptoListService: CryptoListService,
-    private route: ActivatedRoute,
-    private router: Router
   ) {
     Chart.register(
       BarElement,
@@ -78,21 +76,6 @@ export class ChartComponent implements OnChanges, OnInit {
       Tooltip
     );
     Chart.register(...registerables);
-  }
-  ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
-      const id = params['id'];
-      const crypto = params['crypto'];
-      if (id && crypto) {
-        this.selectedCryptoName = crypto;
-        this.selectedCrypto = id;
-        this.getChartDataValue(id, this.selectedPeriod);
-        this.getChartDataMc(id, this.selectedPeriod);
-        this.createChart();
-      }
-    });
-    const currentRoute = this.router.url;
-    this.router.navigateByUrl(currentRoute.split('?')[0]);
   }
 
   ngOnChanges(changes: SimpleChanges): void {

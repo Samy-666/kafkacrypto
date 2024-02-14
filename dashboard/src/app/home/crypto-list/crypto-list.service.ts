@@ -1,64 +1,52 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { CRYPTO_INFO, CRYPTO_LISTING_CRYPTO, CRYPTO_LIST_ROUTE, CRYPTO_MARKET_CAP, CRYPTO_VALUE } from 'src/app/config/app.config';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { CryptoInfoModel, Values, MarketCap, CryptoList, ResponseValue, ResponseMarketCap } from 'src/app/models/crypto.model';
-
+import { TokenService } from 'src/app/authentification/service/token-storage.service';
+import { CRYPTO_INFO, CRYPTO_LISTING_CRYPTO, CRYPTO_LIST_ROUTE, CRYPTO_MARKET_CAP, CRYPTO_VALUE } from 'src/app/config/app.config';
 
 @Injectable({
     providedIn: 'root',
 })
 export class CryptoListService {
-    constructor(private http: HttpClient) { }
-
+    constructor(private http: HttpClient, private tokenService: TokenService) { }
 
     public getCryptoList() {
-        const token = JSON.parse(localStorage.getItem('token')!);
-        const HttpHeaders = {
-            'Authorization': 'Bearer ' + token
-        };
-        return this.http.get<CryptoList[]>(`${environment.apiUrl}` + CRYPTO_LIST_ROUTE, { headers: HttpHeaders });
+        const token = this.tokenService.getToken();
+        const headers = this.createHeaders(token);
+        return this.http.get<CryptoList[]>(`${environment.apiUrl}${CRYPTO_LIST_ROUTE}`, { headers });
     }
 
     public getListingCrypto() {
-        const token = JSON.parse(localStorage.getItem('token')!);
-        const HttpHeaders = {
-            'Authorization': 'Bearer ' + token
-        };
-        return this.http.post<CryptoList[]>(`${environment.apiUrl}` + CRYPTO_LISTING_CRYPTO, { headers: HttpHeaders });
+        const token = this.tokenService.getToken();
+        const headers = this.createHeaders(token);
+        return this.http.post<CryptoList[]>(`${environment.apiUrl}${CRYPTO_LISTING_CRYPTO}`, {}, { headers });
     }
 
     public getCryptoInfo(id: string) {
-        const token = JSON.parse(localStorage.getItem('token')!);
-        const HttpHeaders = {
-            'Authorization': 'Bearer ' + token
-        };
-        return this.http.get<CryptoInfoModel>(`${environment.apiUrl}` + CRYPTO_INFO + '/' + id, { headers: HttpHeaders });
+        const token = this.tokenService.getToken();
+        const headers = this.createHeaders(token);
+        return this.http.get<CryptoInfoModel>(`${environment.apiUrl}${CRYPTO_INFO}/${id}`, { headers });
     }
 
     public getDataValueByTime(id:number, periode:string) {
-       const token = JSON.parse(localStorage.getItem('token')!);
-        const HttpHeaders = {
-            'Authorization': 'Bearer ' + token,
-            'Content-Type': 'application/json'
-        };
-        const body = {
-            crypto_id: id,
-            time_interval: periode
-        }
-        return this.http.post<ResponseValue[]>(`${environment.apiUrl}` + CRYPTO_VALUE, body, { headers: HttpHeaders });
+        const token = this.tokenService.getToken();
+        const headers = this.createHeaders(token);
+        const body = { crypto_id: id, time_interval: periode };
+        return this.http.post<ResponseValue[]>(`${environment.apiUrl}${CRYPTO_VALUE}`, body, { headers });
     }
 
     public getDataMCByTime(id:number, periode:string) {
-        const token = JSON.parse(localStorage.getItem('token')!);
-        const HttpHeaders = {
-            'Authorization': 'Bearer ' + token,
+        const token = this.tokenService.getToken();
+        const headers = this.createHeaders(token);
+        const body = { crypto_id: id, time_interval: periode };
+        return this.http.post<ResponseMarketCap[]>(`${environment.apiUrl}${CRYPTO_MARKET_CAP}`, body, { headers });
+    }
+
+    private createHeaders(token: string | null): HttpHeaders {
+        return new HttpHeaders({
+            'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
-        };
-        const body = {
-            crypto_id: id,
-            time_interval: periode
-        }
-        return this.http.post<ResponseMarketCap[]>(`${environment.apiUrl}` + CRYPTO_MARKET_CAP, body, { headers: HttpHeaders });
+        });
     }
 }

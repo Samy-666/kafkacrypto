@@ -1,6 +1,6 @@
 from flask import Blueprint
 from middleware.auth_middleware import token_required
-from controllers.FavoritesController import index, get_users_favorites,create_favorites, add_item_to_favorites, remove_item_from_favorites
+from controllers.FavoritesController import index, get_users_favorites, add_item_to_favorites, remove_item_from_favorites
 
 favorites_bp = Blueprint('favorites_bp', __name__)
 

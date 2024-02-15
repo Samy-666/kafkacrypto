@@ -49,4 +49,3 @@ class Favorites(db.Model):
             'user_id': self.user_id,
             'crypto_list': self.deserialize_crypto_list  # Utiliser la méthode pour récupérer la liste
         }
-

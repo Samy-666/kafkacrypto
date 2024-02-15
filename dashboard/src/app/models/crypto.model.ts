@@ -1,8 +1,4 @@
-export interface CryptoInfoModel {
-    id: string,
-    name: string,
-    symbol: string
-}
+
 export interface PeriodModel {
     id: number,
     value: string,

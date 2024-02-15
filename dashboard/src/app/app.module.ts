@@ -12,7 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HomeModule } from './home/home.module';
 import { AuthentificationModule } from './authentification/authentification.module';
 import { MatSelectModule } from '@angular/material/select';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatIconModule,
     AuthentificationModule,
     HomeModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

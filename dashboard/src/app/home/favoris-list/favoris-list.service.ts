@@ -7,7 +7,7 @@ import {
   ADD_FAVORIS,
   DELETE_FAVORIS,
 } from 'src/app/config/app.config';
-import { AddedOfRemovedFav, Favorite, FavoriteCrypto } from 'src/app/models/favorite.model';
+import {  CryptoToAdd, Favorite } from 'src/app/models/favorite.model';
 
 @Injectable({
   providedIn: 'root',
@@ -23,23 +23,22 @@ export class FavoriteService {
     });
   }
 
-  public addToFavoris(favoris: AddedOfRemovedFav) {
+  public addToFavoris(favoris: CryptoToAdd) {
     const token = this.tokenService.getToken();
     const headers = this.createHeaders(token);
-    return this.http.post<any>(
+    return this.http.post<CryptoToAdd>(
       `${environment.apiUrl}${ADD_FAVORIS}`,
-      { favoris },
+        favoris,
       { headers }
     );
   }
 
-  public deleteFromFavoris(favoris: AddedOfRemovedFav) {
+  public deleteFromFavoris(favoris: CryptoToAdd) {
     const token = this.tokenService.getToken();
     const headers = this.createHeaders(token);
-    console.log(favoris);
     return this.http.post<any>(
       `${environment.apiUrl}${DELETE_FAVORIS}`,
-      { favoris },
+      favoris,
       { headers }
     );
   }

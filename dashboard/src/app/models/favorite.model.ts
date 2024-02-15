@@ -1,15 +1,12 @@
-export interface FavoriteCrypto {
-    id: string,
+export interface CryptoToAdd {
+    id: number,
     name: string,
 }
 
 export interface Favorite {
-    crypto_list: FavoriteCrypto[],
+    crypto_list: CryptoToAdd[],
     id:number,
     user_id: number
 }
 
-export interface AddedOfRemovedFav {
-    crypto_list: FavoriteCrypto[],
-}
 

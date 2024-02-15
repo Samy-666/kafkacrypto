@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { CryptoInfoModel, Values, MarketCap, CryptoList, ResponseValue, ResponseMarketCap } from 'src/app/models/crypto.model';
+import { CryptoList, ResponseValue, ResponseMarketCap } from 'src/app/models/crypto.model';
 import { TokenService } from 'src/app/authentification/service/token-storage.service';
 import { CRYPTO_INFO, CRYPTO_LISTING_CRYPTO, CRYPTO_LIST_ROUTE, CRYPTO_MARKET_CAP, CRYPTO_VALUE } from 'src/app/config/app.config';
 
@@ -26,7 +26,7 @@ export class CryptoListService {
     public getCryptoInfo(id: string) {
         const token = this.tokenService.getToken();
         const headers = this.createHeaders(token);
-        return this.http.get<CryptoInfoModel>(`${environment.apiUrl}${CRYPTO_INFO}/${id}`, { headers });
+        return this.http.get<CryptoList>(`${environment.apiUrl}${CRYPTO_INFO}/${id}`, { headers });
     }
 
     public getDataValueByTime(id:number, periode:string) {

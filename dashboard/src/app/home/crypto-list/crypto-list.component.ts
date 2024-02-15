@@ -1,11 +1,14 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { CryptoListService } from './crypto-list.service';
-import { CryptoInfoModel } from '../../models/crypto.model';
+import { CryptoList } from '../../models/crypto.model';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { CryptoToAdd, Favorite } from 'src/app/models/favorite.model';
+import { QueryCrypto } from 'src/app/models/query.model';
+import { FavoriteService } from '../favoris-list/favoris-list.service';
 
 @Component({
   selector: 'app-crypto-list',
@@ -16,8 +19,8 @@ export class CryptoListComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator?: MatPaginator;
   @ViewChild(MatSort) sort?: MatSort;
 
-  public dataSource: MatTableDataSource<CryptoInfoModel> =
-    new MatTableDataSource<CryptoInfoModel>([]);
+  public dataSource: MatTableDataSource<CryptoList> =
+    new MatTableDataSource<CryptoList>([]);
   public displayedColumns: string[] = [
     'id',
     'crypto',
@@ -26,24 +29,32 @@ export class CryptoListComponent implements AfterViewInit {
     'plus',
   ];
   public isLoading = true;
-  public datas: CryptoInfoModel[] = [];
+  public datas: CryptoList[] = [];
 
   constructor(
     private cryptoListService: CryptoListService,
     public dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private favoriteService: FavoriteService
   ) {}
 
   public voirPlus(id: number, crypto: string) {
-    const queryParams: any = { id: id, crypto: crypto};
+    const queryParams: QueryCrypto = { id: id, crypto: crypto };
     this.router.navigate(['/dashboard'], { queryParams });
   }
 
-  ngAfterViewInit() {
+  public addToFavorite(id: number, crypto: string) {
+    const params: CryptoToAdd = { id: id, name: crypto };
+    this.favoriteService.addToFavoris(params).subscribe((data: CryptoToAdd) => {
+      console.log('ok');
+    });
+  }
+
+  public getCryptoList() {
     this.cryptoListService.getListingCrypto().subscribe(
-      (response: any) => {
+      (response: CryptoList[]) => {
         this.datas = response.slice(0, 100);
-        this.dataSource = new MatTableDataSource<CryptoInfoModel>(this.datas);
+        this.dataSource = new MatTableDataSource<CryptoList>(this.datas);
 
         if (this.paginator) {
           this.dataSource.paginator = this.paginator;
@@ -58,6 +69,9 @@ export class CryptoListComponent implements AfterViewInit {
         console.log(error);
       }
     );
+  }
+  ngAfterViewInit() {
+    this.getCryptoList();
   }
 
   public applyFilter(event: Event) {

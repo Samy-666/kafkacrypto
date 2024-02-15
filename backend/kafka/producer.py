@@ -24,7 +24,7 @@ from kafka import KafkaProducer
 import time
 
 # Configuration Kafka
-topic_name = "btopic1"
+topic_name = "datarypto"
 kafka_server = 'localhost:9092'
 producer = KafkaProducer(bootstrap_servers=[kafka_server],
                          value_serializer=lambda v: json.dumps(v).encode('utf-8'))

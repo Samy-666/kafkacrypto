@@ -9,7 +9,7 @@ import os
 
 # Configuration Kafka
 kafka_server = 'localhost:9092'
-topic_name = 'btopic1'
+topic_name = 'datarypto'
 
 # Créer un consommateur Kafka
 consumer = KafkaConsumer(

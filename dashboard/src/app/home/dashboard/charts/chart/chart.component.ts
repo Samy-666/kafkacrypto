@@ -177,7 +177,7 @@ export class ChartComponent implements OnChanges {
     this.chartColorsMarketCap = this.chartDataMarketCap.map((item: any) =>
       this.generateRandomColor()
     );
-    if (this.chartDataValue?.length > 50) {
+    if (this.chartDataValue.length > 50 && this.chartDataValue) {
       this.chartDataValue = this.chartDataValue.slice(0, 50);
       this.chartLabelsValues = this.chartLabelsValues.slice(0, 50);
       this.chartColorsValues = this.chartColorsValues.slice(0, 50);

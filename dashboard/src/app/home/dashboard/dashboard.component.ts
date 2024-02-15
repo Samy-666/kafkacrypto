@@ -111,7 +111,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getChartData();
-    this.selectedPeriod = this.Periodes[0]?.value;
-    this.selectedFormat = this.FormatChart[0]?.type;
+    this.selectedPeriod = this.Periodes[0].value;
+    this.selectedFormat = this.FormatChart[0].type;
   }
 }

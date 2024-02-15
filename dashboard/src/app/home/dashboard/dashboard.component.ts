@@ -1,9 +1,6 @@
 import {
-  AfterViewInit,
   Component,
-  OnChanges,
   OnInit,
-  SimpleChanges,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {
@@ -12,7 +9,6 @@ import {
   PeriodModel,
 } from 'src/app/models/crypto.model';
 import { CryptoListService } from '../crypto-list/crypto-list.service';
-import { MatSelect, MatSelectChange } from '@angular/material/select';
 
 @Component({
   selector: 'app-dashboard',

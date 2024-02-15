@@ -5,7 +5,6 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Chart, ChartTypeRegistry } from 'chart.js';
 import {
   BarElement,

@@ -4,3 +4,4 @@ PyJWT
 requests
 psycopg2-binary
 flask_cors
+kafka

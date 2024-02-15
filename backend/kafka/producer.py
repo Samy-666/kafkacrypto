@@ -1,12 +1,12 @@
 import json
-import urllib.request
+# import urllib.request
 import time
 #
-import six
-import sys
+# import six
+# import sys
 
-if sys.version_info >= (3, 12, 0):
-    sys.modules['kafka.vendor.six.moves'] = six.moves
+# if sys.version_info >= (3, 12, 0):
+#     sys.modules['kafka.vendor.six.moves'] = six.moves
 
 from kafka import KafkaProducer
 

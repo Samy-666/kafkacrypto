@@ -1,20 +1,16 @@
 
-import urllib.request
-
 import six
 import sys
-
 if sys.version_info >= (3, 12, 0):
     sys.modules['kafka.vendor.six.moves'] = six.moves
-
-from kafka import KafkaProducer
-
-
 import requests
 from datetime import datetime
 import json
 from kafka import KafkaProducer
 import time
+
+
+
 
 # Configuration Kafka
 topic_name = "datarypto"

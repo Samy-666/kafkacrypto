@@ -5,7 +5,7 @@ echo "Démarrage de Zookeeper..."
 /home/ubuntu/kafka_2.12-3.6.1/bin/zookeeper-server-start.sh /home/ubuntu/kafka_2.12-3.6.1/config/zookeeper.properties > /dev/null 2>&1 &
 ZK_PID=$!
 
-sleep 3
+sleep 10
 
 # Démarrer Kafka
 echo "Démarrage de Kafka..."
@@ -13,19 +13,19 @@ echo "Démarrage de Kafka..."
 /home/ubuntu/kafka_2.12-3.6.1/bin/kafka-server-start.sh /home/ubuntu/kafka_2.12-3.6.1/config/server.properties > /dev/null 2>&1 &
 KAFKA_PID=$!
 
-sleep 5
+sleep 10
 
 # démarre le producteur Kafka
 echo "Démarrage du producteur Kafka..."
 python3 /home/ubuntu/kafkacrypto/backend/kafka/producer.py &
 
-sleep 1
+sleep 5
 
 # demarrer le consommateur Kafka
 echo "Démarrage du consommateur Kafka..."
 python3 /home/ubuntu/kafkacrypto/backend/kafka/consumer.py &
 
-sleep 1
+sleep 5
 
 # Démarrer votre application Flask
 echo "Démarrage de l'application Flask..."

@@ -2,52 +2,69 @@
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     background-color: black;
+   
 }
-
+.img{
+    width: 100%;
+    height: 100%;
+}
 mat-card {
-    width: 400px;
-    height: 650px;
-    padding: 20px;
+    width: 800px;
+    height: 700px;
+    padding: 10px;
     border-radius: 5px;
+    border-color: white;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    background-color: black;
+    color: white;
 
     mat-card-title {
         text-align: center;
-        font-size: 30px;
-        font-weight: 300;
-        margin-bottom: 20px;
+        font-size: 50px;
+        font-weight: 200;
+        margin-bottom: 0px;
+        color: white;
+
     }
     mat-card-content{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100%;
+        height: 90%;
+        color: white;
         form {
-            width: 100%;
-            height: 100%;
+            width: 60%;
+            height: 60%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             padding-top: 0%;
             margin-top: 0%;
+            color: white;
+
             .mat-form-field {
                 width: 100%;
                 margin-bottom: 10px;
+                background-color: white;
+                padding: 1px 10px;
+                border-radius: 4%;
             }
             button {
                 width: 100%;
-                height: 50px;
-                margin-top: 20px;
+                height: 100px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                background-color: rgb(161, 232, 161);
             }
         }
         a {
             cursor: pointer;
-            color: #3f51b5;
+            color: rgb(161, 232, 161);
             :hover {
                 text-decoration: underline;
             }

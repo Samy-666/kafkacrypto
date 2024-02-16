@@ -60,7 +60,9 @@ mat-card {
                 border-color: white;
                 background-color: white;
                 color: rgb(18, 2, 2);
-                border-radius: 0%;
+               
+                padding: 1px 10px;
+                border-radius: 4%;
             }
             button {
                 width: 100%;
@@ -68,6 +70,7 @@ mat-card {
                 background-color:rgb(161, 232, 161);
                 border-color: white;
                 margin-top: 20px;
+                border-radius: 4%;
             }
             a {
                 cursor: pointer;

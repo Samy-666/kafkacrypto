@@ -13,7 +13,7 @@ import time
 
 
 # Configuration Kafka
-topic_name = "datarypto"
+topic_name = "datacrypto"
 kafka_server = 'localhost:9092'
 producer = KafkaProducer(bootstrap_servers=[kafka_server],
                          value_serializer=lambda v: json.dumps(v).encode('utf-8'))

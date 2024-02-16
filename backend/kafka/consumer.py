@@ -7,7 +7,7 @@ import json
 
 # Configuration Kafka
 kafka_server = 'localhost:9092'
-topic_name = 'datarypto'
+topic_name = 'datacrypto'
 
 # Créer un consommateur Kafka
 consumer = KafkaConsumer(

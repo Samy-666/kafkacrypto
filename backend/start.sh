@@ -1,57 +1,90 @@
 #!/bin/bash
 
-#Appeler le script stop.sh pour s'assurer que tout est arrêté
-echo "Préparation ... "
-pkill -f "flask run"
-/home/ubuntu/kafkacrypto/backend/stop.sh
+# Function to check if a process is running
+function is_process_running {
+    pgrep -f "$1" > /dev/null
+}
 
+# Function to gracefully stop a process
+function stop_process {
+    pkill -f "$1"
+    while is_process_running "$1"; do
+        sleep 1
+    done
+}
 
-# Démarrer Zookeeper
-echo "Démarrage de Zookeeper..."
-/home/ubuntu/kafka_2.12-3.6.1/bin/zookeeper-server-start.sh /home/ubuntu/kafka_2.12-3.6.1/config/zookeeper.properties > /dev/null 2>&1 &
-ZK_PID=$!
+# Function to start Kafka components
+function start_kafka_components {
+    local component_name="$1"
+    local component_command="$2"
 
-sleep 10
+    echo "Démarrage de $component_name..."
+    eval "$component_command > /dev/null 2>&1 &"
+    if [ $? -ne 0 ]; then
+        echo "Erreur lors du démarrage de $component_name."
+        exit 1
+    fi
+    sleep 10
+}
 
-# Démarrer Kafka
-echo "Démarrage de Kafka..."
+# Function to start Flask application
+function start_flask_app {
+    echo "Démarrage de l'application Flask..."
+    export FLASK_APP=app.py
+    flask run --host=0.0.0.0 &
+    FLASK_PID=$!
+}
 
-/home/ubuntu/kafka_2.12-3.6.1/bin/kafka-server-start.sh /home/ubuntu/kafka_2.12-3.6.1/config/server.properties > /dev/null 2>&1 &
-KAFKA_PID=$!
+# Function to stop Kafka components
+function stop_kafka_components {
+    echo "Arrêt de Zookeeper et Kafka..."
+    /home/ubuntu/kafka_2.12-3.6.1/bin/zookeeper-server-stop.sh
+    /home/ubuntu/kafka_2.12-3.6.1/bin/kafka-server-stop.sh
+    stop_process "zookeeper"
+    stop_process "kafka"
+}
 
-sleep 10
+# Function to stop Kafka producers and consumers
+function stop_kafka_clients {
+    echo "Arrêt du consommateur et du producteur Kafka..."
+    stop_process "python3 /home/ubuntu/kafkacrypto/backend/kafka/consumer.py"
+    stop_process "python3 /home/ubuntu/kafkacrypto/backend/kafka/producer.py"
+}
 
-# démarre le producteur Kafka
+# Function to stop all processes
+function stop_all_processes {
+    stop_kafka_clients
+    stop_kafka_components
+    if is_process_running "flask run --host=0.0.0.0"; then
+        stop_process "flask run --host=0.0.0.0"
+    fi
+}
+
+# Trap Ctrl+C and stop all processes
+trap stop_all_processes SIGINT
+
+# Main script
+
+# Préparation
+echo "Préparation..."
+stop_all_processes
+
+# Démarrage de Zookeeper
+start_kafka_components "Zookeeper" "/home/ubuntu/kafka_2.12-3.6.1/bin/zookeeper-server-start.sh /home/ubuntu/kafka_2.12-3.6.1/config/zookeeper.properties"
+
+# Démarrage de Kafka
+start_kafka_components "Kafka" "/home/ubuntu/kafka_2.12-3.6.1/bin/kafka-server-start.sh /home/ubuntu/kafka_2.12-3.6.1/config/server.properties"
+
+# Démarrage du producteur Kafka
 echo "Démarrage du producteur Kafka..."
 python3 /home/ubuntu/kafkacrypto/backend/kafka/producer.py &
 
-sleep 5
-
-# demarrer le consommateur Kafka
+# Démarrage du consommateur Kafka
 echo "Démarrage du consommateur Kafka..."
 python3 /home/ubuntu/kafkacrypto/backend/kafka/consumer.py &
 
-sleep 5
+# Démarrage de l'application Flask
+start_flask_app
 
-# Démarrer votre application Flask
-echo "Démarrage de l'application Flask..."
-export FLASK_APP=app.py
-flask run --host=0.0.0.0 &
-
-
-# Arrêter le consommateur Kafka lorsque l'application Flask se termine
-echo "Arrêt du consommateur Kafka..."
-pkill -f "python3 /home/ubuntu/kafkacrypto/backend/kafka/consumer.py"
-
-# Arrêter le producteur Kafka si nécessaire
-echo "Arrêt du producteur Kafka..."
-pkill -f "python3 /home/ubuntu/kafkacrypto/backend/kafka/producer.py"
-
-# Arrêter Zookeeper et Kafka
-echo "Arrêt de Zookeeper et Kafka..."
-/home/ubuntu/kafka_2.12-3.6.1/bin/zookeeper-server-stop.sh
-/home/ubuntu/kafka_2.12-3.6.1/bin/kafka-server-stop.sh
-
-# Attendre que tous les processus se terminent
-wait $ZK_PID
-wait $KAFKA_PID
+# Attente de la fin du processus Flask
+wait $FLASK_PID

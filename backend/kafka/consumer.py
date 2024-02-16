@@ -48,8 +48,9 @@ try:
         
         # Sauvegarder dans un JSON après avoir reçu 100 messages
         if len(data_accumulator) >= 100:
-            with open(json_path, 'w' if not os.path.exists(json_path) else 'a') as file:
+            with open(json_path, 'a') as file:  # Utiliser le mode 'a' pour ajouter au fichier
                 json.dump({'data': data_accumulator}, file, indent=4)
+                file.write('\n')  # Ajouter un saut de ligne pour séparer les enregistrements
             data_accumulator.clear()  # Vider la liste pour les prochains messages
 
 

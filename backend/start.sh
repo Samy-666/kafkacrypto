@@ -39,7 +39,7 @@ pkill -f "python3 /home/ubuntu/kafkacrypto/backend/kafka/consumer.py"
 
 # Arrêter le producteur Kafka si nécessaire
 echo "Arrêt du producteur Kafka..."
-pkill -f "python3 /chemin/vers/producer.py"
+pkill -f "python3 /home/ubuntu/kafkacrypto/backend/kafka/producer.py"
 
 # Arrêter Zookeeper et Kafka
 echo "Arrêt de Zookeeper et Kafka..."

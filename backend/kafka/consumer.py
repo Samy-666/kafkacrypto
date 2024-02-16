@@ -4,7 +4,6 @@ if sys.version_info >= (3, 12, 0):
     sys.modules['kafka.vendor.six.moves'] = six.moves
 from kafka import KafkaConsumer
 import json
-import os
 
 # Configuration Kafka
 kafka_server = 'localhost:9092'

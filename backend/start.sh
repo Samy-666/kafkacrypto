@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#Appeler le script stop.sh pour s'assurer que tout est arrêté
+echo "Préparation ... "
+pkill -f "flask run"
+/home/ubuntu/kafkacrypto/backend/stop.sh
+
+
 # Démarrer Zookeeper
 echo "Démarrage de Zookeeper..."
 /home/ubuntu/kafka_2.12-3.6.1/bin/zookeeper-server-start.sh /home/ubuntu/kafka_2.12-3.6.1/config/zookeeper.properties > /dev/null 2>&1 &

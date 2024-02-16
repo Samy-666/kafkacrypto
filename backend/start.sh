@@ -30,7 +30,7 @@ sleep 5
 # Démarrer votre application Flask
 echo "Démarrage de l'application Flask..."
 export FLASK_APP=app.py
-flask run --host=0.0.0.0 --port=5000
+flask run --host=0.0.0.0 --port=5000 &
 
 
 # Arrêter le consommateur Kafka lorsque l'application Flask se termine

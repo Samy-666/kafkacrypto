@@ -65,8 +65,8 @@
 
 import six
 import sys
-if sys.version_info >= (3, 12, 0):
-    sys.modules['kafka.vendor.six.moves'] = six.moves
+# if sys.version_info >= (3, 12, 0):
+#     sys.modules['kafka.vendor.six.moves'] = six.moves
 from kafka import KafkaConsumer
 import json
 
@@ -107,6 +107,7 @@ try:
                 }
                 data_accumulator.append(record)
                 id += 1
+                print(f"Consumer", record)
 
                 # Sauvegarder dans un JSON après avoir reçu 100 messages
                 if len(data_accumulator) >= 100:

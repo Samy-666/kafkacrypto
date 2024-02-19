@@ -24,7 +24,7 @@ print(f"Listening to topic {topic_name} on {kafka_server}...")
 # Initialiser la liste pour accumuler les données et l'identifiant
 data_accumulator = []
 id = 0
-json_path = "./crypto_data.json"
+json_path = "./test.json"
 
 
 # créer le fichier json si il n'existe pas

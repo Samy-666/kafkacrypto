@@ -57,9 +57,13 @@ try:
 
                 # Sauvegarder dans un JSON après avoir reçu 100 messages
                 if len(data_accumulator) >= 100:
-                    with open(json_path, 'a') as file:
-                        json.dump({'data': data_accumulator}, file, indent=4)
-                        file.write('\n')
+                    try:
+                        with open(json_path, 'a') as file:
+                            json.dump({'data': data_accumulator}, file, indent=4)
+                            file.write('\n')
+                            file.flush()
+                    except Exception as e:
+                        print("Error writing data:", e)
                     data_accumulator.clear()
         except Exception as e:
             print("Error processing message:", e)

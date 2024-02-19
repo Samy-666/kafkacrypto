@@ -53,7 +53,7 @@ function stop_kafka_clients {
 
 # Function to stop all processes
 function stop_all_processes {
-    stop_kafka_clients
+    # stop_kafka_clients
     stop_kafka_components
     if is_process_running "flask run --host=0.0.0.0"; then
         stop_process "flask run --host=0.0.0.0"
@@ -71,17 +71,18 @@ stop_all_processes
 
 # Démarrage de Zookeeper
 start_kafka_components "Zookeeper" "/home/ubuntu/kafka_2.12-3.6.1/bin/zookeeper-server-start.sh /home/ubuntu/kafka_2.12-3.6.1/config/zookeeper.properties"
-sleep 10
+sleep 5
 # Démarrage de Kafka
 start_kafka_components "Kafka" "/home/ubuntu/kafka_2.12-3.6.1/bin/kafka-server-start.sh /home/ubuntu/kafka_2.12-3.6.1/config/server.properties"
-sleep 10
-# Démarrage du producteur Kafka
-echo "Démarrage du producteur Kafka..."
-python3 /home/ubuntu/kafkacrypto/backend/kafka/producer.py &
+sleep 5
 
-# Démarrage du consommateur Kafka
-echo "Démarrage du consommateur Kafka..."
-python3 /home/ubuntu/kafkacrypto/backend/kafka/consumer.py &
+# # Démarrage du producteur Kafka
+# echo "Démarrage du producteur Kafka..."
+# python3 /home/ubuntu/kafkacrypto/backend/kafka/producer.py &
+
+# # Démarrage du consommateur Kafka
+# echo "Démarrage du consommateur Kafka..."
+# python3 /home/ubuntu/kafkacrypto/backend/kafka/consumer.py &
 
 # Démarrage de l'application Flask
 start_flask_app

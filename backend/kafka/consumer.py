@@ -65,6 +65,7 @@ try:
                     except Exception as e:
                         print("Error writing data:", e)
                     data_accumulator.clear()
+                id = 0
         except Exception as e:
             print("Error processing message:", e)
 except KeyboardInterrupt:

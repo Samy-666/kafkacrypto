@@ -1,1 +1,2 @@
 ssh -i "macle.pem" ubuntu@ec2-51-44-5-214.eu-west-3.compute.amazonaws.com
+ssh -i "macle.pem" ubuntu@ec2-51-44-5-214.eu-west-3.compute.amazonaws.com

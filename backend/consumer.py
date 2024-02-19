@@ -5,6 +5,8 @@ if sys.version_info >= (3, 12, 0):
     sys.modules['kafka.vendor.six.moves'] = six.moves
 from kafka import KafkaConsumer
 import json
+import os
+import json
 
 # Configuration Kafka
 kafka_server = 'localhost:9092'
@@ -24,17 +26,18 @@ print(f"Listening to topic {topic_name} on {kafka_server}...")
 # Initialiser la liste pour accumuler les données et l'identifiant
 data_accumulator = []
 id = 0
-json_path = "./test.json"
 
 
-# créer le fichier json si il n'existe pas
-with open(json_path, 'a') as file:
-    file.write('[]')
+# Chemin vers le fichier JSON
+json_path = "./data.json"
 
-# add rights to the file
-import os
-os.chmod(json_path, 0o777)
-
+# Vérifie si le fichier est vide
+if os.stat(json_path).st_size == 0:
+    data_accumulator = []
+else:
+    # Charger les données existantes à partir du fichier JSON
+    with open(json_path, 'r') as file:
+        data_accumulator = json.load(file)['data']
 
 # Boucle infinie pour lire les messages du topic
 try:
@@ -58,14 +61,16 @@ try:
                 # Sauvegarder dans un JSON après avoir reçu 100 messages
                 if len(data_accumulator) >= 100:
                     try:
-                        with open(json_path, 'a') as file:
+                        with open(json_path, 'w') as file:
                             json.dump({'data': data_accumulator}, file, indent=4)
-                            file.write('\n')
-                            file.flush()
                     except Exception as e:
                         print("Error writing data:", e)
                     data_accumulator.clear()
-                id = 0
+
+                # Réinitialiser l'ID à 1 lorsque 99 est atteint
+                if id == 99:
+                    id = 1
+                    
         except Exception as e:
             print("Error processing message:", e)
 except KeyboardInterrupt:
@@ -75,10 +80,8 @@ finally:
     # Sauvegarder les données restantes lors de la fermeture
     if data_accumulator:
         try:
-            with open(json_path, 'a') as file:
+            with open(json_path, 'w') as file:
                 json.dump({'data': data_accumulator}, file, indent=4)
-                file.write('\n')
-                file.flush()
         except Exception as e:
             print("Error writing data:", e)
     

@@ -84,3 +84,18 @@ finally:
             print("Error writing data:", e)
     
     print("Consumer stopped.")
+
+# Lire les données du fichier JSON
+with open(json_path, 'r') as file:
+    data = json.load(file)
+
+# Vérifier si le premier élément de "data" est un tableau vide
+if len(data["data"]) > 0:
+    if not data["data"][0]:
+        # Si c'est le cas, supprimer le premier élément
+        data["data"].pop(0)
+
+# Écrire les données modifiées dans le fichier JSON
+with open(json_path, 'w') as file:
+    json.dump(data, file, indent=4)
+

@@ -53,7 +53,7 @@ function stop_kafka_clients {
 
 # Function to stop all processes
 function stop_all_processes {
-    # stop_kafka_clients
+    stop_kafka_clients
     stop_kafka_components
     if is_process_running "flask run --host=0.0.0.0"; then
         stop_process "flask run --host=0.0.0.0"

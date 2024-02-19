@@ -1,8 +1,7 @@
 
 from functools import wraps
 import jwt
-from flask import request, abort
-from flask import current_app
+from flask import request
 from models.Models import User
 from config import SECRET_KEY
 

@@ -90,6 +90,16 @@ data_accumulator = []
 id = 0
 json_path = "crypto_data.json"
 
+
+# créer le fichier json si il n'existe pas
+with open(json_path, 'a') as file:
+    file.write('[]')
+
+# add rights to the file
+import os
+os.chmod(json_path, 0o777)
+
+
 # Boucle infinie pour lire les messages du topic
 try:
     for message in consumer:

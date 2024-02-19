@@ -10,8 +10,6 @@ from kafka import KafkaProducer
 import time
 
 
-
-
 # Configuration Kafka
 topic_name = "datacrypto"
 kafka_server = 'localhost:9092'
@@ -19,9 +17,9 @@ producer = KafkaProducer(bootstrap_servers=[kafka_server],
                          value_serializer=lambda v: json.dumps(v).encode('utf-8'))
 
 def fetch_top_coins(limit=100):
-    """
-    Récupère les identifiants des 'limit' premières crypto-monnaies par capitalisation boursière.
-    """
+  
+    # Récupère les identifiants des 'limit' premières crypto-monnaies par capitalisation boursière.
+  
     url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page={limit}&page=1"
     response = requests.get(url)
     #print(response)

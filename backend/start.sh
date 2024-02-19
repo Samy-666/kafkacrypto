@@ -71,10 +71,10 @@ stop_all_processes
 
 # Démarrage de Zookeeper
 start_kafka_components "Zookeeper" "/home/ubuntu/kafka_2.12-3.6.1/bin/zookeeper-server-start.sh /home/ubuntu/kafka_2.12-3.6.1/config/zookeeper.properties"
-sleep 5
+sleep 8
 # Démarrage de Kafka
 start_kafka_components "Kafka" "/home/ubuntu/kafka_2.12-3.6.1/bin/kafka-server-start.sh /home/ubuntu/kafka_2.12-3.6.1/config/server.properties"
-sleep 5
+sleep 8
 
 # # Démarrage du producteur Kafka
 # echo "Démarrage du producteur Kafka..."

@@ -69,5 +69,12 @@ finally:
     consumer.close()
     # Sauvegarder les données restantes lors de la fermeture
     if data_accumulator:
-        with open(json_path, 'a') as file:
-            json.dump({'data': data_accumulator}, file, indent=4)
+        try:
+            with open(json_path, 'a') as file:
+                json.dump({'data': data_accumulator}, file, indent=4)
+                file.write('\n')
+                file.flush()
+        except Exception as e:
+            print("Error writing data:", e)
+    
+    print("Consumer stopped.")

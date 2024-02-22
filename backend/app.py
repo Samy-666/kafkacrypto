@@ -25,6 +25,12 @@ os.system('python3 crypto_producer.py &')
 # lancer le consumer kafka
 os.system('python3 crypto_consumer.py &')
 
+# lancer le producer kafka rss
+os.system('python3 rss_producer.py &')
+
+# lancer le consumer kafka rss
+os.system('python3 rss_consumer.py &')
+
 # Initialisez l'extension Flask-Migrate
 migrate = Migrate(app, db)
 

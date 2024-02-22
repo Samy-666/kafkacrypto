@@ -1,11 +1,11 @@
-from kafka import Producer
+from kafka import KafkaProducer
 import feedparser 
 
 # Configuration du producteur Kafka
 conf = {'bootstrap.servers': "localhost:9092"}
 
 # Création de l'instance du producteur
-producer = Producer(conf)
+producer = KafkaProducer(conf)
 
 # URL du flux RSS à récupérer
 rss_feed_url = "https://coinjournal.net/fr/actualites/tag/"

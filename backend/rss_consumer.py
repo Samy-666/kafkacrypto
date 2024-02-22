@@ -1,4 +1,4 @@
-from kafka import Consumer, KafkaError
+from kafka import KafkaConsumer, KafkaError
 
 # Configuration du consommateur Kafka
 conf = {'bootstrap.servers': "localhost:9092",
@@ -6,7 +6,7 @@ conf = {'bootstrap.servers': "localhost:9092",
         'auto.offset.reset': 'earliest'}
 
 # Création de l'instance du consommateur
-consumer = Consumer(conf)
+consumer = KafkaConsumer(conf)
 
 # Abonnement au topic Kafka
 consumer.subscribe(['rss-topic'])

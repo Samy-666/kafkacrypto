@@ -1,13 +1,18 @@
 from kafka import KafkaConsumer, KafkaError
-
+import json
 # Configuration du consommateur Kafka
-conf = {'bootstrap.servers': "localhost:9092",
-        'group.id': "my_consumer_group",
-        'auto.offset.reset': 'earliest'}
 
-# Création de l'instance du consommateur
-consumer = KafkaConsumer(conf)
+# Configuration Kafka
+topic_name = "rss-topic"
+kafka_server = 'localhost:9092'
 
+consumer = KafkaConsumer(
+    topic_name,
+    bootstrap_servers=[kafka_server],
+    auto_offset_reset='earliest',
+    group_id='myFirst-group',
+    value_deserializer=lambda x: json.loads(x.decode('utf-8'))
+)
 # Abonnement au topic Kafka
 consumer.subscribe(['rss-topic'])
 

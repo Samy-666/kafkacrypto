@@ -14,11 +14,16 @@ consumer = KafkaConsumer(
     consumer_timeout_ms=1000  # Définir le délai d'attente ici
 )
 
-# Boucle de consommation des messages
-try:
-    for msg in consumer:
-        print('Received message: {}'.format(msg.value.decode('utf-8')))
-except KeyboardInterrupt:
-    pass
-finally:
-    consumer.close()
+# Ouvrir un fichier en mode écriture pour stocker les messages
+with open('rss.xml', 'w') as file:
+    # Boucle de consommation des messages
+    try:
+        for msg in consumer:
+            message = msg.value.decode('utf-8')
+            print('Received message: {}'.format(message))
+            # Écrire le message dans le fichier
+            file.write(message + '\n')
+    except KeyboardInterrupt:
+        pass
+    finally:
+        consumer.close()

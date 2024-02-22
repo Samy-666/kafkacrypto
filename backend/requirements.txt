@@ -7,4 +7,3 @@ flask_cors
 kafka-python
 confluent_kafka
 feedparser
-kafka

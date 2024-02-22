@@ -63,8 +63,6 @@ function stop_all_processes {
 # Trap Ctrl+C and stop all processes
 trap stop_all_processes SIGINT
 
-# Main script
-
 # Préparation
 echo "Préparation..."
 stop_all_processes
@@ -75,14 +73,6 @@ sleep 8
 # Démarrage de Kafka
 start_kafka_components "Kafka" "/home/ubuntu/kafka_2.12-3.6.1/bin/kafka-server-start.sh /home/ubuntu/kafka_2.12-3.6.1/config/server.properties"
 sleep 8
-
-# # Démarrage du producteur Kafka
-# echo "Démarrage du producteur Kafka..."
-# python3 /home/ubuntu/kafkacrypto/backend/kafka/producer.py &
-
-# # Démarrage du consommateur Kafka
-# echo "Démarrage du consommateur Kafka..."
-# python3 /home/ubuntu/kafkacrypto/backend/kafka/consumer.py &
 
 # Démarrage de l'application Flask
 start_flask_app

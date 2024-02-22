@@ -20,10 +20,10 @@ app.config['SECRET_KEY'] = SECRET_KEY
 
 
 # lancer le producer kafka
-os.system('python3 producer.py &')
+os.system('python3 crypto_producer.py &')
 
 # lancer le consumer kafka
-os.system('python3 consumer.py &')
+os.system('python3 crypto_consumer.py &')
 
 # Initialisez l'extension Flask-Migrate
 migrate = Migrate(app, db)

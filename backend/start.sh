@@ -47,8 +47,8 @@ function stop_kafka_components {
 # Function to stop Kafka producers and consumers
 function stop_kafka_clients {
     echo "Arrêt du consommateur et du producteur Kafka..."
-    stop_process "python3 /home/ubuntu/kafkacrypto/backend/kafka/consumer.py"
-    stop_process "python3 /home/ubuntu/kafkacrypto/backend/kafka/producer.py"
+    stop_process "python3 /home/ubuntu/kafkacrypto/backend/kafka/crypto_consumer.py"
+    stop_process "python3 /home/ubuntu/kafkacrypto/backend/kafka/crypto_producer.py"
 }
 
 # Function to stop all processes

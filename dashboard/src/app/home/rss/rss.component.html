@@ -1,1 +1,21 @@
-<h1>test</h1>
+<div *ngIf="!isLoaded" class="loading-spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+
+<div class="container" *ngIf="isLoaded">
+    <div class="row justify-content-center">
+        <div class="col-md-9 col-12">
+        <h1 class="page-title">Actualités</h1>
+        <div *ngFor="let item of rssData">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.title}}</h5>
+                    <p class="card-text">{{item.description}}</p>
+                    <span class="date" >Date de parution : {{item.pubDate}}</span>
+                    <div class="row justify-content-end">
+                        <a href="{{item.link}}" class="btn btn-primary more">Lire la suite</a>
+                    </div>
+        </div>
+        </div>
+    </div>
+</div>

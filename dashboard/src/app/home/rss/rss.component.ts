@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RssService } from './rss.service';
+import { FavoriteService } from '../favoris-list/favoris-list.service';
+import { CryptoToAdd, Favorite } from 'src/app/models/favorite.model';
 
 @Component({
   selector: 'app-rss',
@@ -10,19 +12,33 @@ import { RssService } from './rss.service';
 export class RssComponent implements OnInit {
   public rssData: any[] = [];
   public xmlData: any;
-  constructor(private rssService: RssService) {}
+  public favotiteCrypto: string[] = [];
+  public isLoaded = false;
+  constructor(private rssService: RssService, private favoriteService: FavoriteService) {}
   ngOnInit(): void {
     this.getRssData();
-    
   }
 
   getRssData() {
+    this.getFavoris();
     this.rssService.getRss().subscribe(
       (response: string) => {
-        console.log(response);
         if (response) {
           this.rssData = this.rssService.extractRssData(response);
-          console.log(this.rssData);
+          this.rssData.forEach(item => {
+            item.description = this.stripHtmlTags(item.description);
+            item.description = item.description.replace(/appeared first on CoinJournal/g, '');
+            const date = new Date(item.pubDate);
+            item.pubDate = date.toLocaleString('fr-FR', { timeZone: 'UTC' });
+          });
+          if(this.favotiteCrypto.length > 0) {
+            this.rssData = this.rssData.filter((item) => {
+              return this.favotiteCrypto.some((crypto) => {
+                return item.title.includes(crypto);
+              });
+            });
+          }
+          this.isLoaded = true;
         }
       },
       (error) => {
@@ -30,5 +46,17 @@ export class RssComponent implements OnInit {
       }
     );
   }
-  
+
+  public getFavoris() {
+    this.favoriteService.getFavoris().subscribe((data: Favorite) => {
+      data.crypto_list.forEach((crypto: CryptoToAdd) => {
+        this.favotiteCrypto.push(crypto.name);
+      });
+    });
+  }
+
+  stripHtmlTags(html: string): string {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    return doc.body.textContent || "";
+  }
 }

@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { TokenService } from "src/app/authentification/service/token-storage.service";
 import {
-    GET_RSS_BY_CRYPTO,
     GET_RSS,
   } from 'src/app/config/app.config';
 import { environment } from "src/environments/environment";
@@ -39,6 +38,7 @@ export class RssService {
             const description = item.querySelector('description')?.textContent ?? '';
             const pubDate = item.querySelector('pubDate')?.textContent ?? '';
             const guid = item.querySelector('guid')?.textContent ?? '';
+            const image = item.querySelector('enclosure')?.getAttribute('url') ?? '';
             return { title, link, description, pubDate, guid };
         });
     }

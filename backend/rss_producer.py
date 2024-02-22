@@ -9,7 +9,7 @@ kafka_server = 'localhost:9092'
 producer = KafkaProducer(bootstrap_servers=[kafka_server],
                          value_serializer=lambda v: json.dumps(v).encode('utf-8'))
 # URL du flux RSS à récupérer
-rss_feed_url = "https://coinjournal.net/fr/actualites/tag/"
+rss_feed_url = "https://coinjournal.net/fr/actualites/feed/"
 
 # Fonction de publication des messages dans Kafka
 def publish_to_kafka(topic, message):

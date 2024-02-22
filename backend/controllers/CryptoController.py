@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 
 def get_data_crypto():
-    with open('crypto_data.json') as json_file:
+    with open('data.json') as json_file:
         data = json.load(json_file)
         return data
 

@@ -17,10 +17,13 @@ def publish_to_kafka(topic, message):
     producer.flush()
 
 # Fonction pour récupérer les entrées du flux RSS et les publier dans Kafka
+# Fonction pour récupérer les entrées du flux RSS et les publier dans Kafka
 def fetch_and_publish_rss(rss_feed_url, kafka_topic):
     feed = feedparser.parse(rss_feed_url)
     for entry in feed.entries:
-        publish_to_kafka(kafka_topic, entry.title)
+        message = {"title": entry.title}  # Créer un dictionnaire avec le titre du message
+        producer.send(kafka_topic, value=message)  # Utiliser send() au lieu de produce()
+    producer.flush()  # Assurer que tous les messages sont envoyés avant de quitter
 
 # Appel de la fonction pour récupérer et publier les messages
 fetch_and_publish_rss(rss_feed_url, "rss-topic")

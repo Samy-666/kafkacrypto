@@ -1,4 +1,4 @@
-from kafka import KafkaConsumer, KafkaError
+from kafka import KafkaConsumer
 import json
 # Configuration du consommateur Kafka
 
@@ -22,7 +22,7 @@ while True:
     if msg is None:
         continue
     if msg.error():
-        if msg.error().code() == KafkaError._PARTITION_EOF:
+        if msg.error().code() == 'PARTITION_EOF':
             # Fin de la partition, continuons
             continue
         else:

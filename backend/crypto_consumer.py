@@ -27,10 +27,6 @@ id = 0
 json_path = "./data.json"
 
 
-# créer le fichier json si il n'existe pas
-with open(json_path, 'a') as file:
-    file.write('[]')
-
 # add rights to the file
 import os
 os.chmod(json_path, 0o777)
@@ -65,7 +61,7 @@ try:
                     except Exception as e:
                         print("Error writing data:", e)
                     data_accumulator.clear()
-                if id == 99:
+                if id == 100:
                    id = 0   
         except Exception as e:
             print("Error processing message:", e)

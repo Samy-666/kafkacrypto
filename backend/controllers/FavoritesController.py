@@ -73,3 +73,5 @@ def remove_item_from_favorites(current_user):
             return jsonify(message='Favorite not found'), 400
     else:
         return jsonify(message='Bad request'), 400
+    
+

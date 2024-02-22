@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { PAGE_ID } from '../enums/page.enum';
 import { AuthGuard } from '../config/guard/auth.guard';
 import { FavorisListComponent } from './favoris-list/favoris-list.component';
+import { RssComponent } from './rss/rss.component';
 
 
 const routes: Routes = [
@@ -33,7 +34,14 @@ const routes: Routes = [
                 component: FavorisListComponent,
                 data: { pageId: PAGE_ID.FAVORIS_LIST },
                 canActivate: [AuthGuard],
-            }
+            },
+            {
+                path: 'rss',
+                component: RssComponent,
+                data: { pageId: PAGE_ID.RSS },
+                canActivate: [AuthGuard],
+            },
+            
         ],
     },
 ];

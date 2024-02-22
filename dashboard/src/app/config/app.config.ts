@@ -13,3 +13,6 @@ export const CRYPTO_VALUE = '/crypto/dataValuesByTime'
 export const GET_FAVORIS = '/favorites/getUsersFavorite'
 export const ADD_FAVORIS = '/favorites/addToFavorites'
 export const DELETE_FAVORIS = '/favorites/removeItemFromFavorites'
+
+export const GET_RSS = '/rss/getRssFeed'
+export const GET_RSS_BY_CRYPTO = '/rss/getRssFeedByCrypto'

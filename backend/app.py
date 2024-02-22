@@ -7,6 +7,7 @@ import os
 from routes.user_bp import user_bp
 from routes.favorites_bp import favorites_bp
 from routes.crypto_bp import crypto_bp
+from routes.rss_bp import rss_bp
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -44,6 +45,8 @@ app.register_blueprint(user_bp, url_prefix='/users')
 app.register_blueprint(favorites_bp, url_prefix='/favorites')
 
 app.register_blueprint(crypto_bp, url_prefix='/crypto')
+
+app.register_blueprint(rss_bp, url_prefix='/rss')
 
 
 @app.route('/')

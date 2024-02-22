@@ -27,7 +27,8 @@ export class LeftMenuNavComponent implements OnInit {
     public isAtHome = false;
     public menuList: MenuList[] = [{ id: 0, name: 'Dashboard', route: '/dashboard' },
                                    { id: 1, name: 'Toutes les Monnaies', route: '/crypto-list' },
-                                   { id: 2, name: 'Favoris', route: '/favoris-list' }];
+                                   { id: 2, name: 'Favoris', route: '/favoris-list' },
+                                   { id: 3, name: 'Actualités', route: '/rss' }];
     public isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),

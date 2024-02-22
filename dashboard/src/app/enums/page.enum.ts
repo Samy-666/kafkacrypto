@@ -5,4 +5,5 @@ export enum PAGE_ID {
     DASHBOARD = 'DASHBOARD',
     CRYPTO_LIST = 'CRYPTO_LIST',
     FAVORIS_LIST = 'FAVORIS_LIST',
+    RSS = 'RSS'
 }

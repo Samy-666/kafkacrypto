@@ -26,6 +26,7 @@ import { CryptoInfoModal } from './crypto-list/crypto-info-modal/crypto-info-mod
 import { ChartComponent } from './dashboard/charts/chart/chart.component';
 import { MatSelectModule } from '@angular/material/select';
 import { FavorisListComponent } from './favoris-list/favoris-list.component';
+import { RssComponent } from './rss/rss.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { FavorisListComponent } from './favoris-list/favoris-list.component';
         CryptoListComponent,
         CryptoInfoModal,
         ChartComponent,
-        FavorisListComponent
+        FavorisListComponent,
+        RssComponent
     ],
     imports: [
         HomeRoutingModule,

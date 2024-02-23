@@ -1,7 +1,14 @@
+
 <div class="container">
+ 
+    <mat-card>  <img src="../../../assets/login_img2.avif" class="img rounded float-start"></mat-card>
+
+   
     <mat-card>
-        <mat-card-title>Connexion</mat-card-title>
+       
         <mat-card-content>
+            <mat-card-title><h2>Bienvenue </h2></mat-card-title>
+            <p> Le monde de l’investissement vous attend déjà </p>
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <mat-form-field>
                     <input matInput placeholder="Email" formControlName="email">
@@ -16,6 +23,9 @@
                 <button mat-raised-button color="primary" type="submit">Connexion</button>
                 
             </form>
+           
         </mat-card-content>
     </mat-card>
 </div>
+
+

@@ -1,0 +1,5 @@
+<mat-card class="evolution" [ngClass]="getClassObject()">
+<span *ngIf="valueEvolution > 0"> + {{valueEvolution}} %</span>
+<span *ngIf="valueEvolution <= 0"> {{valueEvolution}} %</span>
+
+</mat-card>

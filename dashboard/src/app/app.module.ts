@@ -16,7 +16,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent, 
   ],
   imports: [
     BrowserModule,

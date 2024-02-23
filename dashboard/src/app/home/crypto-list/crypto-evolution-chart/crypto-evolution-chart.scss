@@ -1,0 +1,18 @@
+.evolution{
+    display: flex;
+    justify-content: center;
+    span{
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
+.red{
+    background-color: rgba(167, 31, 31, 0.567);
+}
+.green {
+    background-color: rgba(0, 128, 0, 0.634);
+}
+.grey{
+    background-color: rgba(128, 128, 128, 0.647);
+}

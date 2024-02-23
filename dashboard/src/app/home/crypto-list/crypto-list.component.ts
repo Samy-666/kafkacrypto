@@ -22,10 +22,11 @@ export class CryptoListComponent implements AfterViewInit {
   public dataSource: MatTableDataSource<CryptoList> =
     new MatTableDataSource<CryptoList>([]);
   public displayedColumns: string[] = [
-    'id',
     'crypto',
     'price',
     'market_cap',
+    'status',
+    'evolution',
     'plus',
   ];
   public isLoading = true;
@@ -47,6 +48,7 @@ export class CryptoListComponent implements AfterViewInit {
     const params: CryptoToAdd = { id: id, name: crypto };
     this.favoriteService.addToFavoris(params).subscribe((data: CryptoToAdd) => {
       console.log('ok');
+      //TODO
     });
   }
 

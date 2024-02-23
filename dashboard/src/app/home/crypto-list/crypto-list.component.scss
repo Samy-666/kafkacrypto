@@ -4,10 +4,16 @@
   max-width: 1200px;
   padding: 0 20px;
   width: 100%;
+
+  th{
+    color: #fcfcfc;
+    size: 50px;
+  }
   h1 {
     font-size: 24px;
     font-weight: 500;
     margin: 0 0 20px;
+    color: rgb(15, 14, 14);
   }
   table {
     width: 100%;
@@ -15,6 +21,8 @@
     border-spacing: 0;
     border: 1px solid #ddd;
     margin-bottom: 20px;
+    background-color: black;
+
   }
 
   .loading-spinner {
@@ -28,4 +36,27 @@
   * .material-symbols-outlined {
     font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   }
+  
+  span{
+    color:white;
+    
+  }
+  button{
+    height: 5%;
+    width: 5%;
+    background-color: #0a0a0a;
+
+  }
+  .crypto_name{
+    color: #ddd;
+  }
+  .crypto_price{
+     color: #ddd;
+  }
+  .crypto_market{
+    color: #ddd;
+  }
+
+
+
 }

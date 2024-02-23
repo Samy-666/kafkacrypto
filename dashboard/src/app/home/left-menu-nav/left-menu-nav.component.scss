@@ -1,11 +1,33 @@
-.sidenav{
-    background-color: #d4d7dc!important;
+mat-toolbar[_ngcontent-jrr-c189]{
+    color: #0a0a0a;
 }
+.sidenav{
+    background-color:rgb(6, 1, 12);
+}
+mat-toolbar{
+    color: #080808;
+}
+
 .sidenav-footer {
     padding: 16px;
-    background-color: #f0f0f0;
+    background-color: #0a0a0a;
     text-align: center;
     position: absolute;
     bottom: 0;
     width: 100%;;
+  }
+ 
+  button {
+    color: red;
+  }
+  span{
+    color: white;
+  }
+
+  mat-list-item{
+    color: white;
+  }
+
+  a{
+    color: white!important;
   }

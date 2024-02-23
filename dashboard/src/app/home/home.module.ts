@@ -28,6 +28,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { FavorisListComponent } from './favoris-list/favoris-list.component';
 import { RssComponent } from './rss/rss.component';
 import { FooterComponent } from './footer/footer.component';
+import { CryptoStatusChartComponent} from './crypto-list/crypto-status-chart/crypto-status-chart'
+import {CryptoEvolutionChart} from './crypto-list/crypto-evolution-chart/crypto-evolution-chart'
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { FooterComponent } from './footer/footer.component';
         ChartComponent,
         FavorisListComponent,
         RssComponent,
-        FooterComponent
+        FooterComponent,
+        CryptoStatusChartComponent,
+        CryptoEvolutionChart
     ],
     imports: [
         HomeRoutingModule,

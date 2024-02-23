@@ -61,9 +61,7 @@ export class ChartComponent implements OnChanges {
   public marketCapEvolution: number = 0;
   public valueEvolutionCompareTo: number = 0;
   public marketCapEvolutionCompareTo: number = 0;
-  constructor(
-    private cryptoListService: CryptoListService,
-  ) {
+  constructor(private cryptoListService: CryptoListService) {
     Chart.register(
       BarElement,
       BarController,
@@ -204,7 +202,8 @@ export class ChartComponent implements OnChanges {
       data: {
         labels: this.chartLabelsValues,
         datasets:
-          this.selectedCryptoCompareToName.length > 0 && this.selectedFormat == 'line'
+          this.selectedCryptoCompareToName.length > 0 &&
+          this.selectedFormat == 'line'
             ? [
                 {
                   label: this.selectedCryptoName,
@@ -238,6 +237,16 @@ export class ChartComponent implements OnChanges {
               ],
       },
       options: {
+        plugins: {
+          legend: {
+            display: this.selectedCryptoCompareToName.length > 0 ? true : false,
+            position: 'top',
+            labels: {
+              usePointStyle: true,
+              pointStyle: 'circle',
+            },
+          },
+        },
         scales: {
           y: {
             ticks: {
@@ -256,7 +265,8 @@ export class ChartComponent implements OnChanges {
       data: {
         labels: this.chartLabelsMarketCap,
         datasets:
-          this.selectedCryptoCompareToName.length > 0 && this.selectedFormat == 'line'
+          this.selectedCryptoCompareToName.length > 0 &&
+          this.selectedFormat == 'line'
             ? [
                 {
                   label: this.selectedCryptoName,
@@ -290,6 +300,16 @@ export class ChartComponent implements OnChanges {
               ],
       },
       options: {
+        plugins: {
+          legend: {
+            display: this.selectedCryptoCompareToName.length > 0 ? true : false,
+            position: 'top',
+            labels: {
+              usePointStyle: true,
+              pointStyle: 'circle',
+            },
+          },
+        },
         scales: {
           y: {
             ticks: {

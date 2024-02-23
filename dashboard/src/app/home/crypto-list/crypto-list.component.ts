@@ -19,6 +19,7 @@ export class CryptoListComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator?: MatPaginator;
   @ViewChild(MatSort) sort?: MatSort;
 
+  public favotiteCrypto: string[] = [];
   public dataSource: MatTableDataSource<CryptoList> =
     new MatTableDataSource<CryptoList>([]);
   public displayedColumns: string[] = [
@@ -43,12 +44,26 @@ export class CryptoListComponent implements AfterViewInit {
     const queryParams: QueryCrypto = { id: id, crypto: crypto };
     this.router.navigate(['/dashboard'], { queryParams });
   }
+  public addToOrDeleteFromFavorite(favorite: any) {
+    if (favorite.favorite) {
+      this.deleteFromFavorite(favorite.id, favorite.crypto);
+    } else {
+      this.addToFavorite(favorite.id, favorite.crypto);
+    }
+    favorite.favorite = !favorite.favorite;
+  }
+
+  public deleteFromFavorite(id: number, crypto: string) {
+    const params: CryptoToAdd = { id: id, name: crypto };
+    this.favoriteService
+      .deleteFromFavoris(params)
+      .subscribe((data: CryptoToAdd) => {
+      });
+  }
 
   public addToFavorite(id: number, crypto: string) {
     const params: CryptoToAdd = { id: id, name: crypto };
     this.favoriteService.addToFavoris(params).subscribe((data: CryptoToAdd) => {
-      console.log('ok');
-      //TODO
     });
   }
 
@@ -56,15 +71,17 @@ export class CryptoListComponent implements AfterViewInit {
     this.cryptoListService.getListingCrypto().subscribe(
       (response: CryptoList[]) => {
         this.datas = response.slice(0, 100);
+        this.datas.forEach((crypto: CryptoList) => {
+          crypto.favorite = false;
+        });
+        this.setFavoriteCrypto();
         this.dataSource = new MatTableDataSource<CryptoList>(this.datas);
-
         if (this.paginator) {
           this.dataSource.paginator = this.paginator;
         }
         if (this.sort) {
           this.dataSource.sort = this.sort;
         }
-
         this.isLoading = false;
       },
       (error) => {
@@ -74,6 +91,19 @@ export class CryptoListComponent implements AfterViewInit {
   }
   ngAfterViewInit() {
     this.getCryptoList();
+  }
+
+  public setFavoriteCrypto() {
+    this.favoriteService.getFavoris().subscribe((data: Favorite) => {
+      data.crypto_list.forEach((crypto: CryptoToAdd) => {
+        this.favotiteCrypto.push(crypto.name);
+      });
+      this.datas.forEach((crypto: any) => {
+        if (this.favotiteCrypto.includes(crypto['crypto'])) {
+          crypto.favorite = true;
+        }
+      });
+    });
   }
 
   public applyFilter(event: Event) {

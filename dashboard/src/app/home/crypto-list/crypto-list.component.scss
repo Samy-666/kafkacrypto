@@ -5,7 +5,7 @@
   padding: 0 20px;
   width: 100%;
 
-  th{
+  th {
     color: #fcfcfc;
     size: 50px;
   }
@@ -22,7 +22,6 @@
     border: 1px solid #ddd;
     margin-bottom: 20px;
     background-color: black;
-
   }
 
   .loading-spinner {
@@ -36,27 +35,29 @@
   * .material-symbols-outlined {
     font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   }
-  
-  span{
-    color:white;
-    
+
+  span {
+    color: white;
   }
-  button{
+  button {
     height: 5%;
     width: 5%;
     background-color: #0a0a0a;
-
   }
-  .crypto_name{
+  .crypto_name {
     color: #ddd;
   }
-  .crypto_price{
-     color: #ddd;
-  }
-  .crypto_market{
+  .crypto_price {
     color: #ddd;
   }
-
-
-
+  .crypto_market {
+    color: #ddd;
+  }
+  .loved {
+    color: #89094ba5;
+  }
+  .not-loved {
+    color: #847d7de9;
+  }
+  
 }

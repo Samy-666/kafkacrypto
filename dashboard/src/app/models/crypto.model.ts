@@ -13,6 +13,7 @@ export interface FormatLabel {
 export interface CryptoList {
     id: number;
     name: string;
+    favorite: boolean;
 }
 export interface Values {
     time: string;

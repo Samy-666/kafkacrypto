@@ -29,7 +29,7 @@
       </ng-container>
 
       <ng-container matColumnDef="status">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"  class="fw-bold">Status</th>
+        <th mat-header-cell *matHeaderCellDef  class="text-center"  class="fw-bold">Status</th>
         <td style= "cursor:pointer" mat-cell *matCellDef="let element let i = index" (click)="voirPlus(element.id, element.crypto)"><app-crypto-status-chart [selectedCryptoId]="element.id" [canvasId]="'statusChart_' + i"></app-crypto-status-chart></td>
       </ng-container>
 
@@ -50,19 +50,10 @@
             <button
               mat-raised-button
               color="primary"
-              (click)="addToFavorite(element.id, element.crypto)"
+              (click)="addToOrDeleteFromFavorite(element)"
               matTooltip="'Ajouter aux favoris'"
-              
             >
-              <span class="material-icons">favorite</span>
-            </button>
-            <button
-              mat-raised-button
-              color="primary"
-              (click)="voirPlus(element.id, element.crypto)"
-              matTooltip="Voir plus"
-            >
-        
+              <span class="material-icons" [ngClass]="{'loved': element.favorite, 'not-loved': !element.favorite}">favorite</span>
             </button>
           </div>
         </td>

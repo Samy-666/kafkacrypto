@@ -89,7 +89,7 @@ def login():
                         {"user_id": user.id}, 
                         SECRET_KEY,
                         algorithm="HS256"
-                    ).decode('utf-8')
+                    )
                     
                     user.token = token 
                     db.session.commit()

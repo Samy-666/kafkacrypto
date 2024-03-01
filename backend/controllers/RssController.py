@@ -24,19 +24,32 @@ def get_rss_feed_by_crypto():
         return jsonify(message='Bad request, data is missing crypto field'), 400
     
    
-
+# def get_rss_feed():
+#     url = "https://coinjournal.net/fr/actualites/feed/"
+    
+#     # Effectuer la requête HTTP GET pour récupérer les données de l'API
+#     response = requests.get(url)
+    
+#     # Vérifier si la requête a réussi (code de statut HTTP 200)
+#     if response.status_code == 200:
+#         # Renvoyer le contenu brut de la réponse
+#         return response.text
+#     else:
+#         # Si la requête a échoué, afficher un message d'erreur
+#         print(f"Erreur lors de la récupération de l'API : {response.status_code}")
+#         return None
 
 def get_rss_feed():
-    url = "https://coinjournal.net/fr/actualites/feed/"
-    
-    # Effectuer la requête HTTP GET pour récupérer les données de l'API
-    response = requests.get(url)
-    
-    # Vérifier si la requête a réussi (code de statut HTTP 200)
-    if response.status_code == 200:
-        # Renvoyer le contenu brut de la réponse
-        return response.text
-    else:
-        # Si la requête a échoué, afficher un message d'erreur
-        print(f"Erreur lors de la récupération de l'API : {response.status_code}")
-        return None
+# load xml file
+    with open('rss.xml') as xml_file:
+        rss = xml_file.read()
+        # Effectuer la requête HTTP GET pour récupérer les données de l'API
+        rss = rss.encode('latin1').decode('utf-8')
+        # Vérifier si la requête a réussi (code de statut HTTP 200)
+        if rss:
+            # Renvoyer le contenu brut de la réponse
+            return rss
+        else:
+            # Si la requête a échoué, afficher un message d'erreur
+            print(f"Erreur lors du flux : {400}")
+            return None

@@ -97,7 +97,6 @@ def filter_data_value_by_time(data, time_interval):
 
     for crypto in data:
         current_time = crypto["time"]
-
         # Vérifier si l'intervalle de temps est atteint
         if not data_values or current_time - data_values[-1]["time"] >= interval_duration:
             data_values.append({"value": crypto["value"], "time": current_time})

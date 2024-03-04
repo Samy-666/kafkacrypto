@@ -53,4 +53,3 @@ except KeyboardInterrupt:
 finally:
     consumer.close()
     print("Consumer stopped.")
- 

@@ -1,46 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
-	xmlns:content="http://purl.org/rss/1.0/modules/content/"
-	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
-	xmlns:dc="http://purl.org/dc/elements/1.1/"
-	xmlns:atom="http://www.w3.org/2005/Atom"
-	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
-	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
-	>
+        xmlns:content="http://purl.org/rss/1.0/modules/content/"
+        xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:atom="http://www.w3.org/2005/Atom"
+        xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+        xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+        >
 
 <channel>
-	<title><![CDATA[L'actualité des crypto-monnaies : Bitcoin, Ethereum, Litecoin | CoinJournal]]></title>
-	<atom:link href="https://coinjournal.net/fr/actualites/feed/" rel="self" type="application/rss+xml" />
-	<link>https://coinjournal.net/fr/actualites/</link>
-	<description><![CDATA[Le Média N°1 sur l'actualité des crypto-monnaies : Bitcoin, Ethereum, Litecoin... Analyses, Trading, lCO, Minage et Wallets.]]></description>
-	<lastBuildDate>Thu, 29 Feb 2024 21:31:06 +0000</lastBuildDate>
-	<language>fr-FR</language>
-	<sy:updatePeriod>
-	hourly	</sy:updatePeriod>
-	<sy:updateFrequency>
-	1	</sy:updateFrequency>
-	
+        <title><![CDATA[L'actualité des crypto-monnaies : Bitcoin, Ethereum, Litecoin | CoinJournal]]></title>
+        <atom:link href="https://coinjournal.net/fr/actualites/feed/" rel="self" type="application/rss+xml" />
+        <link>https://coinjournal.net/fr/actualites/</link>
+        <description><![CDATA[Le Média N°1 sur l'actualité des crypto-monnaies : Bitcoin, Ethereum, Litecoin... Analyses, Trading, lCO, Minage et Wallets.]]></description>
+        <lastBuildDate>Fri, 01 Mar 2024 20:40:36 +0000</lastBuildDate>
+        <language>fr-FR</language>
+        <sy:updatePeriod>
+        hourly  </sy:updatePeriod>
+        <sy:updateFrequency>
+        1       </sy:updateFrequency>
+
 
 <image>
-	<url>https://coinjournal.net/wp-content/uploads/2022/09/apple-touch-icon.png</url>
-	<title><![CDATA[L'actualité des crypto-monnaies : Bitcoin, Ethereum, Litecoin | CoinJournal]]></title>
-	<link>https://coinjournal.net/fr/actualites/</link>
-	<width>32</width>
-	<height>32</height>
+        <url>https://coinjournal.net/wp-content/uploads/2022/09/apple-touch-icon.png</url>
+        <title><![CDATA[L'actualité des crypto-monnaies : Bitcoin, Ethereum, Litecoin | CoinJournal]]></title>
+        <link>https://coinjournal.net/fr/actualites/</link>
+        <width>32</width>
+        <height>32</height>
 </image> 
-	<item>
-		<title>Prédictions de prix pour les crypto-monnaies : Bitcoin Dogs, Bitgert (BRISE) et WAXP</title>
-		<link>https://coinjournal.net/fr/actualites/predictions-de-prix-pour-les-crypto-monnaies-bitcoin-dogs-bitgert-brise-et-waxp/</link>
-					<comments>https://coinjournal.net/fr/actualites/predictions-de-prix-pour-les-crypto-monnaies-bitcoin-dogs-bitgert-brise-et-waxp/#respond</comments>
-		
-		<dc:creator><![CDATA[arnaud peres]]></dc:creator>
-		<pubDate>Thu, 29 Feb 2024 21:31:06 +0000</pubDate>
-				<category><![CDATA[Analyse]]></category>
-		<guid isPermaLink="false">https://coinjournal.net/?p=189444</guid>
+        <item>
+                <title>Les investisseurs diversifient leurs portefeuilles avec ApeCoin, NuggetRush et Ethereum Classic</title>
+                <link>https://coinjournal.net/fr/actualites/les-investisseurs-diversifient-leurs-portefeuilles-avec-apecoin-nuggetrush-et-ethereum-classic/</link>
+                                        <comments>https://coinjournal.net/fr/actualites/les-investisseurs-diversifient-leurs-portefeuilles-avec-apecoin-nuggetrush-et-ethereum-classic/#respond</comments>
 
-					<description><![CDATA[<p>Les prix des crypto-monnaies ont connu une semaine assez fructueuse alors que la demande a continu&#233; d&#8217;augmenter et qu&#8217;un sentiment d&#8217;avidit&#233; est apparu sur le march&#233;. Bitcoin a bondi &#224; plus de 60 000 $ tandis que d&#8217;autres pi&#232;ces comme Dogecoin, Shiba Inu et Bonk sont devenues paraboliques. Au total, cette hausse a ajout&#233; des [&#8230;]</p>
+                <dc:creator><![CDATA[News Team]]></dc:creator>
+                <pubDate>Fri, 01 Mar 2024 20:40:02 +0000</pubDate>
+                                <category><![CDATA[Communiqué De Presse]]></category>
+                <guid isPermaLink="false">https://coinjournal.net/?p=189570</guid>
+
+                                        <description><![CDATA[<p>TLDR&#160;: Le prix de l&#8217;Ethereum Classic a augment&#233; de 3,2 % au cours des sept derniers jours et de 16,4 % le mois dernier. Selon des donn&#233;es r&#233;centes, le nombre d&#8217;adresses actives d&#8217;ApeCoin a atteint son plus haut niveau en plus de six mois. NuggetRush a vendu plus de 200 millions de jetons, tandis que [&#8230;]</p>
+<p>The post <a href="https://coinjournal.net/fr/actualites/les-investisseurs-diversifient-leurs-portefeuilles-avec-apecoin-nuggetrush-et-ethereum-classic/">Les investisseurs diversifient leurs portefeuilles avec ApeCoin, NuggetRush et Ethereum Classic</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
+]]></description>
+                                                                                <content:encoded><![CDATA[<p dir="ltr">TLDR&nbsp;:</p>
+<ul>
+<li dir="ltr">
+<p dir="ltr">Le prix de l&rsquo;Ethereum Classic a augment&eacute; de 3,2 % au cours des sept derniers jours et de 16,4 % le mois dernier.</p>
+</li>
+<li dir="ltr">
+<p dir="ltr">Selon des donn&eacute;es r&eacute;centes, le nombre d&rsquo;adresses actives d&rsquo;ApeCoin a atteint son plus haut niveau en plus de six mois.</p>
+</li>
+<li dir="ltr">
+<p dir="ltr">NuggetRush a vendu plus de 200 millions de jetons, tandis que de nombreux investisseurs consid&egrave;rent le jeton NUGX comme potentiellement l&rsquo;un des plus performants acteurs de 2024.</p>
+</li>
+</ul>
+<p dir="ltr">Le <a href="https://coinjournal.net/fr/actualites/">march&eacute; des crypto-monnaies</a>&nbsp;a connu une tendance haussi&egrave;re au cours de la semaine derni&egrave;re en raison d&rsquo;une rupture du niveau de r&eacute;sistance de 60 000 $ du Bitcoin, qui a suscit&eacute; un regain de sentiment positif parmi les investisseurs. &Agrave; l&rsquo;heure actuelle, les investisseurs se pr&eacute;parent &agrave; un rallye haussier majeur et prennent des d&eacute;cisions intelligentes en ajoutant certains des meilleurs altcoins, tels que ApeCoin, NuggetRush et Ethereum Classic, &agrave; leurs portefeuilles.</p>
+<p dir="ltr"><a href="https://nuggetrush.io/?utm_source=PR&amp;utm_medium=organic&amp;utm_campaign=cjl&amp;utm_content=52" target="_blank" rel="noopener noreferrer"><u>&gt;&gt; Achetez des jetons NuggetRush maintenant &lt;&lt;</u></a></p>
+<h2 dir="ltr">NuggetRush (NUGX) franchit la barre des 200 millions de jetons vendus</h2>
+<p><a href="https://nuggetrush.io/?utm_source=PR&amp;utm_medium=organic&amp;utm_campaign=cjl&amp;utm_content=52" target="_blank" rel="noopener noreferrer"><u>NuggetRush (NUGX)</u></a> est un projet innovant de jeu play-to-earn bas&eacute; sur la blockchain Ethereum, proposant un jeu d&rsquo;aventure mini&egrave;re unique qui se d&eacute;marque dans le secteur du jeu play-to-earn (P2E). Il permet aux joueurs d&rsquo;incarner des mineurs artisanaux.</p>
+<p dir="ltr">Le gameplay comprendra la construction de tunnels et l&rsquo;extraction de min&eacute;raux, refl&eacute;tant les d&eacute;fis auxquels sont confront&eacute;s les mineurs des pays en d&eacute;veloppement. De plus, le jeu comprend des mineurs exp&eacute;riment&eacute;s qui guident les joueurs et leur montrent le chemin de progression, avec des investissements dans des outils d&rsquo;extraction en cours de route.</p>
+<p dir="ltr">Le jeu de NuggetRush propose &eacute;galement un gameplay aventureux et offre aux joueurs de multiples chances d&rsquo;acqu&eacute;rir des r&eacute;compenses dans le jeu. Dans le jeu, les r&eacute;compenses proviennent de diverses activit&eacute;s, notamment des comp&eacute;titions, des tournois, des batailles et des parties class&eacute;es. Ces r&eacute;compenses peuvent &ecirc;tre &eacute;chang&eacute;es contre de l&rsquo;argent r&eacute;el sur sa place de march&eacute;.</p>
+<p dir="ltr">Les principales r&eacute;compenses du jeu comprennent des personnages correspondant &agrave; des NFT tendances et des dispositifs miniers avanc&eacute;s. De plus, les gens peuvent utiliser <a href="https://coinjournal.net/fr/nfts/">les NFT</a> comme garantie et gagner en obtenant des incitations suppl&eacute;mentaires allant jusqu&rsquo;&agrave; 20 % APY. Actuellement, NuggetRush en est au cinqui&egrave;me tour de son ICO, avec NUGX au prix de 0,018 $. Le prix augmentera &agrave; 0,020 $ apr&egrave;s la fin de l&rsquo;ICO et sera cot&eacute; en bourse.</p>
+<p dir="ltr"><a href="https://nuggetrush.io/?utm_source=PR&amp;utm_medium=organic&amp;utm_campaign=cjl&amp;utm_content=52" target="_blank" rel="noopener noreferrer"><u>&gt;&gt; Achetez des jetons NuggetRush maintenant &lt;&lt;</u></a></p>
+<h2 dir="ltr">Ethereum Classic (ETC) prolonge la tendance haussi&egrave;re</h2>
+<p dir="ltr">Ethereum Classic (ETC) a b&eacute;n&eacute;fici&eacute; du r&eacute;cent rallye du march&eacute; qui a pouss&eacute; d&rsquo;autres altcoins dans la r&eacute;gion verte. Concernant la direction dans laquelle fluctue le <a href="https://coinjournal.net/fr/ethereum-classic/">prix de l&rsquo;Ethereum Classic</a>, il a &eacute;volu&eacute; entre 25,14 $ pour le point le plus bas de la semaine en cours et 28,34 $ pour le plus haut.</p>
+<p dir="ltr">En cons&eacute;quence, ETC a connu une hausse des prix de 3,2 % la semaine derni&egrave;re. Une situation comparable est repr&eacute;sent&eacute;e par les sommets qui peuvent &ecirc;tre soutenus par des d&eacute;lais plus longs, avec respectivement 16,4 % et 32,2 % sur les graphiques de prix mensuels et annuels.</p>
+<p dir="ltr">Ethereum Classic a g&eacute;n&eacute;r&eacute; au moins 18 (60 %) jours verts parmi les 30 jours de trading pr&eacute;c&eacute;dents. &Eacute;tant donn&eacute; l&rsquo;augmntation qu&rsquo;affiche Ethereum Classic, le prix de cette crypto-monnaie pourrait augmenter dans les prochaines semaines.</p>
+<p dir="ltr">L&rsquo;&eacute;volution des prix du jeton est techniquement r&eacute;v&eacute;latrice de la tendance haussi&egrave;re, car il se n&eacute;gocie au-dessus de la SMA &agrave; 50 jours (25,19 $) et de la SMA &agrave; 200 jours (20,13 $). &Agrave; court terme, cela laisse penser que le prix pourrait augmenter de 50 %, et qu&rsquo;il pourrait encore augmenter jusqu&rsquo;&agrave; 100 % &agrave; long terme.</p>
+<h2 dir="ltr">Les adresses actives d&rsquo;ApeCoin (APE) atteignent leur plus haut niveau en 6 mois</h2>
+<p dir="ltr">ApeCoin (APE) a connu un taux de croissance sans pr&eacute;c&eacute;dent depuis son lancement en mars 2017, ce qui a abouti &agrave; un sommet du nombre d&rsquo;adresses actives sur les six derniers mois. ApeCoin a de nouveau d&eacute;montr&eacute; son &eacute;lan en franchissant une nouvelle &eacute;tape sur le graphique journalier, le nombre d&rsquo;adresses actives doublant &eacute;galement.</p>
+<p dir="ltr">Ce r&eacute;cent record n&rsquo;est cependant pas une surprise, car il s&rsquo;agit du plus grand nombre d&rsquo;adresses enregistr&eacute; au cours des six mois pr&eacute;c&eacute;dents. Cette hausse enregistr&eacute;e dans les adresses actives se produit lorsque le prix des crypto-monnaies autres que les altcoins est &eacute;valu&eacute; positivement.</p>
+<p dir="ltr">Conform&eacute;ment aux informations de <a href="https://coinmarketcap.com/currencies/apecoin-ape/" target="_blank" rel="noopener noreferrer"><u>CoinMarketCap</u></a>, au tout d&eacute;but du mois, le prix d&rsquo;ApeCoin a touch&eacute; le fond &agrave; 1,34 $ et, &agrave; un moment donn&eacute;, il est remont&eacute; &agrave; 2,06 $. Actuellement, la pr&eacute;vision du prix d&rsquo;ApeCoin est plut&ocirc;t positive.</p>
+<p dir="ltr">En analyse technique, 25 indicateurs pointent vers une hausse, tandis que 3 indiquent le contraire. Cela dit, l&rsquo;opportunit&eacute; d&rsquo;ApeCoin de monter en fl&egrave;che devient encore plus grande. Les analystes ont pr&eacute;dit une hausse des prix &agrave; court terme &agrave; 2,83 $ et une hausse &agrave; long terme &agrave; 3,26 $.</p>
+<h2 dir="ltr">Derni&egrave;res remarques</h2>
+<p dir="ltr">Une grande partie du march&eacute; des crypto-monnaies se n&eacute;gocie actuellement dans le vert en pr&eacute;vision d&rsquo;une prochaine hausse des prix. Les investisseurs intelligents diversifient d&eacute;j&agrave; leurs portefeuilles avec ApeCoin, NuggetRush et Ethereum Classic pour augmenter leurs chances de gains. Cela en fait les meilleurs altcoins dans lesquels investir en ce moment.</p>
+<p dir="ltr"><a href="https://nuggetrush.io/?utm_source=PR&amp;utm_medium=organic&amp;utm_campaign=cjl&amp;utm_content=52" target="_blank" rel="noopener noreferrer"><u>Visitez le site Web de la pr&eacute;vente de NuggetRush</u></a></p>
+
+<p>The post <a href="https://coinjournal.net/fr/actualites/les-investisseurs-diversifient-leurs-portefeuilles-avec-apecoin-nuggetrush-et-ethereum-classic/">Les investisseurs diversifient leurs portefeuilles avec ApeCoin, NuggetRush et Ethereum Classic</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
+]]></content:encoded>
+
+                                        <wfw:commentRss>https://coinjournal.net/fr/actualites/les-investisseurs-diversifient-leurs-portefeuilles-avec-apecoin-nuggetrush-et-ethereum-classic/feed/</wfw:commentRss>
+                        <slash:comments>0</slash:comments>
+
+
+                        </item>
+                <item>
+                <title>Prédictions de prix pour les crypto-monnaies : Bitcoin Dogs, Bitgert (BRISE) et WAXP</title>
+                <link>https://coinjournal.net/fr/actualites/predictions-de-prix-pour-les-crypto-monnaies-bitcoin-dogs-bitgert-brise-et-waxp/</link>
+                                        <comments>https://coinjournal.net/fr/actualites/predictions-de-prix-pour-les-crypto-monnaies-bitcoin-dogs-bitgert-brise-et-waxp/#respond</comments>
+
+                <dc:creator><![CDATA[arnaud peres]]></dc:creator>
+                <pubDate>Thu, 29 Feb 2024 21:31:06 +0000</pubDate>
+                                <category><![CDATA[Analyse]]></category>
+                <guid isPermaLink="false">https://coinjournal.net/?p=189444</guid>
+
+                                        <description><![CDATA[<p>Les prix des crypto-monnaies ont connu une semaine assez fructueuse alors que la demande a continu&#233; d&#8217;augmenter et qu&#8217;un sentiment d&#8217;avidit&#233; est apparu sur le march&#233;. Bitcoin a bondi &#224; plus de 60 000 $ tandis que d&#8217;autres pi&#232;ces comme Dogecoin, Shiba Inu et Bonk sont devenues paraboliques. Au total, cette hausse a ajout&#233; des [&#8230;]</p>
 <p>The post <a href="https://coinjournal.net/fr/actualites/predictions-de-prix-pour-les-crypto-monnaies-bitcoin-dogs-bitgert-brise-et-waxp/">Prédictions de prix pour les crypto-monnaies : Bitcoin Dogs, Bitgert (BRISE) et WAXP</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
 ]]></description>
-										<content:encoded><![CDATA[<p dir="ltr">Les prix des crypto-monnaies ont connu une semaine assez fructueuse alors que la demande a continu&eacute; d&rsquo;augmenter et qu&rsquo;un sentiment d&rsquo;avidit&eacute; est apparu sur le march&eacute;. <a href="https://coinjournal.net/fr/bitcoin/"><u>Bitcoin</u></a> a bondi &agrave; plus de 60 000 $ tandis que d&rsquo;autres pi&egrave;ces comme Dogecoin, Shiba Inu et Bonk sont devenues paraboliques. Au total, cette hausse a ajout&eacute; des milliards de dollars &agrave; la valorisation totale de toutes les crypto-monnaies. Cet article fournit des pr&eacute;visions pour certaines des principales crypto-monnaies telles que <a href="https://bitcoindogs.club/?utm_source=media&amp;utm_medium=artc&amp;utm_campaign=coinjournal&amp;utm_term=internal&amp;utm_content=price_prediction" target="_blank" rel="noopener"><u>Bitcoin Dogs</u></a>, Bitgert (BRISE) et WAXP.</p>
+                                                                                <content:encoded><![CDATA[<p dir="ltr">Les prix des crypto-monnaies ont connu une semaine assez fructueuse alors que la demande a continu&eacute; d&rsquo;augmenter et qu&rsquo;un sentiment d&rsquo;avidit&eacute; est apparu sur le march&eacute;. <a href="https://coinjournal.net/fr/bitcoin/"><u>Bitcoin</u></a> a bondi &agrave; plus de 60 000 $ tandis que d&rsquo;autres pi&egrave;ces comme Dogecoin, Shiba Inu et Bonk sont devenues paraboliques. Au total, cette hausse a ajout&eacute; des milliards de dollars &agrave; la valorisation totale de toutes les crypto-monnaies. Cet article fournit des pr&eacute;visions pour certaines des principales crypto-monnaies telles que <a href="https://bitcoindogs.club/?utm_source=media&amp;utm_medium=artc&amp;utm_campaign=coinjournal&amp;utm_term=internal&amp;utm_content=price_prediction" target="_blank" rel="noopener"><u>Bitcoin Dogs</u></a>, Bitgert (BRISE) et WAXP.</p>
 <h2 dir="ltr">Pr&eacute;visions de prix pour Bitgert (BRISE)</h2>
 <p dir="ltr"><u>Bitgert</u>, comme d&rsquo;autres crypto-monnaies, a r&eacute;alis&eacute; une solide performance cette semaine alors que son jeton s&rsquo;est soudainement r&eacute;veill&eacute;. Le jeton BRISE a atteint un sommet de 0,00000020 $, son plus haut niveau depuis le 29 d&eacute;cembre de l&rsquo;ann&eacute;e derni&egrave;re. Il a bondi d&rsquo;environ 50 % par rapport &agrave; son niveau le plus bas de cette ann&eacute;e.</p>
 <p dir="ltr">En cours de route, la pi&egrave;ce a bondi au-dessus de la moyenne mobile sur 50 jours, signalant que les taureaux ont d&eacute;sormais le contr&ocirc;le. Plus important encore, certains signes indiquent que le jeton a form&eacute; une configuration &agrave; double fond &agrave; 0,00000013 $. Dans la plupart des cas, cette tendance est l&rsquo;un des signes les plus haussiers du march&eacute;.</p>
@@ -60,27 +115,27 @@
 
 <p>The post <a href="https://coinjournal.net/fr/actualites/predictions-de-prix-pour-les-crypto-monnaies-bitcoin-dogs-bitgert-brise-et-waxp/">Prédictions de prix pour les crypto-monnaies : Bitcoin Dogs, Bitgert (BRISE) et WAXP</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
 ]]></content:encoded>
-					
-					<wfw:commentRss>https://coinjournal.net/fr/actualites/predictions-de-prix-pour-les-crypto-monnaies-bitcoin-dogs-bitgert-brise-et-waxp/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Le prix de Bitcoin atteint 63 000 $ alors que l&#8217;étape 16 de la prévente de Memeinator touche à sa fin</title>
-		<link>https://coinjournal.net/fr/actualites/le-prix-de-bitcoin-atteint-63-000-alors-que-letape-16-de-la-prevente-de-memeinator-touche-a-sa-fin/</link>
-					<comments>https://coinjournal.net/fr/actualites/le-prix-de-bitcoin-atteint-63-000-alors-que-letape-16-de-la-prevente-de-memeinator-touche-a-sa-fin/#respond</comments>
-		
-		<dc:creator><![CDATA[arnaud peres]]></dc:creator>
-		<pubDate>Thu, 29 Feb 2024 21:10:43 +0000</pubDate>
-				<category><![CDATA[Marchés]]></category>
-		<category><![CDATA[Bitcoin]]></category>
-		<guid isPermaLink="false">https://coinjournal.net/?p=189440</guid>
 
-					<description><![CDATA[<p>Points cl&#233;s &#224; retenir Bitcoin a d&#233;pass&#233; le niveau de 63 000 $ pour la premi&#232;re fois depuis d&#233;cembre 2021. La pr&#233;vente de Memeinator a permis de r&#233;colter plus de 5,2 millions $. Bitcoin approche de son prix record Bitcoin, la premi&#232;re monnaie num&#233;rique au monde en termes de capitalisation boursi&#232;re, affiche d&#8217;excellentes performances depuis [&#8230;]</p>
+                                        <wfw:commentRss>https://coinjournal.net/fr/actualites/predictions-de-prix-pour-les-crypto-monnaies-bitcoin-dogs-bitgert-brise-et-waxp/feed/</wfw:commentRss>
+                        <slash:comments>0</slash:comments>
+
+
+                        </item>
+                <item>
+                <title>Le prix de Bitcoin atteint 63 000 $ alors que l&#8217;étape 16 de la prévente de Memeinator touche à sa fin</title>
+                <link>https://coinjournal.net/fr/actualites/le-prix-de-bitcoin-atteint-63-000-alors-que-letape-16-de-la-prevente-de-memeinator-touche-a-sa-fin/</link>
+                                        <comments>https://coinjournal.net/fr/actualites/le-prix-de-bitcoin-atteint-63-000-alors-que-letape-16-de-la-prevente-de-memeinator-touche-a-sa-fin/#respond</comments>
+
+                <dc:creator><![CDATA[arnaud peres]]></dc:creator>
+                <pubDate>Thu, 29 Feb 2024 21:10:43 +0000</pubDate>
+                                <category><![CDATA[Marchés]]></category>
+                <category><![CDATA[Bitcoin]]></category>
+                <guid isPermaLink="false">https://coinjournal.net/?p=189440</guid>
+
+                                        <description><![CDATA[<p>Points cl&#233;s &#224; retenir Bitcoin a d&#233;pass&#233; le niveau de 63 000 $ pour la premi&#232;re fois depuis d&#233;cembre 2021. La pr&#233;vente de Memeinator a permis de r&#233;colter plus de 5,2 millions $. Bitcoin approche de son prix record Bitcoin, la premi&#232;re monnaie num&#233;rique au monde en termes de capitalisation boursi&#232;re, affiche d&#8217;excellentes performances depuis [&#8230;]</p>
 <p>The post <a href="https://coinjournal.net/fr/actualites/le-prix-de-bitcoin-atteint-63-000-alors-que-letape-16-de-la-prevente-de-memeinator-touche-a-sa-fin/">Le prix de Bitcoin atteint 63 000 $ alors que l&#8217;étape 16 de la prévente de Memeinator touche à sa fin</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
 ]]></description>
-										<content:encoded><![CDATA[<p dir="ltr">Points cl&eacute;s &agrave; retenir</p>
+                                                                                <content:encoded><![CDATA[<p dir="ltr">Points cl&eacute;s &agrave; retenir</p>
 <ul>
 <li dir="ltr">
 <p dir="ltr">Bitcoin a d&eacute;pass&eacute; le niveau de 63 000 $ pour la premi&egrave;re fois depuis d&eacute;cembre 2021.</p>
@@ -117,29 +172,29 @@
 
 <p>The post <a href="https://coinjournal.net/fr/actualites/le-prix-de-bitcoin-atteint-63-000-alors-que-letape-16-de-la-prevente-de-memeinator-touche-a-sa-fin/">Le prix de Bitcoin atteint 63 000 $ alors que l&#8217;étape 16 de la prévente de Memeinator touche à sa fin</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
 ]]></content:encoded>
-					
-					<wfw:commentRss>https://coinjournal.net/fr/actualites/le-prix-de-bitcoin-atteint-63-000-alors-que-letape-16-de-la-prevente-de-memeinator-touche-a-sa-fin/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Ethereum et Bitcoin stimulent le marché des crypto-monnaies ; la prévente du jeton PLX de Pullix touche à sa fin</title>
-		<link>https://coinjournal.net/fr/actualites/ethereum-et-bitcoin-stimulent-le-marche-des-crypto-monnaies-la-prevente-du-jeton-plx-de-pullix-touche-a-sa-fin/</link>
-					<comments>https://coinjournal.net/fr/actualites/ethereum-et-bitcoin-stimulent-le-marche-des-crypto-monnaies-la-prevente-du-jeton-plx-de-pullix-touche-a-sa-fin/#respond</comments>
-		
-		<dc:creator><![CDATA[arnaud peres]]></dc:creator>
-		<pubDate>Thu, 29 Feb 2024 20:44:36 +0000</pubDate>
-				<category><![CDATA[Marchés]]></category>
-		<category><![CDATA[Bitcoin]]></category>
-		<category><![CDATA[crypto-monnaies]]></category>
-		<category><![CDATA[Ethereum]]></category>
-		<guid isPermaLink="false">https://coinjournal.net/?p=189423</guid>
 
-					<description><![CDATA[<p>Le prix d&#8217;Ethereum (ETH) a bondi pour passer au-dessus de la barre des 3 400 $, gr&#226;ce &#224; la hausse du Bitcoin. La pr&#233;vente de Pullix se termine bient&#244;t ; le jeton PLX va &#234;tre r&#233;pertori&#233; sur Uniswap, BitMart. Les investisseurs se tournent vers Ethereum (ETH) et Pullix (PLX) au milieu du march&#233; haussier des [&#8230;]</p>
+                                        <wfw:commentRss>https://coinjournal.net/fr/actualites/le-prix-de-bitcoin-atteint-63-000-alors-que-letape-16-de-la-prevente-de-memeinator-touche-a-sa-fin/feed/</wfw:commentRss>
+                        <slash:comments>0</slash:comments>
+
+
+                        </item>
+                <item>
+                <title>Ethereum et Bitcoin stimulent le marché des crypto-monnaies ; la prévente du jeton PLX de Pullix touche à sa fin</title>
+                <link>https://coinjournal.net/fr/actualites/ethereum-et-bitcoin-stimulent-le-marche-des-crypto-monnaies-la-prevente-du-jeton-plx-de-pullix-touche-a-sa-fin/</link>
+                                        <comments>https://coinjournal.net/fr/actualites/ethereum-et-bitcoin-stimulent-le-marche-des-crypto-monnaies-la-prevente-du-jeton-plx-de-pullix-touche-a-sa-fin/#respond</comments>
+
+                <dc:creator><![CDATA[arnaud peres]]></dc:creator>
+                <pubDate>Thu, 29 Feb 2024 20:44:36 +0000</pubDate>
+                                <category><![CDATA[Marchés]]></category>
+                <category><![CDATA[Bitcoin]]></category>
+                <category><![CDATA[crypto-monnaies]]></category>
+                <category><![CDATA[Ethereum]]></category>
+                <guid isPermaLink="false">https://coinjournal.net/?p=189423</guid>
+
+                                        <description><![CDATA[<p>Le prix d&#8217;Ethereum (ETH) a bondi pour passer au-dessus de la barre des 3 400 $, gr&#226;ce &#224; la hausse du Bitcoin. La pr&#233;vente de Pullix se termine bient&#244;t ; le jeton PLX va &#234;tre r&#233;pertori&#233; sur Uniswap, BitMart. Les investisseurs se tournent vers Ethereum (ETH) et Pullix (PLX) au milieu du march&#233; haussier des [&#8230;]</p>
 <p>The post <a href="https://coinjournal.net/fr/actualites/ethereum-et-bitcoin-stimulent-le-marche-des-crypto-monnaies-la-prevente-du-jeton-plx-de-pullix-touche-a-sa-fin/">Ethereum et Bitcoin stimulent le marché des crypto-monnaies ; la prévente du jeton PLX de Pullix touche à sa fin</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
 ]]></description>
-										<content:encoded><![CDATA[<ul>
+                                                                                <content:encoded><![CDATA[<ul>
 <li>Le prix d&rsquo;Ethereum (ETH) a bondi pour passer au-dessus de la barre des 3 400 $, gr&acirc;ce &agrave; la hausse du Bitcoin.</li>
 <li>La pr&eacute;vente de Pullix se termine bient&ocirc;t ; le jeton PLX va &ecirc;tre r&eacute;pertori&eacute; sur Uniswap, BitMart.</li>
 <li>Les investisseurs se tournent vers Ethereum (ETH) et Pullix (PLX) au milieu du march&eacute; haussier des crypto-monnaies.</li>
@@ -167,26 +222,26 @@
 
 <p>The post <a href="https://coinjournal.net/fr/actualites/ethereum-et-bitcoin-stimulent-le-marche-des-crypto-monnaies-la-prevente-du-jeton-plx-de-pullix-touche-a-sa-fin/">Ethereum et Bitcoin stimulent le marché des crypto-monnaies ; la prévente du jeton PLX de Pullix touche à sa fin</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
 ]]></content:encoded>
-					
-					<wfw:commentRss>https://coinjournal.net/fr/actualites/ethereum-et-bitcoin-stimulent-le-marche-des-crypto-monnaies-la-prevente-du-jeton-plx-de-pullix-touche-a-sa-fin/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Polygon (MATIC) choque les traders avec sa hausse de prix alors que la frénésie augmente pour un achat de dernière minute dans la prévente de Rebel Satoshi ($RBLZ)</title>
-		<link>https://coinjournal.net/fr/actualites/polygon-matic-choque-les-traders-avec-sa-hausse-de-prix-alors-que-la-frenesie-augmente-pour-un-achat-de-derniere-minute-dans-la-prevente-de-rebel-satoshi-rblz/</link>
-		
-		<dc:creator><![CDATA[News Team]]></dc:creator>
-		<pubDate>Thu, 29 Feb 2024 20:21:45 +0000</pubDate>
-				<category><![CDATA[Communiqué De Presse]]></category>
-		<category><![CDATA[Polygon]]></category>
-		<guid isPermaLink="false">https://coinjournal.net/?p=189371</guid>
 
-					<description><![CDATA[<p>TLDR Les experts sont optimistes sur le fait que le prix du jeton Polygon (MATIC) pourrait augmenter de 55 % en 2024. Les investisseurs affluent vers la derni&#232;re &#233;tape de la pr&#233;vente de Rebel Satoshi ($RBLZ) alors que le sentiment de FOMO monte en fl&#232;che. $RBLZ a apport&#233; des perspectives de gains &#233;poustouflantes aux investisseurs. [&#8230;]</p>
+                                        <wfw:commentRss>https://coinjournal.net/fr/actualites/ethereum-et-bitcoin-stimulent-le-marche-des-crypto-monnaies-la-prevente-du-jeton-plx-de-pullix-touche-a-sa-fin/feed/</wfw:commentRss>
+                        <slash:comments>0</slash:comments>
+
+
+                        </item>
+                <item>
+                <title>Polygon (MATIC) choque les traders avec sa hausse de prix alors que la frénésie augmente pour un achat de dernière minute dans la prévente de Rebel Satoshi ($RBLZ)</title>
+                <link>https://coinjournal.net/fr/actualites/polygon-matic-choque-les-traders-avec-sa-hausse-de-prix-alors-que-la-frenesie-augmente-pour-un-achat-de-derniere-minute-dans-la-prevente-de-rebel-satoshi-rblz/</link>
+
+                <dc:creator><![CDATA[News Team]]></dc:creator>
+                <pubDate>Thu, 29 Feb 2024 20:21:45 +0000</pubDate>
+                                <category><![CDATA[Communiqué De Presse]]></category>
+                <category><![CDATA[Polygon]]></category>
+                <guid isPermaLink="false">https://coinjournal.net/?p=189371</guid>
+
+                                        <description><![CDATA[<p>TLDR Les experts sont optimistes sur le fait que le prix du jeton Polygon (MATIC) pourrait augmenter de 55 % en 2024. Les investisseurs affluent vers la derni&#232;re &#233;tape de la pr&#233;vente de Rebel Satoshi ($RBLZ) alors que le sentiment de FOMO monte en fl&#232;che. $RBLZ a apport&#233; des perspectives de gains &#233;poustouflantes aux investisseurs. [&#8230;]</p>
 <p>The post <a href="https://coinjournal.net/fr/actualites/polygon-matic-choque-les-traders-avec-sa-hausse-de-prix-alors-que-la-frenesie-augmente-pour-un-achat-de-derniere-minute-dans-la-prevente-de-rebel-satoshi-rblz/">Polygon (MATIC) choque les traders avec sa hausse de prix alors que la frénésie augmente pour un achat de dernière minute dans la prévente de Rebel Satoshi ($RBLZ)</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
 ]]></description>
-										<content:encoded><![CDATA[<h2><span style="font-weight: 400">TLDR</span></h2>
+                                                                                <content:encoded><![CDATA[<h2><span style="font-weight: 400">TLDR</span></h2>
 <ul>
 <li style="font-weight: 400"><span style="font-weight: 400">Les experts sont optimistes sur le fait que le prix du jeton Polygon (MATIC) pourrait augmenter de 55 % en 2024.</span></li>
 <li style="font-weight: 400"><span style="font-weight: 400">Les investisseurs affluent vers la derni&egrave;re &eacute;tape de la pr&eacute;vente de Rebel Satoshi ($RBLZ) alors que le sentiment de FOMO monte en fl&egrave;che. $RBLZ a apport&eacute; des perspectives de gains &eacute;poustouflantes aux investisseurs.</span></li>
@@ -199,27 +254,27 @@
 
 <p>The post <a href="https://coinjournal.net/fr/actualites/polygon-matic-choque-les-traders-avec-sa-hausse-de-prix-alors-que-la-frenesie-augmente-pour-un-achat-de-derniere-minute-dans-la-prevente-de-rebel-satoshi-rblz/">Polygon (MATIC) choque les traders avec sa hausse de prix alors que la frénésie augmente pour un achat de dernière minute dans la prévente de Rebel Satoshi ($RBLZ)</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
 ]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>L&#8217;approbation des ETF Ethereum au comptant devrait arriver le 23 mai, selon Standard Chartered</title>
-		<link>https://coinjournal.net/fr/actualites/lapprobation-des-etf-ethereum-au-comptant-devrait-arriver-le-23-mai-selon-standard-chartered/</link>
-					<comments>https://coinjournal.net/fr/actualites/lapprobation-des-etf-ethereum-au-comptant-devrait-arriver-le-23-mai-selon-standard-chartered/#respond</comments>
-		
-		<dc:creator><![CDATA[Benson Toti]]></dc:creator>
-		<pubDate>Thu, 29 Feb 2024 19:47:17 +0000</pubDate>
-				<category><![CDATA[Marchés]]></category>
-		<category><![CDATA[ETF]]></category>
-		<category><![CDATA[ETH]]></category>
-		<category><![CDATA[Ethereum]]></category>
-		<guid isPermaLink="false">https://coinjournal.net/?p=189292</guid>
 
-					<description><![CDATA[<p>Standard Chartered Bank affirme que la SEC pourrait approuver les ETF au comptant Ethereum le 23 mai, date limite pour les demandes actuellement soumises au r&#233;gulateur. Le prix du jeton Ethereum pourrait alors d&#233;passer la barre des 4 000 $, a indiqu&#233; la banque dans un rapport. La Securities and Exchange Commission (SEC) des &#201;tats-Unis [&#8230;]</p>
+
+
+                        </item>
+                <item>
+                <title>L&#8217;approbation des ETF Ethereum au comptant devrait arriver le 23 mai, selon Standard Chartered</title>
+                <link>https://coinjournal.net/fr/actualites/lapprobation-des-etf-ethereum-au-comptant-devrait-arriver-le-23-mai-selon-standard-chartered/</link>
+                                        <comments>https://coinjournal.net/fr/actualites/lapprobation-des-etf-ethereum-au-comptant-devrait-arriver-le-23-mai-selon-standard-chartered/#respond</comments>
+
+                <dc:creator><![CDATA[Benson Toti]]></dc:creator>
+                <pubDate>Thu, 29 Feb 2024 19:47:17 +0000</pubDate>
+                                <category><![CDATA[Marchés]]></category>
+                <category><![CDATA[ETF]]></category>
+                <category><![CDATA[ETH]]></category>
+                <category><![CDATA[Ethereum]]></category>
+                <guid isPermaLink="false">https://coinjournal.net/?p=189292</guid>
+
+                                        <description><![CDATA[<p>Standard Chartered Bank affirme que la SEC pourrait approuver les ETF au comptant Ethereum le 23 mai, date limite pour les demandes actuellement soumises au r&#233;gulateur. Le prix du jeton Ethereum pourrait alors d&#233;passer la barre des 4 000 $, a indiqu&#233; la banque dans un rapport. La Securities and Exchange Commission (SEC) des &#201;tats-Unis [&#8230;]</p>
 <p>The post <a href="https://coinjournal.net/fr/actualites/lapprobation-des-etf-ethereum-au-comptant-devrait-arriver-le-23-mai-selon-standard-chartered/">L&#8217;approbation des ETF Ethereum au comptant devrait arriver le 23 mai, selon Standard Chartered</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
 ]]></description>
-										<content:encoded><![CDATA[<ul>
+                                                                                <content:encoded><![CDATA[<ul>
 <li dir="ltr">Standard Chartered Bank affirme que la SEC pourrait approuver les ETF au comptant Ethereum le 23 mai, date limite pour les demandes actuellement soumises au r&eacute;gulateur.</li>
 <li dir="ltr">Le prix du jeton Ethereum pourrait alors d&eacute;passer la barre des 4 000 $, a indiqu&eacute; la banque dans un rapport.</li>
 </ul>
@@ -234,27 +289,27 @@
 
 <p>The post <a href="https://coinjournal.net/fr/actualites/lapprobation-des-etf-ethereum-au-comptant-devrait-arriver-le-23-mai-selon-standard-chartered/">L&#8217;approbation des ETF Ethereum au comptant devrait arriver le 23 mai, selon Standard Chartered</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
 ]]></content:encoded>
-					
-					<wfw:commentRss>https://coinjournal.net/fr/actualites/lapprobation-des-etf-ethereum-au-comptant-devrait-arriver-le-23-mai-selon-standard-chartered/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>BEAM et Chiliz (CHZ) conservent leurs gains dans un contexte de correction du marché, tandis que NuggetRush émerge comme une nouvelle tendance sur le marché</title>
-		<link>https://coinjournal.net/fr/actualites/beam-et-chiliz-chz-conservent-leurs-gains-dans-un-contexte-de-correction-du-marche-tandis-que-nuggetrush-emerge-comme-une-nouvelle-tendance-sur-le-marche/</link>
-		
-		<dc:creator><![CDATA[News Team]]></dc:creator>
-		<pubDate>Thu, 29 Feb 2024 19:07:45 +0000</pubDate>
-				<category><![CDATA[Communiqué De Presse]]></category>
-		<category><![CDATA[Blockchain]]></category>
-		<category><![CDATA[crypto-monnaies]]></category>
-		<guid isPermaLink="false">https://coinjournal.net/?p=189238</guid>
 
-					<description><![CDATA[<p>TLDR Les investisseurs sont impressionn&#233;s par la reprise des prix de Beam en f&#233;vrier. Le prix du jeton Chiliz (CHZ) se trouve &#233;galement autour de 0,10 $. NuggetRush (NUGX) a vendu pr&#232;s de 200 millions de jetons alors que sa pr&#233;vente se poursuit. Beam a lanc&#233; son pont vers Ethereum. Le Paris Saint Germain (PSG) [&#8230;]</p>
+                                        <wfw:commentRss>https://coinjournal.net/fr/actualites/lapprobation-des-etf-ethereum-au-comptant-devrait-arriver-le-23-mai-selon-standard-chartered/feed/</wfw:commentRss>
+                        <slash:comments>0</slash:comments>
+
+
+                        </item>
+                <item>
+                <title>BEAM et Chiliz (CHZ) conservent leurs gains dans un contexte de correction du marché, tandis que NuggetRush émerge comme une nouvelle tendance sur le marché</title>
+                <link>https://coinjournal.net/fr/actualites/beam-et-chiliz-chz-conservent-leurs-gains-dans-un-contexte-de-correction-du-marche-tandis-que-nuggetrush-emerge-comme-une-nouvelle-tendance-sur-le-marche/</link>
+
+                <dc:creator><![CDATA[News Team]]></dc:creator>
+                <pubDate>Thu, 29 Feb 2024 19:07:45 +0000</pubDate>
+                                <category><![CDATA[Communiqué De Presse]]></category>
+                <category><![CDATA[Blockchain]]></category>
+                <category><![CDATA[crypto-monnaies]]></category>
+                <guid isPermaLink="false">https://coinjournal.net/?p=189238</guid>
+
+                                        <description><![CDATA[<p>TLDR Les investisseurs sont impressionn&#233;s par la reprise des prix de Beam en f&#233;vrier. Le prix du jeton Chiliz (CHZ) se trouve &#233;galement autour de 0,10 $. NuggetRush (NUGX) a vendu pr&#232;s de 200 millions de jetons alors que sa pr&#233;vente se poursuit. Beam a lanc&#233; son pont vers Ethereum. Le Paris Saint Germain (PSG) [&#8230;]</p>
 <p>The post <a href="https://coinjournal.net/fr/actualites/beam-et-chiliz-chz-conservent-leurs-gains-dans-un-contexte-de-correction-du-marche-tandis-que-nuggetrush-emerge-comme-une-nouvelle-tendance-sur-le-marche/">BEAM et Chiliz (CHZ) conservent leurs gains dans un contexte de correction du marché, tandis que NuggetRush émerge comme une nouvelle tendance sur le marché</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
 ]]></description>
-										<content:encoded><![CDATA[<h2><span style="font-weight: 400">TLDR</span></h2>
+                                                                                <content:encoded><![CDATA[<h2><span style="font-weight: 400">TLDR</span></h2>
 <ul>
 <li style="font-weight: 400"><span style="font-weight: 400">Les investisseurs sont impressionn&eacute;s par la reprise des prix de Beam en f&eacute;vrier.</span></li>
 <li style="font-weight: 400"><span style="font-weight: 400">Le prix du jeton Chiliz (CHZ) se trouve &eacute;galement autour de 0,10 $.</span></li>
@@ -282,24 +337,24 @@
 
 <p>The post <a href="https://coinjournal.net/fr/actualites/beam-et-chiliz-chz-conservent-leurs-gains-dans-un-contexte-de-correction-du-marche-tandis-que-nuggetrush-emerge-comme-une-nouvelle-tendance-sur-le-marche/">BEAM et Chiliz (CHZ) conservent leurs gains dans un contexte de correction du marché, tandis que NuggetRush émerge comme une nouvelle tendance sur le marché</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
 ]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>La toute première ICO sur la blockchain Bitcoin est couronnée de succès, Marathon Digital révélant un nouveau réseau de couche 2</title>
-		<link>https://coinjournal.net/fr/actualites/la-toute-premiere-ico-sur-la-blockchain-bitcoin-est-couronnee-de-succes-marathon-digital-revelant-un-nouveau-reseau-de-couche-2/</link>
-		
-		<dc:creator><![CDATA[arnaud peres]]></dc:creator>
-		<pubDate>Thu, 29 Feb 2024 18:50:16 +0000</pubDate>
-				<category><![CDATA[Marchés]]></category>
-		<category><![CDATA[BTC]]></category>
-		<guid isPermaLink="false">https://coinjournal.net/?p=189346</guid>
 
-					<description><![CDATA[<p>Marathon Digital a d&#233;voil&#233; deux sidechains sur Anduro, le nouveau r&#233;seau multi-cha&#238;nes de couche 2 sur Bitcoin. Bitcoin Dogs ($0DOG), la toute premi&#232;re ICO de jetons BRC-20, a d&#233;pass&#233; les 5,4 millions $ au milieu de l&#8217;attention massive de l&#8217;industrie pour le projet. La pr&#233;vente de jetons $oDOG se terminera le 15 mars 2024. L&#8217;attrait [&#8230;]</p>
+
+
+                        </item>
+                <item>
+                <title>La toute première ICO sur la blockchain Bitcoin est couronnée de succès, Marathon Digital révélant un nouveau réseau de couche 2</title>
+                <link>https://coinjournal.net/fr/actualites/la-toute-premiere-ico-sur-la-blockchain-bitcoin-est-couronnee-de-succes-marathon-digital-revelant-un-nouveau-reseau-de-couche-2/</link>
+
+                <dc:creator><![CDATA[arnaud peres]]></dc:creator>
+                <pubDate>Thu, 29 Feb 2024 18:50:16 +0000</pubDate>
+                                <category><![CDATA[Marchés]]></category>
+                <category><![CDATA[BTC]]></category>
+                <guid isPermaLink="false">https://coinjournal.net/?p=189346</guid>
+
+                                        <description><![CDATA[<p>Marathon Digital a d&#233;voil&#233; deux sidechains sur Anduro, le nouveau r&#233;seau multi-cha&#238;nes de couche 2 sur Bitcoin. Bitcoin Dogs ($0DOG), la toute premi&#232;re ICO de jetons BRC-20, a d&#233;pass&#233; les 5,4 millions $ au milieu de l&#8217;attention massive de l&#8217;industrie pour le projet. La pr&#233;vente de jetons $oDOG se terminera le 15 mars 2024. L&#8217;attrait [&#8230;]</p>
 <p>The post <a href="https://coinjournal.net/fr/actualites/la-toute-premiere-ico-sur-la-blockchain-bitcoin-est-couronnee-de-succes-marathon-digital-revelant-un-nouveau-reseau-de-couche-2/">La toute première ICO sur la blockchain Bitcoin est couronnée de succès, Marathon Digital révélant un nouveau réseau de couche 2</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
 ]]></description>
-										<content:encoded><![CDATA[<ul>
+                                                                                <content:encoded><![CDATA[<ul>
 <li dir="ltr">Marathon Digital a d&eacute;voil&eacute; deux sidechains sur Anduro, le nouveau r&eacute;seau multi-cha&icirc;nes de couche 2 sur Bitcoin.</li>
 <li dir="ltr">Bitcoin Dogs ($0DOG), la toute premi&egrave;re ICO de jetons BRC-20, a d&eacute;pass&eacute; les 5,4 millions $ au milieu de l&rsquo;attention massive de l&rsquo;industrie pour le projet.</li>
 <li dir="ltr">La pr&eacute;vente de jetons $oDOG se terminera le 15 mars 2024.</li>
@@ -326,26 +381,26 @@
 
 <p>The post <a href="https://coinjournal.net/fr/actualites/la-toute-premiere-ico-sur-la-blockchain-bitcoin-est-couronnee-de-succes-marathon-digital-revelant-un-nouveau-reseau-de-couche-2/">La toute première ICO sur la blockchain Bitcoin est couronnée de succès, Marathon Digital révélant un nouveau réseau de couche 2</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
 ]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>Le prix du Bitcoin franchit la barre des 59 000 $ alors que la prévente explosive place Pullix dans le collimateur des investisseurs</title>
-		<link>https://coinjournal.net/fr/actualites/le-prix-du-bitcoin-franchit-la-barre-des-59-000-alors-que-la-prevente-explosive-place-pullix-dans-le-collimateur-des-investisseurs/</link>
-					<comments>https://coinjournal.net/fr/actualites/le-prix-du-bitcoin-franchit-la-barre-des-59-000-alors-que-la-prevente-explosive-place-pullix-dans-le-collimateur-des-investisseurs/#respond</comments>
-		
-		<dc:creator><![CDATA[arnaud peres]]></dc:creator>
-		<pubDate>Wed, 28 Feb 2024 19:13:25 +0000</pubDate>
-				<category><![CDATA[Marchés]]></category>
-		<category><![CDATA[BTC]]></category>
-		<category><![CDATA[crypto-monnaies]]></category>
-		<guid isPermaLink="false">https://coinjournal.net/?p=188916</guid>
 
-					<description><![CDATA[<p>Le prix du Bitcoin a d&#233;pass&#233; la barre des 59 000 $ pour voir les taureaux cibler 60 000 $. Pullix conna&#238;t une &#233;norme demande en d&#233;voilant un tour de bonus pour son jeton PLX. Le prix du jeton Pullix pourrait exploser lorsque le jeton sera n&#233;goci&#233; sur Uniswap et BitMart dans les prochains jours. [&#8230;]</p>
+
+
+                        </item>
+                <item>
+                <title>Le prix du Bitcoin franchit la barre des 59 000 $ alors que la prévente explosive place Pullix dans le collimateur des investisseurs</title>
+                <link>https://coinjournal.net/fr/actualites/le-prix-du-bitcoin-franchit-la-barre-des-59-000-alors-que-la-prevente-explosive-place-pullix-dans-le-collimateur-des-investisseurs/</link>
+                                        <comments>https://coinjournal.net/fr/actualites/le-prix-du-bitcoin-franchit-la-barre-des-59-000-alors-que-la-prevente-explosive-place-pullix-dans-le-collimateur-des-investisseurs/#respond</comments>
+
+                <dc:creator><![CDATA[arnaud peres]]></dc:creator>
+                <pubDate>Wed, 28 Feb 2024 19:13:25 +0000</pubDate>
+                                <category><![CDATA[Marchés]]></category>
+                <category><![CDATA[BTC]]></category>
+                <category><![CDATA[crypto-monnaies]]></category>
+                <guid isPermaLink="false">https://coinjournal.net/?p=188916</guid>
+
+                                        <description><![CDATA[<p>Le prix du Bitcoin a d&#233;pass&#233; la barre des 59 000 $ pour voir les taureaux cibler 60 000 $. Pullix conna&#238;t une &#233;norme demande en d&#233;voilant un tour de bonus pour son jeton PLX. Le prix du jeton Pullix pourrait exploser lorsque le jeton sera n&#233;goci&#233; sur Uniswap et BitMart dans les prochains jours. [&#8230;]</p>
 <p>The post <a href="https://coinjournal.net/fr/actualites/le-prix-du-bitcoin-franchit-la-barre-des-59-000-alors-que-la-prevente-explosive-place-pullix-dans-le-collimateur-des-investisseurs/">Le prix du Bitcoin franchit la barre des 59 000 $ alors que la prévente explosive place Pullix dans le collimateur des investisseurs</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
 ]]></description>
-										<content:encoded><![CDATA[<ul>
+                                                                                <content:encoded><![CDATA[<ul>
 <li dir="ltr">Le prix du Bitcoin a d&eacute;pass&eacute; la barre des 59 000 $ pour voir les taureaux cibler 60 000 $.</li>
 <li dir="ltr">Pullix conna&icirc;t une &eacute;norme demande en d&eacute;voilant un tour de bonus pour son jeton PLX.</li>
 <li dir="ltr">Le prix du jeton Pullix pourrait exploser lorsque le jeton sera n&eacute;goci&eacute; sur Uniswap et BitMart dans les prochains jours.</li>
@@ -373,53 +428,11 @@
 
 <p>The post <a href="https://coinjournal.net/fr/actualites/le-prix-du-bitcoin-franchit-la-barre-des-59-000-alors-que-la-prevente-explosive-place-pullix-dans-le-collimateur-des-investisseurs/">Le prix du Bitcoin franchit la barre des 59 000 $ alors que la prévente explosive place Pullix dans le collimateur des investisseurs</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
 ]]></content:encoded>
-					
-					<wfw:commentRss>https://coinjournal.net/fr/actualites/le-prix-du-bitcoin-franchit-la-barre-des-59-000-alors-que-la-prevente-explosive-place-pullix-dans-le-collimateur-des-investisseurs/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>AltSignals suit les tendances de l&#8217;IA et se concentre sur l&#8217;accélération des lancements de produits en 2024</title>
-		<link>https://coinjournal.net/fr/actualites/altsignals-suit-les-tendances-de-lia-et-se-concentre-sur-lacceleration-des-lancements-de-produits-en-2024/</link>
-		
-		<dc:creator><![CDATA[arnaud peres]]></dc:creator>
-		<pubDate>Wed, 28 Feb 2024 18:53:50 +0000</pubDate>
-				<category><![CDATA[Analyse]]></category>
-		<guid isPermaLink="false">https://coinjournal.net/?p=188893</guid>
 
-					<description><![CDATA[<p>AltSignals devrait lancer de nombreux produits en 2024. Le projet devrait b&#233;n&#233;ficier de l&#8217;optimisme positif du secteur de l&#8217;IA. La valeur du jeton $ASI sera d&#233;bloqu&#233;e &#224; mesure que la plateforme ActualizeAI sera op&#233;rationnelle. L&#8217;intelligence artificielle se d&#233;veloppe rapidement et ce n&#8217;est pas un hasard si les secteurs expos&#233;s en profitent. Les jetons d&#8217;IA ont [&#8230;]</p>
-<p>The post <a href="https://coinjournal.net/fr/actualites/altsignals-suit-les-tendances-de-lia-et-se-concentre-sur-lacceleration-des-lancements-de-produits-en-2024/">AltSignals suit les tendances de l&#8217;IA et se concentre sur l&#8217;accélération des lancements de produits en 2024</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[<ul>
-<li style="font-weight: 400"><span style="font-weight: 400">AltSignals devrait lancer de nombreux produits en 2024.</span></li>
-<li style="font-weight: 400"><span style="font-weight: 400">Le projet devrait b&eacute;n&eacute;ficier de l&rsquo;optimisme positif du secteur de l&rsquo;IA.</span></li>
-<li style="font-weight: 400"><span style="font-weight: 400">La valeur du jeton $ASI sera d&eacute;bloqu&eacute;e &agrave; mesure que la plateforme ActualizeAI sera op&eacute;rationnelle.</span></li>
-</ul>
-<p><span style="font-weight: 400">L&rsquo;intelligence artificielle se d&eacute;veloppe rapidement et ce n&rsquo;est pas un hasard si les secteurs expos&eacute;s en profitent. Les jetons d&rsquo;IA ont enregistr&eacute;</span> des gains <span style="font-weight: 400">accrus</span><span style="font-weight: 400">, men&eacute;s par le jeton Worldcoin (WLD), qui a atteint un nouveau record. Par ailleurs, les actions d&rsquo;entreprises li&eacute;es &agrave; l&rsquo;IA, comme Nvidia, revendiquent un nouveau record. Cela a suscit&eacute; l&rsquo;optimisme quant au fait que le projet</span> <a href="https://www.altsignals.io/?utm_source=media&amp;utm_medium=artc&amp;utm_campaign=coinjournal&amp;utm_term=internal&amp;utm_content=investment_opportunity" target="_blank" rel="noopener"><span style="font-weight: 400">AltSignals</span></a> <span style="font-weight: 400">($ASI) nouvellement lanc&eacute; conna&icirc;tra une croissance consid&eacute;rable en 2024. Cela intervient au milieu d&rsquo;une s&eacute;rie de lancements de projets qui devraient am&eacute;liorer la trajectoire du jeton au cours de l&rsquo;ann&eacute;e.</span></p>
-<h2><b>AltSignals&nbsp;: un projet tirant parti de l&rsquo;IA pour des signaux de trading de qualit&eacute;</b></h2>
-<p><span style="font-weight: 400">L&rsquo;une des principales propositions de vente d&rsquo;AltSignals a &eacute;t&eacute; son utilisation de l&rsquo;IA dans le monde du trading. Apr&egrave;s un service r&eacute;ussi de g&eacute;n&eacute;ration de signaux aid&eacute; par des algorithmes, AltSignals est pr&ecirc;t pour sa prochaine phase. Utilisez l&rsquo;intelligence artificielle pour produire davantage de signaux de qualit&eacute; et augmenter les revenus des investisseurs.</span></p>
-<p><span style="font-weight: 400">La plateforme, cr&eacute;&eacute;e en 2017 par un groupe de traders britanniques, h&eacute;berge plus de 52 000 traders sur Telegram. La qualit&eacute; du signal d&rsquo;AltSignals est sup&eacute;rieure &agrave; 64 %, ce qui permet aux traders d&rsquo;&eacute;valuer la plateforme avec une note de 4,9/5 &eacute;toiles sur TrustPilot. Les signaux couvrent divers instruments financiers, notamment le Forex,</span> <a href="https://coinjournal.net/fr/crypto-monnaies/" rel=""><span style="font-weight: 400">les crypto-monnaies</span></a><span style="font-weight: 400">, les CFD et les actions.</span></p>
-<p><span style="font-weight: 400">Une demande accrue pour AltSignals a incit&eacute; son &eacute;quipe &agrave; envisager d&rsquo;int&eacute;grer l&rsquo;IA dans sa g&eacute;n&eacute;ration de signaux. L&rsquo;objectif est d&rsquo;exploiter les capacit&eacute;s d&rsquo;apprentissage automatique, de traitement du langage naturel et d&rsquo;analyse des sentiments de l&rsquo;IA. De cette fa&ccedil;on, l&rsquo;&eacute;quipe AltSignals produira plus de signaux de qualit&eacute; avec une rentabilit&eacute; plus &eacute;lev&eacute;e.</span></p>
-<p><span style="font-weight: 400">Le lancement d&rsquo;ActualizeAI, une plateforme bas&eacute;e sur l&rsquo;IA, compl&egrave;te l&rsquo;it&eacute;ration AltSignals. Le nouveau service de g&eacute;n&eacute;ration de signaux est aliment&eacute; par l&rsquo;IA, o&ugrave; les membres poss&egrave;dent une crypto-monnaie, $ASI. Cela a &eacute;t&eacute; un attrait car les investisseurs consid&egrave;rent $ASI comme un gagnant potentiel en raison de son exposition aux secteurs de l&rsquo;IA. Par cons&eacute;quent, l&rsquo;&eacute;quipe d&rsquo;AltSignals s&rsquo;est efforc&eacute;e d&rsquo;actualiser les lancements de produits pr&eacute;vus en 2024.</span></p>
-<h2><b>Grande programmation d&rsquo;AltSignals en 2024 : arriv&eacute;e du jeton $ASI sur les bourses, march&eacute; de NFT et partenariats</b></h2>
-<p><span style="font-weight: 400">2024 est la grande ann&eacute;e pour AltSignals pour concr&eacute;tiser son r&ecirc;ve de trading bas&eacute; sur l&rsquo;IA, avec des lancements cl&eacute;s pr&eacute;vus. Apr&egrave;s la pr&eacute;vente tr&egrave;s r&eacute;ussie du jeton, $ASI a &eacute;t&eacute;</span> <span style="font-weight: 400">cot&eacute;</span> <span style="font-weight: 400">sur Uniswap et a ouvert son programme de jalonnement. La cotation a ouvert le jeton $ASI aux achats publics alors que le jeton se pr&eacute;pare &agrave; une cotation ult&eacute;rieure.</span></p>
-<p><span style="font-weight: 400">Cependant, le point culminant du jeton jusqu&rsquo;&agrave; pr&eacute;sent est son produit de jalonnement. Le jalonnement g&eacute;n&egrave;re un retour sur investissement de 25 % pour une p&eacute;riode de jalonnement de 30 jours. Les investisseurs ont rapidement mis en jeu les jetons, avec pr&egrave;s de 100 % des souscriptions pour les 30 000 000 de jetons propos&eacute;s.</span></p>
-<p><span style="font-weight: 400">Le prochain sur la liste des &eacute;l&eacute;ments suscitant l&rsquo;int&eacute;r&ecirc;t pour AltSignals est le march&eacute; ActualizeAI Pass NFT. Le march&eacute; de NFT est attendu au premier trimestre de 2024. Il s&rsquo;agit d&rsquo;une opportunit&eacute; pour les investisseurs de s&rsquo;exposer &agrave; des revenus partag&eacute;s sur les lancements de nouveaux produits. Le trimestre sera couronn&eacute; par le lancement d&rsquo;un nouveau site Internet qui acc&eacute;l&eacute;rera le d&eacute;veloppement des produits.</span></p>
-<p><span style="font-weight: 400">Au fil de l&rsquo;ann&eacute;e, AltSignals cherchera &agrave; se d&eacute;velopper gr&acirc;ce &agrave; des partenariats. Il s&rsquo;agit notamment des institutions qui autorisent ActualizeAI et les accords d&rsquo;affiliation au deuxi&egrave;me trimestre. L&rsquo;&eacute;quipe d&eacute;veloppera &eacute;galement son syst&egrave;me de notifications en temps r&eacute;el, activ&eacute; par un moteur d&rsquo;analyse des sentiments. De nouvelles versions de produits d&rsquo;IA suivront au troisi&egrave;me trimestre, tandis qu&rsquo;AltSignals intensifiera son marketing mondial.</span></p>
-<p><span style="font-weight: 400">Les analystes esp&egrave;rent qu&rsquo;&agrave; mesure qu&rsquo;AltSignals actualisera son service de signaux d&rsquo;IA en 2024, la demande pour le jeton $ASI augmentera. Coupl&eacute;e aux tendances de l&rsquo;IA et au march&eacute; haussier de la crypto-monnaie, la valeur du jeton $ASI sera d&eacute;bloqu&eacute;e.</span></p>
-<h2><b>Le jeton $ASI, est-ce un bon investissement ?</b></h2>
-<p><span style="font-weight: 400">La valeur sp&eacute;culative de $ASI est &eacute;lev&eacute;e, les analystes pr&eacute;voyant un gain allant jusqu&rsquo;&agrave; 50 fois pour le jeton. La pr&eacute;diction est bas&eacute;e sur le fait que le jeton est soutenu par une plateforme d&eacute;j&agrave; performante. &Agrave; mesure que de plus en plus d&rsquo;investisseurs rejoindront AltSignals et ActualizeAI, la demande et le prix du jeton augmenteront.</span></p>
-<p><span style="font-weight: 400">Investir dans</span> <a href="https://www.altsignals.io/?utm_source=media&amp;utm_medium=artc&amp;utm_campaign=coinjournal&amp;utm_term=internal&amp;utm_content=investment_opportunity" target="_blank" rel="noopener"><span style="font-weight: 400">AltSignals</span></a> <span style="font-weight: 400">est &eacute;galement une opportunit&eacute; de gagner de l&rsquo;argent gr&acirc;ce au trading. Les investisseurs b&eacute;n&eacute;ficient des signaux de haute qualit&eacute; g&eacute;n&eacute;r&eacute;s par l&rsquo;&eacute;quipe d&rsquo;AltSignals pour augmenter leurs revenus. Cela inclut &eacute;galement la participation &agrave; d&rsquo;autres produits, tels que le march&eacute; ActualizeAI NFT. Les diverses opportunit&eacute;s rendent AltSignals attrayant pour les investisseurs cherchant &agrave; augmenter leurs revenus.</span></p>
+                                        <wfw:commentRss>https://coinjournal.net/fr/actualites/le-prix-du-bitcoin-franchit-la-barre-des-59-000-alors-que-la-prevente-explosive-place-pullix-dans-le-collimateur-des-investisseurs/feed/</wfw:commentRss>
+                        <slash:comments>0</slash:comments>
 
-<p>The post <a href="https://coinjournal.net/fr/actualites/altsignals-suit-les-tendances-de-lia-et-se-concentre-sur-lacceleration-des-lancements-de-produits-en-2024/">AltSignals suit les tendances de l&#8217;IA et se concentre sur l&#8217;accélération des lancements de produits en 2024</a> appeared first on <a href="https://coinjournal.net/fr">CoinJournal</a>.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-	</channel>
+
+                        </item>
+        </channel>
 </rss>
-
-
-

@@ -70,7 +70,7 @@ export class CryptoListComponent implements AfterViewInit {
   public getCryptoList() {
     this.cryptoListService.getListingCrypto().subscribe(
       (response: CryptoList[]) => {
-        this.datas = response.slice(0, 100);
+        this.datas = response.slice(0, 30);
         this.datas.forEach((crypto: CryptoList) => {
           crypto.favorite = false;
         });

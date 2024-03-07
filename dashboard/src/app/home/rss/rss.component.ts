@@ -20,7 +20,7 @@ export class RssComponent implements OnInit {
   ngOnInit(): void {
     this.getRssData();
     setInterval(() => {
-      this.getRssData(); 
+      this.getRssData();
     }, 3600000);
   }
 
@@ -39,13 +39,29 @@ export class RssComponent implements OnInit {
             const date = new Date(item.pubDate);
             item.pubDate = date.toLocaleString('fr-FR', { timeZone: 'UTC' });
           });
-          if (this.favotiteCrypto.length > 0) {
-            this.rssData = this.rssData.filter((item) => {
-              return this.favotiteCrypto.some((crypto) => {
-                return item.title.includes(crypto);
-              });
+
+          const cryptoCounts: any = {};
+          this.rssData.forEach((item) => {
+            this.favotiteCrypto.forEach((crypto) => {
+              const regex = new RegExp(crypto, 'gi');
+              const matches = (item.description.match(regex) || []).length;
+              cryptoCounts[crypto] = (cryptoCounts[crypto] || 0) + matches;
+            });
+          });
+          if (this.favotiteCrypto.length === 1) {
+            this.rssData.sort((a, b) => {
+              const countA = this.getCountForCrypto(
+                a.description,
+                cryptoCounts
+              );
+              const countB = this.getCountForCrypto(
+                b.description,
+                cryptoCounts
+              );
+              return countB - countA;
             });
           }
+
           this.isLoaded = true;
         }
       },
@@ -53,6 +69,16 @@ export class RssComponent implements OnInit {
         console.error('Erreur lors de la récupération du flux RSS : ', error);
       }
     );
+  }
+
+  // Fonction utilitaire pour obtenir le nombre de mentions d'une crypto dans un titre
+  getCountForCrypto(title: string, cryptoCounts: any): number {
+    let count = 0;
+    Object.keys(cryptoCounts).forEach((crypto) => {
+      const regex = new RegExp(crypto, 'gi');
+      count += (title.match(regex) || []).length * cryptoCounts[crypto];
+    });
+    return count;
   }
 
   public getFavoris() {

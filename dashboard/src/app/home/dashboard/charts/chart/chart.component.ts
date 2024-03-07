@@ -84,6 +84,7 @@ export class ChartComponent implements OnChanges {
   }
 
   private refreshData(): void {
+    
     this.getChartDataValue(this.selectedCrypto, this.selectedPeriod);
     this.getChartDataMc(this.selectedCrypto, this.selectedPeriod);
 

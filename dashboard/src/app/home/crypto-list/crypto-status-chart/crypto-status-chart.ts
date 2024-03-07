@@ -6,7 +6,6 @@ import {
   BarElement,
   CategoryScale,
   Chart,
-  ChartTypeRegistry,
   Decimation,
   Filler,
   Legend,
@@ -44,7 +43,9 @@ export class CryptoStatusChartComponent implements AfterViewInit {
     Chart.register(...registerables);
   }
   ngAfterViewInit(): void {
-    this.getChartDataValue(this.selectedCryptoId, '5m');
+    if (this.selectedCryptoId !== undefined) {
+      this.getChartDataValue(this.selectedCryptoId, '5m');
+    }
   }
 
   private getChartDataValue(id: number, periode: string) {
@@ -68,12 +69,6 @@ export class CryptoStatusChartComponent implements AfterViewInit {
     this.chartColorsValues = this.chartDataValue.map((item: any) =>
       this.generateRandomColor()
     );
-
-    if (this.chartDataValue.length > 50 && this.chartDataValue) {
-      this.chartDataValue = this.chartDataValue.slice(0, 50);
-      this.chartLabelsValues = this.chartLabelsValues.slice(0, 50);
-      this.chartColorsValues = this.chartColorsValues.slice(0, 50);
-    }
   }
 
   private generateRandomColor(): string {

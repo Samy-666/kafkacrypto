@@ -8,7 +8,7 @@ consumer = KafkaConsumer(topic_name, bootstrap_servers=[kafka_server],
                          value_deserializer=lambda v: v.decode('utf-8'))
 
 # Emplacement du fichier de sauvegarde
-file_path = "./rss_feed.xml"
+file_path = "./rss_feed.txt"
 
 # Fonction pour lire les messages Kafka et sauvegarder dans un fichier
 def consume_and_save_to_file(consumer, file_path):

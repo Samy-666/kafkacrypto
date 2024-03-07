@@ -101,9 +101,9 @@ def filter_data_value_by_time(data, time_interval):
         if not data_values or current_time - data_values[-1]["time"] >= interval_duration:
             data_values.append({"value": crypto["value"], "time": current_time})
 
-    fistValue = data_values[0]["value"]
+    firstValue = data_values[0]["value"]
     lastValue = data_values[len(data_values)-1]["value"]
-    evolution = ((fistValue - lastValue) / fistValue) * 100
+    evolution = ((lastValue - firstValue) / firstValue) * 100
     evolution = round(evolution, 3)
     datas.append({"evolution": evolution, "data": data_values})
 
@@ -124,9 +124,9 @@ def filter_data_mc_by_time(data, time_interval):
         if not data_mk or current_time - data_mk[-1]["time"] >= interval_duration:
             data_mk.append({"market_cap": crypto["market_cap"], "time": current_time})
 
-    fistValue = data_mk[0]["market_cap"]
+    firstValue = data_mk[0]["market_cap"]
     lastValue = data_mk[len(data_mk)-1]["market_cap"]
-    evolution = ((fistValue - lastValue) / fistValue) * 100
+    evolution = ((lastValue - firstValue) / firstValue) * 100
     evolution = round(evolution, 3)
     datas.append({"evolution": evolution, "data": data_mk})
     return datas

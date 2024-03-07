@@ -41,7 +41,7 @@ def get_rss_feed_by_crypto():
 
 def get_rss_feed():
 # load xml file
-    with open('rss.xml') as xml_file:
+    with open('rss.txt') as xml_file:
         rss = xml_file.read()
         # Effectuer la requête HTTP GET pour récupérer les données de l'API
         rss = rss.encode('latin1').decode('utf-8')

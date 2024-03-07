@@ -8,15 +8,20 @@ import { CryptoToAdd, Favorite } from 'src/app/models/favorite.model';
   templateUrl: './rss.component.html',
   styleUrls: ['./rss.component.scss'],
 })
-
 export class RssComponent implements OnInit {
   public rssData: any[] = [];
   public xmlData: any;
   public favotiteCrypto: string[] = [];
   public isLoaded = false;
-  constructor(private rssService: RssService, private favoriteService: FavoriteService) {}
+  constructor(
+    private rssService: RssService,
+    private favoriteService: FavoriteService
+  ) {}
   ngOnInit(): void {
     this.getRssData();
+    setInterval(() => {
+      this.getRssData(); 
+    }, 3600000);
   }
 
   getRssData() {
@@ -25,13 +30,16 @@ export class RssComponent implements OnInit {
       (response: string) => {
         if (response) {
           this.rssData = this.rssService.extractRssData(response);
-          this.rssData.forEach(item => {
+          this.rssData.forEach((item) => {
             item.description = this.stripHtmlTags(item.description);
-            item.description = item.description.replace(/appeared first on CoinJournal/g, '');
+            item.description = item.description.replace(
+              /appeared first on CoinJournal/g,
+              ''
+            );
             const date = new Date(item.pubDate);
             item.pubDate = date.toLocaleString('fr-FR', { timeZone: 'UTC' });
           });
-          if(this.favotiteCrypto.length > 0) {
+          if (this.favotiteCrypto.length > 0) {
             this.rssData = this.rssData.filter((item) => {
               return this.favotiteCrypto.some((crypto) => {
                 return item.title.includes(crypto);
@@ -57,6 +65,6 @@ export class RssComponent implements OnInit {
 
   stripHtmlTags(html: string): string {
     const doc = new DOMParser().parseFromString(html, 'text/html');
-    return doc.body.textContent || "";
+    return doc.body.textContent || '';
   }
 }

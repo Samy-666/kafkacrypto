@@ -4,6 +4,18 @@
 
 <div class="full-container d-block justify-content-around" *ngIf="ready">
   <div class="row justify-content-between">
+
+
+    <mat-form-field class="row w-50" *ngIf="true">
+      <mat-label> Période </mat-label>
+      <mat-select [value]="selectedTime"  (selectionChange)="onTimeChange($event)">
+        <mat-option *ngFor="let time of Times" [value]="time.value">
+          {{ time.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
     <mat-form-field class="row w-50">
       <mat-label> Interval de temps </mat-label>
       <mat-select [value]="selectedPeriod"  (selectionChange)="onPeriodChange($event)">
@@ -53,6 +65,7 @@
   <app-chart
     class="chart"
     [selectedPeriod]="selectedPeriod"
+    [selectedTime]="selectedTime"
     [selectedFormat]="selectedFormat"
     [selectedCrypto]="selectedCrypto"
     [selectedCryptoName]="selectedCryptoName"

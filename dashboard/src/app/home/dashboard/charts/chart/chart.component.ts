@@ -33,6 +33,7 @@ import {
 export class ChartComponent implements OnChanges {
   @Input() public selectedPeriod = '';
   @Input() public selectedFormat = '';
+  @Input() public selectedTime = '';
   @Input() public selectedCrypto = 0;
   @Input() public selectedCryptoName = '';
   @Input() public selectedCryptoCompareTo = 0;
@@ -76,8 +77,16 @@ export class ChartComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    this.refreshData();
+    setInterval(() => {
+      this.refreshData();
+    }, 300000);
+  }
+
+  private refreshData(): void {
     this.getChartDataValue(this.selectedCrypto, this.selectedPeriod);
     this.getChartDataMc(this.selectedCrypto, this.selectedPeriod);
+
     this.getChartDataValueCompareTo(
       this.selectedCryptoCompareTo,
       this.selectedPeriod
@@ -89,6 +98,56 @@ export class ChartComponent implements OnChanges {
     this.createChart();
   }
 
+  private filterDataByTime(time: string) {
+    const date = new Date();
+    let timeInMillis: number;
+
+    switch (time) {
+      case '2m':
+        timeInMillis = 120000;
+        break;
+      case '5m':
+        timeInMillis = 300000;
+        break;
+      case '30m':
+        timeInMillis = 1800000;
+        break;
+      case '45m':
+        timeInMillis = 2700000;
+        break;
+      case '1h':
+        timeInMillis = 3600000;
+        break;
+      case '2h':
+        timeInMillis = 7200000;
+        break;
+      case '6h':
+        timeInMillis = 21600000;
+        break;
+      case '1j':
+        timeInMillis = 86400000;
+        break;
+      case '7j':
+        timeInMillis = 604800000;
+        break;
+      case '30j':
+        timeInMillis = 2592000000;
+        break;
+      default:
+        timeInMillis = 0;
+        break;
+    }
+
+    if (timeInMillis > 0) {
+      const filteredTime = date.getTime() - timeInMillis;
+      this.filtredDataValue = this.filtredDataValue.filter(
+        (item) => new Date(item.time).getTime() > filteredTime
+      );
+      this.filtredDataMc = this.filtredDataMc.filter(
+        (item) => new Date(item.time).getTime() > filteredTime
+      );
+    }
+  }
   private generateRandomColor(): string {
     const randomColor = Math.floor(Math.random() * 16777215).toString(16);
     return '#' + randomColor;
@@ -174,12 +233,7 @@ export class ChartComponent implements OnChanges {
     this.chartColorsMarketCap = this.chartDataMarketCap.map((item: any) =>
       this.generateRandomColor()
     );
-    if (this.chartDataValue.length > 50 && this.chartDataValue) {
-      this.chartDataValue = this.chartDataValue.slice(0, 50);
-      this.chartLabelsValues = this.chartLabelsValues.slice(0, 50);
-      this.chartColorsValues = this.chartColorsValues.slice(0, 50);
-      this.chartDataMarketCap = this.chartDataMarketCap.slice(0, 50);
-    }
+    this.filterDataByTime(this.selectedTime);
   }
 
   createChart(): void {
@@ -213,6 +267,8 @@ export class ChartComponent implements OnChanges {
                   borderWidth: 1,
                   pointStyle: '',
                   pointRadius: 0,
+                  pointBackgroundColor: this.chartColorsValues,
+                  pointBorderColor: this.chartColorsValues,
                 },
                 {
                   label: this.selectedCryptoCompareToName,
@@ -221,7 +277,9 @@ export class ChartComponent implements OnChanges {
                   borderColor: this.chartColorsValuesCompareTo,
                   borderWidth: 1,
                   pointStyle: '',
-                  pointRadius: 0,
+                  pointRadius: 1,
+                  pointBackgroundColor: this.chartColorsValuesCompareTo,
+                  pointBorderColor: this.chartColorsValuesCompareTo,
                 },
               ]
             : [
@@ -232,7 +290,9 @@ export class ChartComponent implements OnChanges {
                   borderColor: this.chartColorsValues,
                   borderWidth: 1,
                   pointStyle: '',
-                  pointRadius: 0,
+                  pointRadius: 1,
+                  pointBackgroundColor: this.chartColorsValues,
+                  pointBorderColor: this.chartColorsValues,
                 },
               ],
       },
@@ -249,6 +309,7 @@ export class ChartComponent implements OnChanges {
         },
         scales: {
           y: {
+            beginAtZero: false,
             ticks: {
               callback: function (value: any, index, values) {
                 return value / 1000 + 'k$';
@@ -275,7 +336,9 @@ export class ChartComponent implements OnChanges {
                   borderColor: this.chartColorsMarketCap,
                   borderWidth: 1,
                   pointStyle: '',
-                  pointRadius: 0,
+                  pointRadius: 1,
+                  pointBorderColor: this.chartColorsMarketCap,
+                  pointBackgroundColor: this.chartColorsMarketCap,
                 },
                 {
                   label: this.selectedCryptoCompareToName,
@@ -284,7 +347,9 @@ export class ChartComponent implements OnChanges {
                   borderColor: this.chartColorsMarketCapCompareTo,
                   borderWidth: 1,
                   pointStyle: '',
-                  pointRadius: 0,
+                  pointRadius: 1,
+                  pointBorderColor: this.chartColorsMarketCapCompareTo,
+                  pointBackgroundColor: this.chartColorsMarketCapCompareTo,
                 },
               ]
             : [
@@ -295,7 +360,7 @@ export class ChartComponent implements OnChanges {
                   borderColor: this.chartColorsMarketCap,
                   borderWidth: 1,
                   pointStyle: '',
-                  pointRadius: 0,
+                  pointRadius: 2,
                 },
               ],
       },
@@ -312,6 +377,7 @@ export class ChartComponent implements OnChanges {
         },
         scales: {
           y: {
+            beginAtZero: false,
             ticks: {
               callback: function (value: any, index, values) {
                 return value / 1000 + 'k$';

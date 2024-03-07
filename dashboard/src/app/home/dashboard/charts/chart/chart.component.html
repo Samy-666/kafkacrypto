@@ -24,7 +24,7 @@
         <div class="evolution-content" *ngIf="valueEvolution < 0">
           <span class="mr-2"> {{ selectedCryptoName }} </span>
           <img src="../../../../../assets/trending_down-24px.svg" alt="" />
-          <span [ngClass]="'negative'">{{ valueEvolution }}</span>
+          <span [ngClass]="'negative'">{{ valueEvolution }}</span> <span> % </span>
         </div>
 
         <div
@@ -36,13 +36,13 @@
         >
           <span class="mr-2"> {{ selectedCryptoCompareToName }} </span>
           <img src="../../../../../assets/trending_down-24px.svg" alt="" />
-          <span [ngClass]="'negative'">{{ valueEvolutionCompareTo }}</span>
+          <span [ngClass]="'negative'">{{ valueEvolutionCompareTo }}</span> <span> % </span>
         </div>
 
         <div class="evolution-content" *ngIf="valueEvolution > 0">
           <span class="mr-2"> {{ selectedCryptoName }} </span>
-          <img src="../../../../../assets/trending_up-24px.svg" alt="" />
-          <span [ngClass]="'positive'">{{ valueEvolution }}</span>
+          <img src="../../../../../assets/trending_up-24px.svg" alt="" /> 
+          <span [ngClass]="'positive'">{{ valueEvolution }}</span><span> % </span>
         </div>
         <div
           class="evolution-content"
@@ -53,13 +53,13 @@
         >
           <span class="mr-2"> {{ selectedCryptoCompareToName }} </span>
           <img src="../../../../../assets/trending_up-24px.svg" alt="" />
-          <span [ngClass]="'positive'">{{ valueEvolutionCompareTo }}</span>
+          <span [ngClass]="'positive'">{{ valueEvolutionCompareTo }}</span><span> % </span>
         </div>
 
         <div class="evolution-content" *ngIf="valueEvolution == 0">
           <span class="mr-2"> {{ selectedCryptoName }} </span>
           <img src="../../../../../assets/trending_flat-24px.svg" alt="" />
-          <span [ngClass]="'no'">{{ valueEvolution }}</span>
+          <span [ngClass]="'no'">{{ valueEvolution }}</span><span> % </span>
         </div>
         <div
           class="evolution-content"
@@ -70,7 +70,7 @@
         >
           <span class="mr-2"> {{ selectedCryptoCompareToName }} </span>
           <img src="../../../../../assets/trending_flat-24px.svg" alt="" />
-          <span [ngClass]="'no'">{{ valueEvolutionCompareTo }}</span>
+          <span [ngClass]="'no'">{{ valueEvolutionCompareTo }}</span><span> % </span>
         </div>
       </div>
     </mat-card-header>
@@ -90,15 +90,15 @@
       <div class="evolution">
         <div class="evolution-content" *ngIf="marketCapEvolution < 0">
           <img src="../../../../../assets/trending_down-24px.svg" alt="" />
-          <span [ngClass]="'negative'">{{ marketCapEvolution }}</span>
+          <span [ngClass]="'negative'">{{ marketCapEvolution }} </span><span> % </span>
         </div>
         <div class="evolution-content" *ngIf="marketCapEvolution > 0">
           <img src="../../../../../assets/trending_up-24px.svg" alt="" />
-          <span [ngClass]="'positive'">{{ marketCapEvolution }}</span>
+          <span [ngClass]="'positive'">{{ marketCapEvolution }} </span><span> % </span>
         </div>
         <div class="evolution-content" *ngIf="marketCapEvolution == 0">
           <img src="../../../../../assets/trending_flat-24px.svg" alt="" />
-          <span [ngClass]="'no'">{{ marketCapEvolution }}</span>
+          <span [ngClass]="'no'">{{ marketCapEvolution }} </span><span> % </span>
         </div>
       </div>
     </mat-card-header>

@@ -17,6 +17,7 @@ import { CryptoListService } from '../crypto-list/crypto-list.service';
 })
 export class DashboardComponent implements OnInit {
   public selectedPeriod = '';
+  public selectedTime = '';
   public selectedCryptoName = '';
   public selectedCryptoCompareToName = '';
   public selectedCrypto = 0;
@@ -29,6 +30,18 @@ export class DashboardComponent implements OnInit {
     { id: 3, value: '5m', viewValue: '5 minutes' },
     { id: 4, value: '10m', viewValue: '10 minutes' },
     { id: 5, value: '30m', viewValue: '30 minutes' },
+  ];
+  public Times: PeriodModel[] = [
+    { id: 0, value: '2m', viewValue: '2 dernières minutes'},
+    { id: 1, value: '5m', viewValue: '5 dernières minutes' },
+    { id: 2, value: '30m', viewValue: '30 dernières minutes'},
+    { id: 3, value: '45m', viewValue: 'Dernières 45 minutes'},
+    { id: 4, value: '1h', viewValue: 'Dernière heure' },
+    { id: 5, value: '2h', viewValue: 'Deux dernières heures' },
+    { id: 6, value: '6h', viewValue: '6 dernières heures' },
+    { id: 7, value: '1j', viewValue: 'Dernière journée'},
+    { id: 8, value: '7j', viewValue: 'Dernière semaine'},
+    { id: 9, value: '30j', viewValue: 'Dernier mois'},
   ];
   public FormatChart: FormatLabel[] = [
     { id: 0, type: 'line', name: 'Ligne' },
@@ -49,6 +62,10 @@ export class DashboardComponent implements OnInit {
   onPeriodChange(event: any) {
     this.selectedPeriod = event.value;
   }
+  onTimeChange(event: any) {
+    this.selectedTime = event.value;
+  }
+
   onFormatChange(event: any): void {
     // Gérer le changement de sélection si nécessaire
     this.selectedFormat = event.value;
@@ -108,6 +125,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.getChartData();
     this.selectedPeriod = this.Periodes[0].value;
+    this.selectedTime = this.Times[7].value;
     this.selectedFormat = this.FormatChart[0].type;
   }
 }
